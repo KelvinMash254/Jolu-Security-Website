@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Mail, MapPin, Shield, Users, Clock, CheckCircle, Star, Eye, AlertTriangle, Building, Home, School, ShoppingBag, Utensils, Camera, UserCheck, Car, Calendar } from "lucide-react";
+import { Phone, Mail, MapPin, Shield, Users, Clock, CheckCircle, Star, Eye, AlertTriangle, Building, Home, School, ShoppingBag, Utensils, Camera, UserCheck, Car, Calendar, Zap, Dog } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { ServiceCard } from "@/components/ServiceCard";
 import { IndustryCard } from "@/components/IndustryCard";
@@ -136,36 +136,107 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/a7436579-bd64-4ae0-ab2a-8a33608836f0.png" 
+                    alt="Manned Guarding Services" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Manned Guarding</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Professional security personnel providing reliable and comprehensive security solutions for residential, commercial, and industrial properties.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/a43900e9-b8a7-4fd1-a598-31db9ec4f29a.png" 
+                    alt="Events Security" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Events Security</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Exceptional event security solutions and professional services to ensure safety and smooth execution of gatherings of all sizes.</p>
+              </CardContent>
+            </Card>
+
             <ServiceCard
-              icon={<UserCheck className="h-8 w-8" />}
-              title="Manned Guarding Services"
-              description="Professional security personnel providing reliable and comprehensive security solutions for residential, commercial, and industrial properties."
+              icon={<Dog className="h-8 w-8" />}
+              title="K9 Unit Services"
+              description="Specialized canine security units for enhanced threat detection, drug screening, and comprehensive security operations."
             />
-            <ServiceCard
-              icon={<Car className="h-8 w-8" />}
-              title="Mobile Patrol Services"
-              description="Swift and reliable mobile patrol services to protect property and respond immediately to security threats and incidents."
-            />
-            <ServiceCard
-              icon={<Calendar className="h-8 w-8" />}
-              title="Event Security"
-              description="Exceptional event security solutions and professional services to ensure safety and smooth execution of gatherings of all sizes."
-            />
-            <ServiceCard
-              icon={<Camera className="h-8 w-8" />}
-              title="CCTV Installation & Monitoring"
-              description="Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring."
-            />
-            <ServiceCard
-              icon={<AlertTriangle className="h-8 w-8" />}
-              title="Alarm Response"
-              description="Swift and reliable alarm response services to protect property and respond immediately to security threats and potential risks."
-            />
-            <ServiceCard
-              icon={<Shield className="h-8 w-8" />}
-              title="Risk Assessment"
-              description="Comprehensive risk assessment and security consulting to identify vulnerabilities and develop effective security strategies."
-            />
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/e069cbc0-c281-4e74-9c20-c24ba110c9d6.png" 
+                    alt="CCTV Installation" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">CCTV Installation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/13b8beab-78f8-4abf-8f74-15a3fd8125f2.png" 
+                    alt="Electric Fencing" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Electric Fencing</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Professional electric fencing installation and maintenance services to create secure perimeters for residential and commercial properties.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/6ecb7db7-6854-4689-bfee-b5f6dec79881.png" 
+                    alt="Alarm Response" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Alarm Response</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Swift and reliable alarm response services to protect property and respond immediately to security threats and potential risks.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/f0159bdf-1df5-43f0-a519-f1304007c2df.png" 
+                    alt="VIP Close Protection" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">VIP Close Protection</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Elite personal protection services for high-profile individuals, executives, and VIPs requiring discreet and professional security.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -180,36 +251,101 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <IndustryCard
-              icon={<Home className="h-8 w-8" />}
-              title="Residential"
-              description="Protecting homes and residential communities with tailored security solutions for families and property owners."
-            />
-            <IndustryCard
-              icon={<Building className="h-8 w-8" />}
-              title="Commercial"
-              description="Comprehensive security services for offices, business centers, and commercial facilities across Kenya."
-            />
-            <IndustryCard
-              icon={<School className="h-8 w-8" />}
-              title="Educational"
-              description="Specialized security solutions for schools, colleges, and educational institutions to ensure student safety."
-            />
-            <IndustryCard
-              icon={<ShoppingBag className="h-8 w-8" />}
-              title="Retail"
-              description="Protecting retail stores, shopping centers, and commercial outlets from theft and security threats."
-            />
-            <IndustryCard
-              icon={<Utensils className="h-8 w-8" />}
-              title="Hospitality"
-              description="Security services for hotels, restaurants, and hospitality venues to ensure guest safety and peace of mind."
-            />
-            <IndustryCard
-              icon={<Shield className="h-8 w-8" />}
-              title="Construction"
-              description="Site security and equipment protection for construction projects and development sites."
-            />
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    alt="Residential Security in Kenya" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Residential</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Protecting homes and residential communities with tailored security solutions for families and property owners.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    alt="Commercial Buildings in Nairobi" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Commercial</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Comprehensive security services for offices, business centers, and commercial facilities across Kenya.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    alt="Educational Institutions in Kenya" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Educational</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Specialized security solutions for schools, colleges, and educational institutions to ensure student safety.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    alt="Retail Stores and Shopping Centers" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Retail</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Protecting retail stores, shopping centers, and commercial outlets from theft and security threats.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    alt="Hotels and Hospitality in Kenya" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Hospitality</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Security services for hotels, restaurants, and hospitality venues to ensure guest safety and peace of mind.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    alt="Construction Sites Security" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">Construction</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Site security and equipment protection for construction projects and development sites.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -325,10 +461,12 @@ const Index = () => {
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>Manned Guarding</li>
-                <li>Mobile Patrols</li>
-                <li>Event Security</li>
-                <li>CCTV Surveillance</li>
+                <li>Events Security</li>
+                <li>K9 Unit Services</li>
+                <li>CCTV Installation</li>
+                <li>Electric Fencing</li>
                 <li>Alarm Response</li>
+                <li>VIP Close Protection</li>
               </ul>
             </div>
             <div>
@@ -339,6 +477,7 @@ const Index = () => {
                 <li>Educational</li>
                 <li>Retail</li>
                 <li>Hospitality</li>
+                <li>Construction</li>
               </ul>
             </div>
             <div>
@@ -351,7 +490,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 JOLU Group Security Ltd. All rights reserved.</p>
+            <p>&copy; 2025 JOLU Group Security Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>
