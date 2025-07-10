@@ -168,11 +168,21 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <ServiceCard
-              icon={<Dog className="h-8 w-8" />}
-              title="K9 Unit Services"
-              description="Specialized canine security units for enhanced threat detection, drug screening, and comprehensive security operations."
-            />
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardHeader>
+                <div className="mb-4">
+                  <img 
+                    src="/lovable-uploads/f39415ee-18d5-4e7c-bcab-b24d2ee6ac19.png" 
+                    alt="K9 Unit Services" 
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
+                <CardTitle className="text-xl font-semibold text-gray-900">K9 Unit Services</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Specialized canine security units for enhanced threat detection, drug screening, and comprehensive security operations.</p>
+              </CardContent>
+            </Card>
 
             <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
               <CardHeader>
