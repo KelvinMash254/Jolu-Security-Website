@@ -117,8 +117,8 @@ const Index = () => {
             </div>
             <div className="lg:pl-8">
               <img 
-                src="/lovable-uploads/eeec11c1-1f8f-4ccf-bf53-da27f9441e15.png" 
-                alt="Security team in action" 
+                src="/lovable-uploads/22705b7f-1767-431f-aa11-1e409fc8f253.png" 
+                alt="JOLU Group Security team in high-visibility uniforms" 
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
