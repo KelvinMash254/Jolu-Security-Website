@@ -265,7 +265,7 @@ const Index = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    src="/lovable-uploads/8399c312-e057-4b56-9178-2e9f38f1110f.png" 
                     alt="Residential Security in Kenya" 
                     className="w-full h-48 object-cover rounded-lg"
                   />
@@ -297,7 +297,7 @@ const Index = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    src="/lovable-uploads/97412991-f7c4-4888-ac33-26240a99331a.png" 
                     alt="Educational Institutions in Kenya" 
                     className="w-full h-48 object-cover rounded-lg"
                   />
@@ -329,7 +329,7 @@ const Index = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    src="/lovable-uploads/0c8ee270-b1f4-4ff3-bc0c-2c2c5b6495ac.png" 
                     alt="Hotels and Hospitality in Kenya" 
                     className="w-full h-48 object-cover rounded-lg"
                   />
@@ -345,7 +345,7 @@ const Index = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60" 
+                    src="/lovable-uploads/1cdb5a4e-bad8-45bb-8ffb-644fe1eefb49.png" 
                     alt="Construction Sites Security" 
                     className="w-full h-48 object-cover rounded-lg"
                   />
