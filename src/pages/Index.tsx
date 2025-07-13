@@ -437,7 +437,10 @@ const Index = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <Button className="bg-green-500 hover:bg-green-600 text-white">
+                <Button 
+                  className="bg-green-500 hover:bg-green-600 text-white"
+                  onClick={() => window.open('https://wa.me/254790298003', '_blank')}
+                >
                   <Phone className="mr-2 h-4 w-4" />
                   WhatsApp Us
                 </Button>
