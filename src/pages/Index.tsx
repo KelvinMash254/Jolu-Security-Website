@@ -32,7 +32,12 @@ const Index = () => {
               <a href="#why-choose-us" className="text-gray-700 hover:text-red-600 font-medium">Why Choose Us</a>
               <a href="#contact" className="text-gray-700 hover:text-red-600 font-medium">Contact</a>
             </div>
-            <Button className="bg-red-600 hover:bg-red-700 text-white">Get Quote</Button>
+            <Button 
+              className="bg-red-600 hover:bg-red-700 text-white"
+              onClick={() => window.open('mailto:jolugroup@gmail.com', '_blank')}
+            >
+              Get Quote
+            </Button>
           </div>
         </div>
       </nav>
@@ -54,7 +59,12 @@ const Index = () => {
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now: +254 790 298 003
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 text-lg px-8 py-4">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white hover:text-red-600 text-lg px-8 py-4"
+                onClick={() => window.open('mailto:jolugroup@gmail.com', '_blank')}
+              >
                 Get Free Quote
               </Button>
             </div>
@@ -140,7 +150,7 @@ const Index = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img 
-                    src="/lovable-uploads/a7436579-bd64-4ae0-ab2a-8a33608836f0.png" 
+                    src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=250&fit=crop&crop=face&auto=format&q=60" 
                     alt="Manned Guarding Services" 
                     className="w-full h-48 object-cover rounded-lg"
                   />
@@ -236,7 +246,7 @@ const Index = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img 
-                    src="/lovable-uploads/f0159bdf-1df5-43f0-a519-f1304007c2df.png" 
+                    src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=250&fit=crop&crop=face&auto=format&q=60" 
                     alt="VIP Close Protection" 
                     className="w-full h-48 object-cover rounded-lg"
                   />
@@ -425,7 +435,7 @@ const Index = () => {
                   <MapPin className="h-6 w-6 text-red-600 mr-4" />
                   <div>
                     <div className="font-semibold">Main Office</div>
-                    <div className="text-gray-600">Thome Estate, Along Northern Bypass, Nairobi</div>
+                    <div className="text-gray-600">Thome Estate - Nairobi</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -435,14 +445,49 @@ const Index = () => {
                     <div className="text-gray-600">Nakuru (KFA Building, Along Geoffrey Kamau Avenue)</div>
                   </div>
                 </div>
+                <div className="flex items-center">
+                  <MapPin className="h-6 w-6 text-red-600 mr-4" />
+                  <div>
+                    <div className="font-semibold">Branches</div>
+                    <div className="text-gray-600">Eldoret • Kisumu • Migori</div>
+                  </div>
+                </div>
               </div>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button 
                   className="bg-green-500 hover:bg-green-600 text-white"
                   onClick={() => window.open('https://wa.me/254790298003', '_blank')}
                 >
                   <Phone className="mr-2 h-4 w-4" />
                   WhatsApp Us
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/lovable-uploads/eeec11c1-1f8f-4ccf-bf53-da27f9441e15.png';
+                    link.download = 'JOLU-Group-Security-Brochure.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
+                  Download Brochure
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/lovable-uploads/eeec11c1-1f8f-4ccf-bf53-da27f9441e15.png';
+                    link.download = 'JOLU-Group-Security-Profile.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
+                  Download Profile
                 </Button>
               </div>
             </div>
