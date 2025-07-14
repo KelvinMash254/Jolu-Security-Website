@@ -9,11 +9,6 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// ✅ Root route to fix "Cannot GET /"
-app.get('/', (req, res) => {
-  res.send('Welcome to Jolu Group Security API');
-});
-
 const services = [
   {
     title: "Manned Guarding",
@@ -59,7 +54,7 @@ app.get("/api/services", (req, res) => {
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   port: process.env.EMAIL_PORT,
-  secure: process.env.EMAIL_SECURE === 'true', // Ensure it's a boolean
+  secure: process.env.EMAIL_SECURE,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -86,6 +81,7 @@ app.post("/api/contact", async (req, res) => {
   try {
     const info = await transporter.sendMail(mailOptions);
     console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
     console.error(error);
@@ -113,6 +109,7 @@ app.post("/api/quote", async (req, res) => {
   try {
     const info = await transporter.sendMail(mailOptions);
     console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     res.status(200).json({ message: "Quote request sent successfully" });
   } catch (error) {
     console.error(error);
