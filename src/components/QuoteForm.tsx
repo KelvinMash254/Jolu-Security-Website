@@ -1,12 +1,18 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-export const ContactForm = () => {
+export const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,7 +26,7 @@ export const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/quote`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +36,7 @@ export const ContactForm = () => {
 
       if (response.ok) {
         toast({
-          title: "Message Sent!",
+          title: "Quote Request Sent!",
           description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
         });
         setFormData({
@@ -43,7 +49,7 @@ export const ContactForm = () => {
       } else {
         toast({
           title: "Error",
-          description: "Failed to send message. Please try again later.",
+          description: "Failed to send quote request. Please try again later.",
           variant: "destructive",
         });
       }
@@ -51,7 +57,7 @@ export const ContactForm = () => {
       console.error(error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: "Failed to send quote request. Please try again later.",
         variant: "destructive",
       });
     }
@@ -65,11 +71,17 @@ export const ContactForm = () => {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Get Your Free Security Quote</CardTitle>
-      </CardHeader>
-      <CardContent>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className="bg-red-600 hover:bg-red-700 text-white">Get Quote</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Get Your Free Security Quote</DialogTitle>
+          <DialogDescription>
+            Fill out the form below and we'll get back to you with a quote.
+          </DialogDescription>
+        </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -148,10 +160,10 @@ export const ContactForm = () => {
             />
           </div>
           <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white">
-            Send Message
+            Request Quote
           </Button>
         </form>
-      </CardContent>
-    </Card>
+      </DialogContent>
+    </Dialog>
   );
 };

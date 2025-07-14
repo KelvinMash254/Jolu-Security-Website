@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, MapPin, Shield, Users, Clock, CheckCircle, Star, Eye, AlertTriangle, Building, Home, School, ShoppingBag, Utensils, Camera, UserCheck, Car, Calendar, Zap, Dog } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { QuoteForm } from "@/components/QuoteForm";
 import { ServiceCard } from "@/components/ServiceCard";
 import { IndustryCard } from "@/components/IndustryCard";
 import { WhyChooseUsCard } from "@/components/WhyChooseUsCard";
@@ -27,12 +28,12 @@ const Index = () => {
             <div className="hidden md:flex space-x-8">
               <a href="#home" className="text-gray-700 hover:text-red-600 font-medium">Home</a>
               <a href="#about" className="text-gray-700 hover:text-red-600 font-medium">About</a>
-              <a href="#services" className="text-gray-700 hover:text-red-600 font-medium">Services</a>
+              <a href="/services" className="text-gray-700 hover:text-red-600 font-medium">Services</a>
               <a href="#industries" className="text-gray-700 hover:text-red-600 font-medium">Industries</a>
               <a href="#why-choose-us" className="text-gray-700 hover:text-red-600 font-medium">Why Choose Us</a>
               <a href="#contact" className="text-gray-700 hover:text-red-600 font-medium">Contact</a>
             </div>
-            <Button className="bg-red-600 hover:bg-red-700 text-white">Get Quote</Button>
+            <QuoteForm />
           </div>
         </div>
       </nav>
@@ -437,10 +438,23 @@ const Index = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <Button className="bg-green-500 hover:bg-green-600 text-white">
-                  <Phone className="mr-2 h-4 w-4" />
-                  WhatsApp Us
-                </Button>
+                <a href="https://wa.me/254790298003" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-green-500 hover:bg-green-600 text-white">
+                    <Phone className="mr-2 h-4 w-4" />
+                    WhatsApp Us
+                  </Button>
+                </a>
+              </div>
+              <div className="mt-8">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.825624474456!2d36.88238081475946!3d-1.277890999066639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11d13807ac8b%3A0x8e64c24325a40e2f!2sJolu%20Group%20Security!5e0!3m2!1sen!2ske!4v1678886969581!5m2!1sen!2ske"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
             <div>
