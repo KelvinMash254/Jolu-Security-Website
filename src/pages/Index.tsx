@@ -426,7 +426,7 @@ const Index = () => {
                   <MapPin className="h-6 w-6 text-red-600 mr-4" />
                   <div>
                     <div className="font-semibold">Main Office</div>
-                    <div className="text-gray-600">Thome Estate, Along Northern Bypass, Nairobi</div>
+                    <div className="text-gray-600">Thome Estate, Nairobi</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -434,6 +434,10 @@ const Index = () => {
                   <div>
                     <div className="font-semibold">Regional Office</div>
                     <div className="text-gray-600">Nakuru (KFA Building, Along Geoffrey Kamau Avenue)</div>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Branches</div>
+                    <div className="text-gray-600">Eldoret, Kisumu & Migori</div>
                   </div>
                 </div>
               </div>
