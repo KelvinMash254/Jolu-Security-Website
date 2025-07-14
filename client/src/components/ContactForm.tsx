@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,20 +19,8 @@ export const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const apiUrl = import.meta.env.VITE_API_URL;
-
-    if (!apiUrl) {
-      console.error("VITE_API_URL is not defined in your .env file.");
-      toast({
-        title: "Configuration Error",
-        description: "The API URL is not configured correctly. Please contact support.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     try {
-      const response = await fetch(`${apiUrl}/api/contact`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,27 +41,23 @@ export const ContactForm = () => {
           message: ''
         });
       } else {
-        const errorData = await response.json();
-        console.error("Server error:", errorData);
         toast({
           title: "Error",
-          description: errorData.message || "Failed to send message. Please try again later.",
+          description: "Failed to send message. Please try again later.",
           variant: "destructive",
         });
       }
     } catch (error) {
-      console.error("Network error:", error);
+      console.error(error);
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again later.",
+        description: "Failed to send message. Please try again later.",
         variant: "destructive",
       });
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value

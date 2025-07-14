@@ -51,17 +51,13 @@ const Index = () => {
               Protecting homes, businesses, and communities across Kenya with reliable, professional security services you can trust.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+254790298003">
               <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
-                Phone: +254 790 298 003
+                Call Now: +254 790 298 003
               </Button>
-              </a>
-              <a href="#quote">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 text-lg px-8 py-4">
                 Get Free Quote
               </Button>
-              </a>
             </div>
           </div>
         </div>
@@ -430,7 +426,7 @@ const Index = () => {
                   <MapPin className="h-6 w-6 text-red-600 mr-4" />
                   <div>
                     <div className="font-semibold">Main Office</div>
-                    <div className="text-gray-600">Thome Estate, Nairobi</div>
+                    <div className="text-gray-600">Thome Estate, Along Northern Bypass, Nairobi</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -440,14 +436,7 @@ const Index = () => {
                     <div className="text-gray-600">Nakuru (KFA Building, Along Geoffrey Kamau Avenue)</div>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <MapPin className="h-6 w-6 text-red-600 mr-4" />
-                  <div>
-                    <div className="font-semibold">Branches</div>
-                    <div className="text-gray-600">Eldoret, Kisumu & Migori</div>
-                  </div>
-                </div>
-              </div>                
+              </div>
               <div className="mt-8">
                 <a href="https://wa.me/254790298003" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-green-500 hover:bg-green-600 text-white">
