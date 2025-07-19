@@ -10,7 +10,7 @@ const AlarmResponse = () => {
       {/* Hero Banner */}
       <div
         className="relative h-[60vh] bg-cover bg-center"
-        style={{ backgroundImage: "url('/lovable-uploads/6ecb7db7-6854-4689-bfee-b5f6dec79881.png')" }}
+        style={{ backgroundImage: "url('/lovable-uploads/alarm-response.png')" }}
       >
         <div className="absolute inset-0 bg-red-800 bg-opacity-60 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-6xl font-bold text-center px-4">
