@@ -51,6 +51,11 @@ const services = [
   },
 ];
 
+// ✅ New: Root Route
+app.get("/", (req, res) => {
+  res.send("✅ Jolu Security Backend is live.");
+});
+
 // Services API
 app.get("/api/services", (req, res) => {
   res.json(services);
