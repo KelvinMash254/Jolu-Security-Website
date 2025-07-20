@@ -14,11 +14,13 @@ import { IndustryCard } from "@/components/IndustryCard";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Hero from "@/pages/Hero"; // Adjust the path if needed
 import './Hero.css';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { DocumentsSection } from "@/components/DocumentsSection";
+import Footer from '@/components/Footer';
 
 import MannedGuarding from "@/pages/services/MannedGuarding";
 import EventsSecurity from "@/pages/services/EventsSecurity";
@@ -181,39 +183,8 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
         return (
           <div>
             {/* Hero Section */}
-           <section id="home" className="hero-section min-h-screen flex items-center text-white">
-              <div className="hero-background">
-                <div className="hero-slide"></div>
-                <div className="hero-slide"></div>
-                <div className="hero-slide"></div>
-              </div>
-              <div className="hero-overlay"></div>
-              <div className="hero-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                  Your Safety,<br />
-                  <span className="text-yellow-300">Our Commitment.</span>
-                </h1>
-                <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                  Protecting homes, businesses, and communities across Kenya with reliable, professional security services you can trust.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="tel:+254790298003" className="inline-block">
-                    <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg px-8 py-4">
-                      <Phone className="mr-2 h-5 w-5" />
-                      Contact Us: +254 790 298 003
-                    </Button>
-                  </a>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-red-600 text-lg px-8 py-4"
-                    onClick={() => setShowQuoteForm(true)}
-                  >
-                    Get Free Quote
-                  </Button>
-                </div>
-              </div>
-            </section>
+
+            <Hero onQuoteClick={() => setShowQuoteForm(true)} />
 
             {/* Stats + About */}
             <QuickStats />
@@ -488,75 +459,10 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
 
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <img 
-                  src="/lovable-uploads/609259d6-4c6b-4219-a763-13ae779e9163.png" 
-                  alt="JOLU Group Security Ltd" 
-                  className="h-8 w-auto"
-                />
-                <span className="ml-2 font-bold">JOLU Group Security</span>
-              </div>
-              <p className="text-gray-400 text-sm">
-                Your trusted security partner in Kenya, providing comprehensive protection services with integrity and professionalism.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Manned Guarding</li>
-                <li>Events Security</li>
-                <li>K9 Unit Services</li>
-                <li>CCTV Installation</li>
-                <li>Electric Fencing</li>
-                <li>Alarm Response</li>
-                <li>VIP Close Protection</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Industries</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Residential</li>
-                <li>Commercial</li>
-                <li>Educational</li>
-                <li>Retail</li>
-                <li>Hospitality</li>
-                <li>Construction</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>+254 790 298 003</li>
-                <li>jolugroup@gmail.com</li>
-                <li>Nairobi, Kenya</li>
-              </ul>
-            </div>
-          </div>
-                    <div className="mt-8 flex justify-center space-x-6 text-gray-400">
-            <a href="https://www.facebook.com/share/16oH7MyoMh/" target="_blank" rel="noopener noreferrer">
-              <FaFacebookF className="h-5 w-5 hover:text-white" />
-            </a>
-            <a href="https://www.instagram.com/jolugroupsecurity?utm_source=qr&igsh=OTAwNm91bjFrcGVj" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="h-5 w-5 hover:text-white" />
-            </a>
-            <a href="https://www.linkedin.com/in/jolu-group-b90a35343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-              <FaLinkedinIn className="h-5 w-5 hover:text-white" />
-            </a>
-            <a href="https://www.tiktok.com/@jolugroup?_t=ZM-8y2Y5HHqdT6&_r=1" target="_blank" rel="noopener noreferrer">
-              <FaTiktok className="h-5 w-5 hover:text-white" />
-            </a>
-          </div>
+      { /* Footer */}
+                        
+<Footer />
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2025 JOLU Group Security Ltd. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
       {showQuoteForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg relative">

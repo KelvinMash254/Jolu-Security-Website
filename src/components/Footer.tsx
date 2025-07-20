@@ -10,11 +10,11 @@ const Footer = () => {
           {/* Logo and About */}
           <div>
             <Link to="/" className="flex items-center mb-4 hover:opacity-90">
-              <img
-                src="http://localhost:3020/lovable-uploads/jolu-logo.png"
-                alt="Jolu Group Security Ltd"
-                className="h-8 w-auto"
-              />
+             <img
+              src={`${import.meta.env.BASE_URL}jolu-logo.png`} 
+              alt="Jolu Group Security Ltd"
+              className="h-8 w-auto"
+            />
               <span className="ml-2 font-bold">Jolu Group Security</span>
             </Link>
             <p className="text-gray-400 text-sm">

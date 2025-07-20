@@ -1,3 +1,4 @@
+/* Animation: Smooth Zoom + Crossfade */
 @keyframes zoomFade {
   0%, 100% {
     transform: scale(1);
@@ -6,60 +7,71 @@
   10% {
     opacity: 1;
   }
-  45% {
-    transform: scale(1.1);
+  50% {
+    transform: scale(1.07);
     opacity: 1;
   }
   90% {
-    transform: scale(1.2);
+    transform: scale(1.12);
     opacity: 0;
   }
 }
 
+/* Hero Section Layout */
 .hero-section {
   position: relative;
   overflow: hidden;
   background-color: black;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
+/* Background Slideshow Container */
 .hero-background {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
+/* Individual Slides */
 .hero-slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.25; /* Balanced visibility */
-  animation: zoomFade 10s linear infinite;
-  filter: brightness(75%) blur(0%); /* Slightly soft, not too dark */
+  opacity: 0;
+  animation: zoomFade 18s ease-in-out infinite;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(70%) contrast(105%) saturate(90%);
 }
 
-
-.hero-slide:nth-child(2) {
-  background-image: url('/hero-bg/hero2.jpeg');
+/* Individual Slide Timing */
+.hero-slide:nth-child(1) {
+  background-image: url('/hero-bg/hero1.jpeg');
   animation-delay: 0s;
 }
-
+.hero-slide:nth-child(2) {
+  background-image: url('/hero-bg/hero2.jpeg');
+  animation-delay: 6s;
+}
 .hero-slide:nth-child(3) {
   background-image: url('/hero-bg/hero3.jpeg');
-  animation-delay: 8s;
-  
+  animation-delay: 12s;
 }
 
+/* Dark Overlay for Better Contrast */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(107, 29, 29, 0.2);
   z-index: 10;
-  backdrop-filter: brightness(60%); /* Slight enhancement */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.25));
+  backdrop-filter: brightness(60%);
 }
 
+/* Hero Content (Text + Buttons) */
 .hero-content {
   position: relative;
   z-index: 20;
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Sharp readable text */
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.85);
 }
