@@ -14,11 +14,13 @@ import { IndustryCard } from "@/components/IndustryCard";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Hero from "@/pages/Hero"; // Adjust the path if needed
 import './Hero.css';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { DocumentsSection } from "@/components/DocumentsSection";
+import Footer from '@/components/Footer';
 
 import MannedGuarding from "@/pages/services/MannedGuarding";
 import EventsSecurity from "@/pages/services/EventsSecurity";
@@ -40,49 +42,50 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
 
                 const serviceData = [
-            {
-              title: "Manned Guarding",
-              path: "/services/manned-guarding",
-              image: "/lovable-uploads/Manned Guarding.jpg",
-              desc: "Professional security personnel providing reliable and comprehensive security solutions for residential, commercial, and industrial properties.",
-            },
-            {
-              title: "Events Security",
-              path: "/services/events-security",
-              image: "/lovable-uploads/a43900e9-b8a7-4fd1-a598-31db9ec4f29a.png",
-              desc: "Exceptional event security solutions and professional services to ensure safety and smooth execution of gatherings of all sizes.",
-            },
-            {
-              title: "K9 Unit Services",
-              path: "/services/k9-unit",
-              image: "/lovable-uploads/f39415ee-18d5-4e7c-bcab-b24d2ee6ac19.png",
-              desc: "Specialized canine security units for enhanced threat detection, drug screening, and comprehensive security operations.",
-            },
-            {
-              title: "CCTV Installation",
-              path: "/services/cctv-installation",
-              image: "/lovable-uploads/e069cbc0-c281-4e74-9c20-c24ba110c9d6.png",
-              desc: "Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring.",
-            },
-            {
-              title: "Electric Fencing",
-              path: "/services/electric-fencing",
-              image: "/lovable-uploads/13b8beab-78f8-4abf-8f74-15a3fd8125f2.png",
-              desc: "Professional electric fencing installation and maintenance services to create secure perimeters for residential and commercial properties.",
-            },
-            {
-              title: "Alarm Response",
-              path: "/services/alarm-response",
-              image: "/lovable-uploads/6ecb7db7-6854-4689-bfee-b5f6dec79881.png",
-              desc: "Swift and reliable alarm response services to protect property and respond immediately to security threats and potential risks.",
-            },
-            {
-              title: "VIP Close Protection",
-              path: "/services/vip-close-protection",
-              image: "/lovable-uploads/f0159bdf-1df5-43f0-a519-f1304007c2df.png",
-              desc: "Elite personal protection services for high-profile individuals, executives, and VIPs requiring discreet and professional security.",
-            },
-          ];
+                  {
+                    title: "Manned Guarding",
+                    path: "/services/manned-guarding",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/manned-guarding.jpg`,
+                    desc: "Professional security personnel providing reliable and comprehensive security solutions for residential, commercial, and industrial properties.",
+                  },
+                  {
+                    title: "Events Security",
+                    path: "/services/events-security",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/events-security.png`,
+                    desc: "Exceptional event security solutions and professional services to ensure safety and smooth execution of gatherings of all sizes.",
+                  },
+                  {
+                    title: "K9 Unit Services",
+                    path: "/services/k9-unit",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/k9-unit.png`,
+                    desc: "Specialized canine security units for enhanced threat detection, drug screening, and comprehensive security operations.",
+                  },
+                  {
+                    title: "CCTV Installation",
+                    path: "/services/cctv-installation",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/cctv-installation.png`,
+                    desc: "Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring.",
+                  },
+                  {
+                    title: "Electric Fencing",
+                    path: "/services/electric-fencing",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/electric-fence.png`,
+                    desc: "Professional electric fencing installation and maintenance services to create secure perimeters for residential and commercial properties.",
+                  },
+                  {
+                    title: "Alarm Response",
+                    path: "/services/alarm-response",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/alarm-response.png`,
+                    desc: "Swift and reliable alarm response services to protect property and respond immediately to security threats and potential risks.",
+                  },
+                  {
+                    title: "VIP Close Protection",
+                    path: "/services/vip-close-protection",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/vip-close-protection.png`,
+                    desc: "Elite personal protection services for high-profile individuals, executives, and VIPs requiring discreet and professional security.",
+                  },
+                ];
+
 
           
 
@@ -164,9 +167,9 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
                 viewport={{ once: true }}
               >
                 <img
-                  src="/lovable-uploads/22705b7f-1767-431f-aa11-1e409fc8f253.png"
-                  alt="JOLU Group Security team"
-                  className="rounded-lg shadow-lg w-full"
+              src={`${import.meta.env.BASE_URL}lovable-uploads/guards-outside.png`}
+              alt="JOLU Group Security team"
+              className="rounded-lg shadow-lg w-full"
                 />
               </motion.div>
             </div>
@@ -181,39 +184,8 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
         return (
           <div>
             {/* Hero Section */}
-           <section id="home" className="hero-section min-h-screen flex items-center text-white">
-              <div className="hero-background">
-                <div className="hero-slide"></div>
-                <div className="hero-slide"></div>
-                <div className="hero-slide"></div>
-              </div>
-              <div className="hero-overlay"></div>
-              <div className="hero-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                  Your Safety,<br />
-                  <span className="text-yellow-300">Our Commitment.</span>
-                </h1>
-                <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                  Protecting homes, businesses, and communities across Kenya with reliable, professional security services you can trust.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="tel:+254790298003" className="inline-block">
-                    <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg px-8 py-4">
-                      <Phone className="mr-2 h-5 w-5" />
-                      Contact Us: +254 790 298 003
-                    </Button>
-                  </a>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-red-600 text-lg px-8 py-4"
-                    onClick={() => setShowQuoteForm(true)}
-                  >
-                    Get Free Quote
-                  </Button>
-                </div>
-              </div>
-            </section>
+
+            <Hero onQuoteClick={() => setShowQuoteForm(true)} />
 
             {/* Stats + About */}
             <QuickStats />
@@ -296,37 +268,37 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
                         {[
                           {
                             title: "Residential",
-                            img: "lovable-uploads/Residential.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/residential.jpg`,
                             alt: "Residential Security in Kenya",
                             desc: "Protecting homes and residential communities with tailored security solutions for families and property owners.",
                           },
                           {
                             title: "Commercial",
-                            img: "/lovable-uploads/Commercial.jpeg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/commercial.jpeg`,
                             alt: "Commercial Buildings in Nairobi",
                             desc: "Comprehensive security services for offices, business centers, and commercial facilities across Kenya.",
                           },
                           {
                             title: "Educational",
-                            img: "/lovable-uploads/Educational.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/educational.jpg`,
                             alt: "Educational Institutions in Kenya",
                             desc: "Specialized security solutions for schools, colleges, and educational institutions to ensure student safety.",
                           },
                           {
                             title: "Retail",
-                            img: "/lovable-uploads/Retail.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/retail.jpg`,
                             alt: "Retail Stores and Shopping Centers",
                             desc: "Protecting retail stores, shopping centers, and commercial outlets from theft and security threats.",
                           },
                           {
                             title: "Hospitality",
-                            img: "/lovable-uploads/Hospitality.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/hospitality.jpg`,
                             alt: "Hotels and Hospitality in Kenya",
                             desc: "Security services for hotels, restaurants, and hospitality venues to ensure guest safety and peace of mind.",
                           },
                           {
                             title: "Construction",
-                            img: "/lovable-uploads/Construction.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/construction.jpg`,
                             alt: "Construction Sites Security",
                             desc: "Site security and equipment protection for construction projects and development sites.",
                           },
@@ -488,75 +460,10 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
 
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <img 
-                  src="/lovable-uploads/609259d6-4c6b-4219-a763-13ae779e9163.png" 
-                  alt="JOLU Group Security Ltd" 
-                  className="h-8 w-auto"
-                />
-                <span className="ml-2 font-bold">JOLU Group Security</span>
-              </div>
-              <p className="text-gray-400 text-sm">
-                Your trusted security partner in Kenya, providing comprehensive protection services with integrity and professionalism.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Manned Guarding</li>
-                <li>Events Security</li>
-                <li>K9 Unit Services</li>
-                <li>CCTV Installation</li>
-                <li>Electric Fencing</li>
-                <li>Alarm Response</li>
-                <li>VIP Close Protection</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Industries</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Residential</li>
-                <li>Commercial</li>
-                <li>Educational</li>
-                <li>Retail</li>
-                <li>Hospitality</li>
-                <li>Construction</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>+254 790 298 003</li>
-                <li>jolugroup@gmail.com</li>
-                <li>Nairobi, Kenya</li>
-              </ul>
-            </div>
-          </div>
-                    <div className="mt-8 flex justify-center space-x-6 text-gray-400">
-            <a href="https://www.facebook.com/share/16oH7MyoMh/" target="_blank" rel="noopener noreferrer">
-              <FaFacebookF className="h-5 w-5 hover:text-white" />
-            </a>
-            <a href="https://www.instagram.com/jolugroupsecurity?utm_source=qr&igsh=OTAwNm91bjFrcGVj" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="h-5 w-5 hover:text-white" />
-            </a>
-            <a href="https://www.linkedin.com/in/jolu-group-b90a35343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-              <FaLinkedinIn className="h-5 w-5 hover:text-white" />
-            </a>
-            <a href="https://www.tiktok.com/@jolugroup?_t=ZM-8y2Y5HHqdT6&_r=1" target="_blank" rel="noopener noreferrer">
-              <FaTiktok className="h-5 w-5 hover:text-white" />
-            </a>
-          </div>
+      { /* Footer */}
+                        
+<Footer />
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2025 JOLU Group Security Ltd. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
       {showQuoteForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg relative">

@@ -20,7 +20,7 @@ const Blogs = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img
-                    src="/lovable-uploads/secure-home.jpg"
+                    src="/Jolu-Security-Website/lovable-uploads/secure-home.jpg"
                     alt="Blog post"
                     className="w-full h-48 object-cover rounded-lg"
                   />
@@ -40,7 +40,7 @@ const Blogs = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img
-                    src="/lovable-uploads/event-security-what-to-consider.jpg"
+                    src="/Jolu-Security-Website/lovable-uploads/event-security-what-to-consider.jpg"
                     alt="Blog post"
                     className="w-full h-48 object-cover rounded-lg"
                   />
@@ -60,7 +60,7 @@ const Blogs = () => {
               <CardHeader>
                 <div className="mb-4">
                   <img
-                    src="/lovable-uploads/cctv-image.jpg"
+                    src="/Jolu-Security-Website/lovable-uploads/cctv-installation.png"
                     alt="Blog post"
                     className="w-full h-48 object-cover rounded-lg"
                   />

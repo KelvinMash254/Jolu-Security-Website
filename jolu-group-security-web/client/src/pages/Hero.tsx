@@ -26,21 +26,29 @@ const Hero = ({ onQuoteClick }: { onQuoteClick: () => void }) => {
         <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
           Protecting homes, businesses, and communities across Kenya with reliable, professional security services you can trust.
         </p>
+
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+254790298003" className="inline-block">
-            <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg px-8 py-4">
-              <Phone className="mr-2 h-5 w-5" />
-              Contact Us: +254 790 298 003
+          <div className="flex flex-col items-center">
+            <Button
+              asChild
+              size="lg"
+              className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
+            >
+              <a href="tel:+254790298003">
+                <Phone className="w-5 h-5" />
+                Call Now
+              </a>
             </Button>
-          </a>
+          </div>
 
           <Button
             size="lg"
             onClick={onQuoteClick}
-            className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95"
+            className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
           >
-            <span className="text-white">Get Free Quote</span>
-            <ArrowRight className="w-5 h-5 text-white" />
+            <span>Get Free Quote</span>
+            <ArrowRight className="w-5 h-5" />
           </Button>
         </div>
       </div>

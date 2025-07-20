@@ -65,11 +65,11 @@ const Services = () => {
               <Card key={service.title} className="hover:shadow-lg transition-shadow duration-300 h-full">
                 <CardHeader className="p-0">
                   <div className="w-full h-48 bg-white rounded-t-md overflow-hidden flex items-center justify-center">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="h-full w-full object-contain"
-                    />
+                  <img
+                    src={`${import.meta.env.VITE_API_URL}${service.image}`}
+                    alt={service.title}
+                    className="h-full w-full object-contain"
+                  />
                   </div>
                   <div className="px-4 pt-4">
                     <CardTitle className="text-xl font-semibold text-gray-900">{service.title}</CardTitle>

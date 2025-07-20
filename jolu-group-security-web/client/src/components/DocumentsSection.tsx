@@ -4,16 +4,16 @@ import { Download, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const DocumentsSection = () => {
-  const documents = [
-    {
-      title: "Company Profile",
-      file: "/company-profile.pdf",
-    },
-    {
-      title: "Security Brochure",
-      file: "/brochure.pdf",
-    },
-  ];
+const documents = [
+  {
+    title: "Company Profile",
+    file: "/Jolu-Security-Website/lovable-uploads/company-profile.pdf", // ✅ correct
+  },
+  {
+    title: "Security Brochure",
+    file: "/Jolu-Security-Website/lovable-uploads/brochure.pdf",
+  },
+];
 
   return (
     <motion.section

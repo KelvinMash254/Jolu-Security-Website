@@ -15,7 +15,7 @@ const MannedGuarding = () => {
             "url('/Jolu-Security-Website/lovable-uploads/manned-guarding.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-red-800 bg-opacity-60 flex items-center justify-center">
+        <div className="absolute inset-0 bg-red-800 bg-opacity-30 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-6xl font-bold text-center px-4">
             Professional Manned Guarding Services
           </h1>
@@ -81,7 +81,7 @@ const MannedGuarding = () => {
           Let’s help you create a secure environment with professional manned guarding
           services.
         </p>
-        <Link to="/#contact">
+        <Link to="/quote">
           <Button className="text-red-700 bg-white hover:bg-gray-200 text-lg px-6 py-3">
             Request a Free Quote
           </Button>
