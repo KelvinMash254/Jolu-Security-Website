@@ -33,6 +33,7 @@ const services = [
     title: "CCTV Installation",
     description: "Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring.",
     image: "/lovable-uploads/cctv-installation.png",
+    
   },
   {
     title: "Electric Fencing",
