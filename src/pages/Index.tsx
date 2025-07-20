@@ -42,49 +42,50 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
 
                 const serviceData = [
-            {
-              title: "Manned Guarding",
-              path: "/services/manned-guarding",
-              image: "http://localhost:3020/lovable-uploads/manned-guarding.jpg",
-              desc: "Professional security personnel providing reliable and comprehensive security solutions for residential, commercial, and industrial properties.",
-            },
-            {
-              title: "Events Security",
-              path: "/services/events-security",
-              image: "http://localhost:3020/lovable-uploads/events-security.png",
-              desc: "Exceptional event security solutions and professional services to ensure safety and smooth execution of gatherings of all sizes.",
-            },
-            {
-              title: "K9 Unit Services",
-              path: "/services/k9-unit",
-              image: "http://localhost:3020/lovable-uploads/k9-unit.png",
-              desc: "Specialized canine security units for enhanced threat detection, drug screening, and comprehensive security operations.",
-            },
-            {
-              title: "CCTV Installation",
-              path: "/services/cctv-installation",
-              image: "http://localhost:3020/lovable-uploads/cctv-installation.png",
-              desc: "Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring.",
-            },
-            {
-              title: "Electric Fencing",
-              path: "/services/electric-fencing",
-              image: "http://localhost:3020/lovable-uploads/electric-fence.png",
-              desc: "Professional electric fencing installation and maintenance services to create secure perimeters for residential and commercial properties.",
-            },
-            {
-              title: "Alarm Response",
-              path: "/services/alarm-response",
-              image: "http://localhost:3020/lovable-uploads/alarm-response.png",
-              desc: "Swift and reliable alarm response services to protect property and respond immediately to security threats and potential risks.",
-            },
-            {
-              title: "VIP Close Protection",
-              path: "/services/vip-close-protection",
-              image: "http://localhost:3020/lovable-uploads/vip-close-protection.png",
-              desc: "Elite personal protection services for high-profile individuals, executives, and VIPs requiring discreet and professional security.",
-            },
-          ];
+                  {
+                    title: "Manned Guarding",
+                    path: "/services/manned-guarding",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/manned-guarding.jpg`,
+                    desc: "Professional security personnel providing reliable and comprehensive security solutions for residential, commercial, and industrial properties.",
+                  },
+                  {
+                    title: "Events Security",
+                    path: "/services/events-security",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/events-security.png`,
+                    desc: "Exceptional event security solutions and professional services to ensure safety and smooth execution of gatherings of all sizes.",
+                  },
+                  {
+                    title: "K9 Unit Services",
+                    path: "/services/k9-unit",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/k9-unit.png`,
+                    desc: "Specialized canine security units for enhanced threat detection, drug screening, and comprehensive security operations.",
+                  },
+                  {
+                    title: "CCTV Installation",
+                    path: "/services/cctv-installation",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/cctv-installation.png`,
+                    desc: "Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring.",
+                  },
+                  {
+                    title: "Electric Fencing",
+                    path: "/services/electric-fencing",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/electric-fence.png`,
+                    desc: "Professional electric fencing installation and maintenance services to create secure perimeters for residential and commercial properties.",
+                  },
+                  {
+                    title: "Alarm Response",
+                    path: "/services/alarm-response",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/alarm-response.png`,
+                    desc: "Swift and reliable alarm response services to protect property and respond immediately to security threats and potential risks.",
+                  },
+                  {
+                    title: "VIP Close Protection",
+                    path: "/services/vip-close-protection",
+                    image: `${import.meta.env.BASE_URL}lovable-uploads/vip-close-protection.png`,
+                    desc: "Elite personal protection services for high-profile individuals, executives, and VIPs requiring discreet and professional security.",
+                  },
+                ];
+
 
           
 
@@ -166,9 +167,9 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
                 viewport={{ once: true }}
               >
                 <img
-                  src="http://localhost:3020/lovable-uploads/guards-outside.png"
-                  alt="JOLU Group Security team"
-                  className="rounded-lg shadow-lg w-full"
+              src={`${import.meta.env.BASE_URL}lovable-uploads/guards-outside.png`}
+              alt="JOLU Group Security team"
+              className="rounded-lg shadow-lg w-full"
                 />
               </motion.div>
             </div>
@@ -267,37 +268,37 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
                         {[
                           {
                             title: "Residential",
-                            img: "http://localhost:3020/lovable-uploads/residential.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/residential.jpg`,
                             alt: "Residential Security in Kenya",
                             desc: "Protecting homes and residential communities with tailored security solutions for families and property owners.",
                           },
                           {
                             title: "Commercial",
-                            img: "http://localhost:3020/lovable-uploads/commercial.jpeg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/commercial.jpeg`,
                             alt: "Commercial Buildings in Nairobi",
                             desc: "Comprehensive security services for offices, business centers, and commercial facilities across Kenya.",
                           },
                           {
                             title: "Educational",
-                            img: "http://localhost:3020/lovable-uploads/educational.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/educational.jpg`,
                             alt: "Educational Institutions in Kenya",
                             desc: "Specialized security solutions for schools, colleges, and educational institutions to ensure student safety.",
                           },
                           {
                             title: "Retail",
-                            img: "http://localhost:3020/lovable-uploads/retail.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/retail.jpg`,
                             alt: "Retail Stores and Shopping Centers",
                             desc: "Protecting retail stores, shopping centers, and commercial outlets from theft and security threats.",
                           },
                           {
                             title: "Hospitality",
-                            img: "http://localhost:3020/lovable-uploads/hospitality.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/hospitality.jpg`,
                             alt: "Hotels and Hospitality in Kenya",
                             desc: "Security services for hotels, restaurants, and hospitality venues to ensure guest safety and peace of mind.",
                           },
                           {
                             title: "Construction",
-                            img: "http://localhost:3020/lovable-uploads/construction.jpg",
+                            img: `${import.meta.env.BASE_URL}lovable-uploads/construction.jpg`,
                             alt: "Construction Sites Security",
                             desc: "Site security and equipment protection for construction projects and development sites.",
                           },

@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ const Navbar = () => {
   });
 
   const navigate = useNavigate();
-  const base = "/Jolu-Security-Website";
+  const base = import.meta.env.BASE_URL;
 
   let aboutTimeout: NodeJS.Timeout;
   let servicesTimeout: NodeJS.Timeout;
@@ -55,7 +54,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <img
-              src="http://localhost:3020/lovable-uploads/jolu-logo.png"
+              src={`${import.meta.env.BASE_URL}jolu-logo.png`}
               alt="JOLU Group Security Ltd"
               className="h-10 w-auto"
             />
@@ -72,10 +71,10 @@ const Navbar = () => {
               <button className="text-gray-700 hover:text-red-600 font-medium">About</button>
               {openAbout && (
                 <div className="absolute bg-white shadow-lg rounded-md mt-2 min-w-[180px] z-50">
-                  <a href={`${base}/#about`} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Us</a>
+                  <a href={`${base}#about`} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About Us</a>
                   <Link to="/team" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Our Team</Link>
                   <Link to="/gallery" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Gallery</Link>
-                  <a href={`${base}/#documents`} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Company Profile & Brochure</a>
+                  <a href={`${base}#documents`} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Company Profile & Brochure</a>
                 </div>
               )}
             </div>
@@ -95,9 +94,9 @@ const Navbar = () => {
               )}
             </div>
 
-            <a href={`${base}/#industries`} className="text-gray-700 hover:text-red-600 font-medium">Industries</a>
-            <a href={`${base}/#why-choose-us`} className="text-gray-700 hover:text-red-600 font-medium">Why Choose Us</a>
-            <a href={`${base}/#contact`} className="text-gray-700 hover:text-red-600 font-medium">Contact</a>
+            <a href={`${base}#industries`} className="text-gray-700 hover:text-red-600 font-medium">Industries</a>
+            <a href={`${base}#why-choose-us`} className="text-gray-700 hover:text-red-600 font-medium">Why Choose Us</a>
+            <a href={`${base}#contact`} className="text-gray-700 hover:text-red-600 font-medium">Contact</a>
             <Link to="/blogs" className="text-gray-700 hover:text-red-600 font-medium">Blogs</Link>
           </div>
 
@@ -112,17 +111,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Animated Sidebar (Right) */}
+      {/* Sidebar for Mobile */}
       <div
-        className={`fixed inset-0 z-50 transition-opacity duration-300 ${
-          sidebarOpen ? "bg-black bg-opacity-50" : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 z-50 transition-opacity duration-300 ${sidebarOpen ? "bg-black bg-opacity-50" : "pointer-events-none opacity-0"}`}
         onClick={() => setSidebarOpen(false)}
       >
         <div
-          className={`fixed top-0 right-0 h-full w-72 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-            sidebarOpen ? "translate-x-0" : "translate-x-full"
-          } overflow-y-auto`}
+          className={`fixed top-0 right-0 h-full w-72 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${sidebarOpen ? "translate-x-0" : "translate-x-full"} overflow-y-auto`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center p-5 border-b">
@@ -133,7 +128,7 @@ const Navbar = () => {
           <nav className="p-5 space-y-4">
             <Link to="/" onClick={() => setSidebarOpen(false)} className="text-gray-700 hover:text-red-600 block">Home</Link>
 
-            {/* Mobile About Dropdown */}
+            {/* About Mobile Dropdown */}
             <div>
               <button
                 onClick={() =>
@@ -145,15 +140,15 @@ const Navbar = () => {
               </button>
               {mobileDropdown.about && (
                 <div className="ml-4 mt-2 space-y-2 text-sm">
-                  <a href={`${base}/#about`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">About Us</a>
+                  <a href={`${base}#about`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">About Us</a>
                   <Link to="/team" onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Our Team</Link>
                   <Link to="/gallery" onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Gallery</Link>
-                  <a href={`${base}/#documents`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Documents</a>
+                  <a href={`${base}#documents`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Documents</a>
                 </div>
               )}
             </div>
 
-            {/* Mobile Services Dropdown */}
+            {/* Services Mobile Dropdown */}
             <div>
               <button
                 onClick={() =>
@@ -176,9 +171,9 @@ const Navbar = () => {
               )}
             </div>
 
-            <a href={`${base}/#industries`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Industries</a>
-            <a href={`${base}/#why-choose-us`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Why Choose Us</a>
-            <a href={`${base}/#contact`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Contact</a>
+            <a href={`${base}#industries`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Industries</a>
+            <a href={`${base}#why-choose-us`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Why Choose Us</a>
+            <a href={`${base}#contact`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Contact</a>
             <Link to="/blogs" onClick={() => setSidebarOpen(false)} className="block text-gray-700 hover:text-red-600">Blogs</Link>
 
             <button

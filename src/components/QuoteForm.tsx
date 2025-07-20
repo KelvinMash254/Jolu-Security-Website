@@ -23,17 +23,21 @@ export const QuoteForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/quote`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://jolu-group-security-web.onrender.com/api/quote`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         toast({
           title: "Quote Request Sent!",
           description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
         });
+
         setFormData({
           name: '',
           email: '',
@@ -46,17 +50,17 @@ export const QuoteForm = () => {
           guards: ''
         });
       } else {
+        const error = await response.json();
         toast({
           title: "Error",
-          description: "Failed to send quote request. Please try again later.",
+          description: error.message || "Failed to send quote request. Please try again later.",
           variant: "destructive",
         });
       }
     } catch (error) {
-      console.error(error);
       toast({
         title: "Error",
-        description: "Failed to send quote request. Please try again later.",
+        description: "Network error. Please check your connection or try again later.",
         variant: "destructive",
       });
     }
@@ -82,82 +86,29 @@ export const QuoteForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Full Name */}
       <div className="col-span-1">
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-          Full Name *
-        </label>
-        <Input
-          id="name"
-          name="name"
-          type="text"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Your full name"
-        />
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+        <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="Your full name" />
       </div>
 
-      {/* Email */}
       <div className="col-span-1">
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-          Email Address *
-        </label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="your@email.com"
-        />
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+        <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="your@email.com" />
       </div>
 
-      {/* Phone */}
       <div className="col-span-1">
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-          Phone Number *
-        </label>
-        <Input
-          id="phone"
-          name="phone"
-          type="tel"
-          required
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="+254 7XX XXX XXX"
-        />
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+        <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleChange} placeholder="+254 7XX XXX XXX" />
       </div>
 
-      {/* Company Name (Optional) */}
       <div className="col-span-1">
-        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-          Company Name
-        </label>
-        <Input
-          id="company"
-          name="company"
-          type="text"
-          value={formData.company}
-          onChange={handleChange}
-          placeholder="Optional"
-        />
+        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+        <Input id="company" name="company" type="text" value={formData.company} onChange={handleChange} placeholder="Optional" />
       </div>
 
-      {/* County */}
       <div className="col-span-1">
-        <label htmlFor="county" className="block text-sm font-medium text-gray-700 mb-1">
-          County *
-        </label>
-        <select
-          id="county"
-          name="county"
-          required
-          value={formData.county}
-          onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-        >
+        <label htmlFor="county" className="block text-sm font-medium text-gray-700 mb-1">County *</label>
+        <select id="county" name="county" required value={formData.county} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
           <option value="">Select a county</option>
           {counties.map((county) => (
             <option key={county} value={county}>{county}</option>
@@ -165,50 +116,19 @@ export const QuoteForm = () => {
         </select>
       </div>
 
-      {/* Area/Town */}
       <div className="col-span-1">
-        <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1">
-          Area/Town *
-        </label>
-        <Input
-          id="area"
-          name="area"
-          type="text"
-          required
-          value={formData.area}
-          onChange={handleChange}
-          placeholder="e.g. Thome, Syokimau, Moi Avenue"
-        />
+        <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1">Area/Town *</label>
+        <Input id="area" name="area" type="text" required value={formData.area} onChange={handleChange} placeholder="e.g. Thome, Syokimau, Moi Avenue" />
       </div>
 
-      {/* Number of Guards (Optional) */}
       <div className="col-span-1">
-        <label htmlFor="guards" className="block text-sm font-medium text-gray-700 mb-1">
-          Number of Guards
-        </label>
-        <Input
-          id="guards"
-          name="guards"
-          type="number"
-          min="1"
-          value={formData.guards}
-          onChange={handleChange}
-          placeholder="Optional"
-        />
+        <label htmlFor="guards" className="block text-sm font-medium text-gray-700 mb-1">Number of Guards</label>
+        <Input id="guards" name="guards" type="number" min="1" value={formData.guards} onChange={handleChange} placeholder="Optional" />
       </div>
 
-      {/* Service Needed */}
       <div className="col-span-1">
-        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
-          Service Needed
-        </label>
-        <select
-          id="service"
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-        >
+        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
+        <select id="service" name="service" value={formData.service} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
           <option value="">Select a service</option>
           <option value="manned-guarding">Manned Guarding</option>
           <option value="k9-unit-services">K9 Unit Services</option>
@@ -220,22 +140,11 @@ export const QuoteForm = () => {
         </select>
       </div>
 
-      {/* Message (Full Width) */}
       <div className="col-span-1 md:col-span-2">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-          Message
-        </label>
-        <Textarea
-          id="message"
-          name="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Tell us about your security needs..."
-        />
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <Textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} placeholder="Tell us about your security needs..." />
       </div>
 
-      {/* Submit Button (Full Width) */}
       <div className="col-span-1 md:col-span-2">
         <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white">
           Request Quote

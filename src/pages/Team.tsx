@@ -67,9 +67,9 @@ const TeamCard = ({ member, setSelectedMember }) => (
     onClick={() => setSelectedMember(member)}
     whileHover={{ scale: 1.05 }}
     transition={{ duration: 0.3 }}
-    className="cursor-pointer bg-white rounded-xl shadow-md overflow-hidden w-full max-w-xs"
+    className="cursor-pointer bg-white rounded-xl shadow-md overflow-hidden w-full max-w-xs hover:shadow-xl"
   >
-    <div className="w-full h-40 bg-white flex items-center justify-center overflow-hidden">
+    <div className="w-full h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
       <img
         src={member.image}
         alt={member.name}
@@ -96,30 +96,39 @@ const Team = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8">
-        <div className="relative mb-12">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-2">Meet Our Team</h1>
-          <div className="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between">
-            <div className="w-1/5 h-1 bg-red-700" />
-            <div className="w-1/5 h-1 bg-red-700" />
+        <div className="text-center mb-12 relative">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4 relative z-10">
+            Meet Our Team
+          </h1>
+          <div className="absolute top-1/2 left-0 w-full flex justify-center gap-12 -z-0">
+            <div className="w-24 h-1 bg-red-700" />
+            <div className="w-24 h-1 bg-red-700" />
           </div>
         </div>
 
         <div className="space-y-16 max-w-7xl mx-auto">
+          {/* Executives */}
           <div className="flex justify-center flex-wrap gap-8">
             {grouped.executives.map((m, i) => (
               <TeamCard key={i} member={m} setSelectedMember={setSelectedMember} />
             ))}
           </div>
+
+          {/* GM */}
           <div className="flex justify-center">
             {grouped.gm.map((m, i) => (
               <TeamCard key={i} member={m} setSelectedMember={setSelectedMember} />
             ))}
           </div>
+
+          {/* Ops */}
           <div className="flex justify-center flex-wrap gap-8">
             {grouped.ops.map((m, i) => (
               <TeamCard key={i} member={m} setSelectedMember={setSelectedMember} />
             ))}
           </div>
+
+          {/* BDE */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {grouped.bde.map((m, i) => (
               <TeamCard key={i} member={m} setSelectedMember={setSelectedMember} />
@@ -127,6 +136,7 @@ const Team = () => {
           </div>
         </div>
 
+        {/* Modal */}
         {selectedMember && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
             <div className="bg-white rounded-2xl shadow-xl w-full max-w-3xl p-6 relative">

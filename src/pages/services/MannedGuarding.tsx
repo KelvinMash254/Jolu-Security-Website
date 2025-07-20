@@ -81,7 +81,7 @@ const MannedGuarding = () => {
           Let’s help you create a secure environment with professional manned guarding
           services.
         </p>
-        <Link to="/#contact">
+        <Link to="/quote">
           <Button className="text-red-700 bg-white hover:bg-gray-200 text-lg px-6 py-3">
             Request a Free Quote
           </Button>

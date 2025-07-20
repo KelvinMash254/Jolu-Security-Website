@@ -6,16 +6,19 @@ import { Phone, ArrowRight } from "lucide-react";
 
 const Hero = ({ onQuoteClick }: { onQuoteClick: () => void }) => {
   return (
-    <section id="home" className="hero-section py-20 text-white">
+    <section
+      id="home"
+      className="hero-section text-white w-full"  // removed py-20
+    >
       {/* Background Slideshow */}
       <div className="hero-background">
-        <div className="hero-slide"></div>
-        <div className="hero-slide"></div>
-        <div className="hero-slide"></div>
+        <div className="hero-slide" />
+        <div className="hero-slide" />
+        <div className="hero-slide" />
       </div>
 
       {/* Dark Overlay */}
-      <div className="hero-overlay"></div>
+      <div className="hero-overlay" />
 
       {/* Hero Content */}
       <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -27,7 +30,6 @@ const Hero = ({ onQuoteClick }: { onQuoteClick: () => void }) => {
           Protecting homes, businesses, and communities across Kenya with reliable, professional security services you can trust.
         </p>
 
-        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <div className="flex flex-col items-center">
             <Button

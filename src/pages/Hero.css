@@ -22,9 +22,12 @@
   position: relative;
   overflow: hidden;
   background-color: black;
-  min-height: 100vh;
+  min-height: 100vh;   /* fallback */
+  height: 100dvh;      /* modern mobile browsers */
   display: flex;
   align-items: center;
+  justify-content: center; /* ensure vertical centering */
+  width: 100%;
 }
 
 /* Background Slideshow Container */

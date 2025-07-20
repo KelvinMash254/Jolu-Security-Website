@@ -31,7 +31,7 @@ export const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+      const response = await fetch(`https://jolu-group-security-web.onrender.com/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -84,7 +84,6 @@ export const ContactForm = () => {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Full Name *
@@ -100,7 +99,6 @@ export const ContactForm = () => {
             />
           </div>
 
-          {/* Email */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
               Email Address *
@@ -116,7 +114,6 @@ export const ContactForm = () => {
             />
           </div>
 
-          {/* Phone */}
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
               Phone Number *
@@ -132,7 +129,6 @@ export const ContactForm = () => {
             />
           </div>
 
-          {/* Service */}
           <div>
             <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
               Service Needed
@@ -155,7 +151,6 @@ export const ContactForm = () => {
             </select>
           </div>
 
-          {/* County (Optional) */}
           <div>
             <label htmlFor="county" className="block text-sm font-medium text-gray-700 mb-1">
               County
@@ -174,7 +169,6 @@ export const ContactForm = () => {
             </select>
           </div>
 
-          {/* Area (Optional) */}
           <div>
             <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1">
               Area/Town
@@ -189,7 +183,6 @@ export const ContactForm = () => {
             />
           </div>
 
-          {/* Message */}
           <div className="md:col-span-2">
             <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
               Message
@@ -204,7 +197,6 @@ export const ContactForm = () => {
             />
           </div>
 
-          {/* Submit */}
           <div className="md:col-span-2">
             <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white">
               Send Message
