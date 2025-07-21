@@ -42,7 +42,7 @@ const features = [
 ];
 
 const WhyChooseUs = () => (
-  <section id="why-choose-us" className="py-20 bg-white">
+  <section id="why-choose-us" className="py-20 bg-white dark:bg-zinc-900">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -50,10 +50,10 @@ const WhyChooseUs = () => (
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">
           Why Choose Jolu Group Security
         </h2>
-        <p className="text-gray-700 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-gray-700 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
           Clients across Kenya trust us because we provide reliable, professional, and tailored security solutions that work.
         </p>
 
@@ -68,8 +68,8 @@ const WhyChooseUs = () => (
               viewport={{ once: true }}
             >
               {feature.icon}
-              <h3 className="text-lg font-semibold text-black">{feature.title}</h3>
-              <p className="text-gray-600 text-sm">{feature.description}</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{feature.description}</p>
             </motion.div>
           ))}
         </div>

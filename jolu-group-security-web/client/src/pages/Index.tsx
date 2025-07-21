@@ -123,7 +123,7 @@ const QuickStats = () => (
 
 // ✅ About Us section
 const AboutUs = () => (
-  <section id="about" className="py-20 bg-white text-black">
+  <section id="about" className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
@@ -133,49 +133,49 @@ const AboutUs = () => (
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
             About Jolu Group Security Ltd
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
             Jolu Group Security Limited is a trusted security company providing comprehensive and tailored protective services, logistics, procurement, and training for the defense, energy, and financial sectors, as well as high net-worth clients, diplomatic missions, and international organizations operating in high-risk, volatile, hostile, and complex environments.
           </p>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
             At Jolu Group Security, we believe that safety is the foundation of progress. Our mission is to deliver reliable, mission-driven security solutions that empower individuals and organizations to operate confidently, even in the most challenging environments.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
               <Shield className="h-12 w-12 text-red-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-black">Integrity</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Integrity</h3>
             </div>
             <div className="text-center">
               <Eye className="h-12 w-12 text-red-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-black">Vigilance</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Vigilance</h3>
             </div>
             <div className="text-center">
               <Users className="h-12 w-12 text-red-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-black">Professionalism</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Professionalism</h3>
             </div>
           </div>
         </motion.div>
 
-              {/* Image */}
-              <motion.div
-                className="lg:pl-8"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-              >
-                <img
-              src={`${import.meta.env.BASE_URL}lovable-uploads/guards-outside.png`}
-              alt="JOLU Group Security team"
-              className="rounded-lg shadow-lg w-full"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-      );
+        {/* Image */}
+        <motion.div
+          className="lg:pl-8"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}lovable-uploads/guards-outside.png`}
+            alt="JOLU Group Security team"
+            className="rounded-lg shadow-lg w-full"
+          />
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
 
       // ✅ Main Index Page
       const Index = () => {
@@ -339,7 +339,7 @@ const AboutUs = () => (
                                                         <DocumentsSection />
 
  {/* Contact Section */}
-<section id="contact" className="py-20 bg-white">
+<section id="contact" className="py-20 bg-white dark:bg-zinc-900">
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -348,10 +348,10 @@ const AboutUs = () => (
     className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
   >
     <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
         Get In Touch
       </h2>
-      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
         Ready to secure your property? Contact us today for a free consultation and personalized security assessment.
       </p>
     </div>
@@ -364,48 +364,50 @@ const AboutUs = () => (
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <h3 className="text-2xl font-semibold text-black mb-6">Contact Information</h3>
+        <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white mb-6">
+          Contact Information
+        </h3>
         <div className="space-y-6">
           <div className="flex items-start">
-            <Phone className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <Phone className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
-              <div className="font-semibold text-black">Phone</div>
-              <div className="text-gray-700">+254 790 298 003 | +254 790 182 487</div>
+              <div className="font-semibold text-neutral-800 dark:text-white">Phone</div>
+              <div className="text-gray-700 dark:text-gray-300">+254 790 298 003 | +254 790 182 487</div>
             </div>
           </div>
           <div className="flex items-start">
-            <Mail className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <Mail className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
-              <div className="font-semibold text-black">Email</div>
-              <div className="text-gray-700">jolugroup@gmail.com</div>
+              <div className="font-semibold text-neutral-800 dark:text-white">Email</div>
+              <div className="text-gray-700 dark:text-gray-300">jolugroup@gmail.com</div>
             </div>
           </div>
           <div className="flex items-start">
-            <MapPin className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <MapPin className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
-              <div className="font-semibold text-black">Nairobi – Main Office</div>
-              <div className="text-gray-700">Thome Estate, Nairobi</div>
+              <div className="font-semibold text-neutral-800 dark:text-white">Nairobi – Main Office</div>
+              <div className="text-gray-700 dark:text-gray-300">Thome Estate, Nairobi</div>
             </div>
           </div>
           <div className="flex items-start">
-            <MapPin className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <MapPin className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
-              <div className="font-semibold text-black">Nakuru – Regional Office</div>
-              <div className="text-gray-700">Nakuru</div>
+              <div className="font-semibold text-neutral-800 dark:text-white">Nakuru – Regional Office</div>
+              <div className="text-gray-700 dark:text-gray-300">Nakuru</div>
             </div>
           </div>
           <div className="flex items-start">
-            <MapPin className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <MapPin className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
-              <div className="font-semibold text-black">Migori – Branch Office</div>
-              <div className="text-gray-700">Rongo</div>
+              <div className="font-semibold text-neutral-800 dark:text-white">Migori – Branch Office</div>
+              <div className="text-gray-700 dark:text-gray-300">Rongo</div>
             </div>
           </div>
         </div>
 
         <div className="mt-8">
           <a href="https://wa.me/254790298003" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-md transition">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-sm transition-all">
               <Phone className="mr-2 h-4 w-4" />
               WhatsApp Us
             </Button>
@@ -414,9 +416,8 @@ const AboutUs = () => (
 
         {/* Maps */}
         <div className="mt-12 space-y-10">
-          {/* Nairobi */}
           <div>
-            <h4 className="font-semibold text-lg text-gray-800 mb-2">Nairobi – Main Office</h4>
+            <h4 className="font-semibold text-lg text-gray-800 dark:text-white mb-2">Nairobi – Main Office</h4>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.416901251848!2d36.8508475!3d-1.2194246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1c5a6c4b21a7%3A0x991d0a8f3c176aad!2sThome%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1712312919946!5m2!1sen!2ske"
               width="100%"
@@ -428,9 +429,8 @@ const AboutUs = () => (
             ></iframe>
           </div>
 
-          {/* Nakuru */}
           <div>
-            <h4 className="font-semibold text-lg text-gray-800 mb-2">Nakuru - Regional Office</h4>
+            <h4 className="font-semibold text-lg text-gray-800 dark:text-white mb-2">Nakuru - Regional Office</h4>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.768809440484!2d36.060809509865564!3d-0.2854380997105522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18298dbee7691795%3A0x57bb3856ac0d67f7!2sKFA%20Building%2C%20Geoffrey%20Kamau%20Ave%2C%20Nakuru!5e0!3m2!1sen!2ske!4v1752868635219!5m2!1sen!2ske"
               width="100%"
@@ -456,7 +456,6 @@ const AboutUs = () => (
     </div>
   </motion.div>
 </section>
-
 
 
 

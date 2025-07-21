@@ -30,19 +30,17 @@ const Hero = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <div className="flex flex-col items-center">
-            <Button
-              asChild
-              size="lg"
-              className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
-            >
-              <a href="tel:+254790298003">
-                <Phone className="w-5 h-5" />
-                Call Now
-              </a>
-            </Button>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center sm:items-start text-center sm:text-left">
+          <Button
+            asChild
+            size="lg"
+            className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
+          >
+            <a href="tel:+254790298003">
+              <Phone className="w-5 h-5" />
+              Call Now
+            </a>
+          </Button>
 
           <Link to="/quote">
             <Button
