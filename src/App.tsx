@@ -1,8 +1,9 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster"; // ✅ Keep only one toaster
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
+
+import ScrollToTop from "@/components/ScrollToTop"; // ✅ Make sure it's imported
 import ScrollToHash from "@/utils/ScrollToHash";
 
 import Index from "./pages/Index";
@@ -11,9 +12,9 @@ import Team from "./pages/Team";
 import Gallery from "./pages/Gallery";
 import Layout from "./components/Layout";
 import QuotePage from "./pages/QuotePage";
-import Blogs from "./pages/Blogs"; // ✅ Added
+import Blogs from "./pages/Blogs";
 
-// Import service pages
+// Service pages
 import MannedGuarding from "./pages/services/MannedGuarding";
 import EventsSecurity from "./pages/services/EventsSecurity";
 import K9Unit from "./pages/services/K9Unit";
@@ -28,15 +29,15 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
       <ScrollToHash />
+      <ScrollToTop /> {/* ✅ Scroll to top on route change */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Index />} />
           <Route path="team" element={<Team />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="quote" element={<QuotePage />} />
-          <Route path="blogs" element={<Blogs />} /> {/* ✅ Blogs page route */}
+          <Route path="blogs" element={<Blogs />} />
 
           {/* Individual service routes */}
           <Route path="services/manned-guarding" element={<MannedGuarding />} />

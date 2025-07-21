@@ -85,30 +85,37 @@ export const QuoteForm = () => {
   ];
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-0">
       <div className="col-span-1">
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Full Name *</label>
         <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="Your full name" />
       </div>
 
       <div className="col-span-1">
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Email Address *</label>
         <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="your@email.com" />
       </div>
 
       <div className="col-span-1">
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Phone Number *</label>
         <Input id="phone" name="phone" type="tel" required value={formData.phone} onChange={handleChange} placeholder="+254 7XX XXX XXX" />
       </div>
 
       <div className="col-span-1">
-        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+        <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Company Name</label>
         <Input id="company" name="company" type="text" value={formData.company} onChange={handleChange} placeholder="Optional" />
       </div>
 
       <div className="col-span-1">
-        <label htmlFor="county" className="block text-sm font-medium text-gray-700 mb-1">County *</label>
-        <select id="county" name="county" required value={formData.county} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+        <label htmlFor="county" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">County *</label>
+        <select
+          id="county"
+          name="county"
+          required
+          value={formData.county}
+          onChange={handleChange}
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+        >
           <option value="">Select a county</option>
           {counties.map((county) => (
             <option key={county} value={county}>{county}</option>
@@ -117,18 +124,24 @@ export const QuoteForm = () => {
       </div>
 
       <div className="col-span-1">
-        <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1">Area/Town *</label>
+        <label htmlFor="area" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Area/Town *</label>
         <Input id="area" name="area" type="text" required value={formData.area} onChange={handleChange} placeholder="e.g. Thome, Syokimau, Moi Avenue" />
       </div>
 
       <div className="col-span-1">
-        <label htmlFor="guards" className="block text-sm font-medium text-gray-700 mb-1">Number of Guards</label>
+        <label htmlFor="guards" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Number of Guards</label>
         <Input id="guards" name="guards" type="number" min="1" value={formData.guards} onChange={handleChange} placeholder="Optional" />
       </div>
 
       <div className="col-span-1">
-        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
-        <select id="service" name="service" value={formData.service} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+        <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Service Needed</label>
+        <select
+          id="service"
+          name="service"
+          value={formData.service}
+          onChange={handleChange}
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+        >
           <option value="">Select a service</option>
           <option value="manned-guarding">Manned Guarding</option>
           <option value="k9-unit-services">K9 Unit Services</option>
@@ -141,8 +154,15 @@ export const QuoteForm = () => {
       </div>
 
       <div className="col-span-1 md:col-span-2">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-        <Textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} placeholder="Tell us about your security needs..." />
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Message</label>
+        <Textarea
+          id="message"
+          name="message"
+          rows={4}
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Tell us about your security needs..."
+        />
       </div>
 
       <div className="col-span-1 md:col-span-2">

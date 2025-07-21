@@ -2,7 +2,6 @@ import React from "react";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Optional: Replace with real descriptions
 const galleryItems = [
   { src: `${import.meta.env.BASE_URL}gallery/best-image.jpeg`, caption: "JOLU Guards During an Event in Naivasha" },
   { src: `${import.meta.env.BASE_URL}gallery/events-security.jpg`, caption: "Events Security in Action" },
@@ -21,7 +20,6 @@ const galleryItems = [
   { src: `${import.meta.env.BASE_URL}gallery/7.jpeg`, caption: "Kenya Urban Forum Security" },
   { src: `${import.meta.env.BASE_URL}gallery/9.jpeg`, caption: "Team Strategy Session" },
   { src: `${import.meta.env.BASE_URL}gallery/8.jpeg`, caption: "Annual Company Dinner" },
-
   { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0021.jpg`, caption: "Assignment in Kangemi" },
   { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0095.jpg`, caption: "Managing Director and General Manager" },
   { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0100.jpg`, caption: "Photo Session" },
@@ -39,9 +37,10 @@ const Gallery = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-grow py-16 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 relative">
-          <h1 className="text-4xl font-bold text-gray-800">Gallery</h1>
-          <div className="absolute top-3/4 left-0 right-0 h-1 bg-red-700 max-w-[100px] mx-auto mt-2"></div>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-800 inline-block border-b-4 border-red-700 pb-1">
+            Gallery
+          </h1>
         </div>
 
         <motion.div

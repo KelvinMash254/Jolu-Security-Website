@@ -85,7 +85,7 @@ export const ContactForm = () => {
       <CardContent>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
               Full Name *
             </label>
             <Input
@@ -100,7 +100,7 @@ export const ContactForm = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
               Email Address *
             </label>
             <Input
@@ -115,7 +115,7 @@ export const ContactForm = () => {
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
               Phone Number *
             </label>
             <Input
@@ -130,7 +130,7 @@ export const ContactForm = () => {
           </div>
 
           <div>
-            <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
               Service Needed
             </label>
             <select
@@ -138,7 +138,7 @@ export const ContactForm = () => {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100"
             >
               <option value="">Select a service</option>
               <option value="manned-guarding">Manned Guarding</option>
@@ -152,7 +152,7 @@ export const ContactForm = () => {
           </div>
 
           <div>
-            <label htmlFor="county" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="county" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
               County
             </label>
             <select
@@ -160,7 +160,7 @@ export const ContactForm = () => {
               name="county"
               value={formData.county}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-100"
             >
               <option value="">Select a county</option>
               {counties.map((county) => (
@@ -170,7 +170,7 @@ export const ContactForm = () => {
           </div>
 
           <div>
-            <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="area" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
               Area/Town
             </label>
             <Input
@@ -184,7 +184,7 @@ export const ContactForm = () => {
           </div>
 
           <div className="md:col-span-2">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
               Message
             </label>
             <Textarea

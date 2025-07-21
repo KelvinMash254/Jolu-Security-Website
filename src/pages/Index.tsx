@@ -22,6 +22,7 @@ import { motion } from 'framer-motion';
 import { DocumentsSection } from "@/components/DocumentsSection";
 import Footer from '@/components/Footer';
 
+
 import MannedGuarding from "@/pages/services/MannedGuarding";
 import EventsSecurity from "@/pages/services/EventsSecurity";
 import K9Unit from "@/pages/services/K9Unit";
@@ -185,7 +186,7 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
           <div>
             {/* Hero Section */}
 
-            <Hero onQuoteClick={() => setShowQuoteForm(true)} />
+            <Hero />
 
             {/* Stats + About */}
             <QuickStats />
@@ -381,22 +382,22 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
                                     <div className="flex items-center">
                                       <MapPin className="h-6 w-6 text-red-600 mr-4" />
                                       <div>
-                                        <div className="font-semibold">Nairobi – Main Office</div>
-                                        <div className="text-gray-600">Thome Estate, Nairobi</div>
+                                        <div className="font-semibold">Nairobi – Head Office</div>
+                                        <div className="text-gray-600">Thome Estate</div>
                                       </div>
                                     </div>
                                     <div className="flex items-center">
                                       <MapPin className="h-6 w-6 text-red-600 mr-4" />
                                       <div>
                                         <div className="font-semibold">Nakuru - Regional Office</div>
-                                        <div className="text-gray-600">Nakuru</div>
+                                        <div className="text-gray-600">KFA Building, Along Geoffrey Kamau Avenue</div>
                                       </div>
                                     </div>
                                     <div className="flex items-center">
                                       <MapPin className="h-6 w-6 text-red-600 mr-4" />
                                       <div>
-                                        <div className="font-semibold">Migori – Branch Office</div>
-                                        <div className="text-gray-600">Rongo</div>
+                                        <div className="font-semibold">Branch Offices</div>
+                                        <div className="text-gray-600">Eldoret, Kisumu & Migori (Rongo)</div>
                                       </div>
                                     </div>
                                   </div>

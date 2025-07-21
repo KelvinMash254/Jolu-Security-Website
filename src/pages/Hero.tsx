@@ -3,12 +3,13 @@ import React from 'react';
 import './Hero.css';
 import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Hero = ({ onQuoteClick }: { onQuoteClick: () => void }) => {
+const Hero = () => {
   return (
     <section
       id="home"
-      className="hero-section text-white w-full"  // removed py-20
+      className="hero-section text-white w-full"
     >
       {/* Background Slideshow */}
       <div className="hero-background">
@@ -45,12 +46,14 @@ const Hero = ({ onQuoteClick }: { onQuoteClick: () => void }) => {
           </div>
 
           <Button
+            asChild
             size="lg"
-            onClick={onQuoteClick}
             className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
           >
-            <span>Get Free Quote</span>
-            <ArrowRight className="w-5 h-5" />
+            <Link to="/quote">
+              <span>Get Free Quote</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </Button>
         </div>
       </div>

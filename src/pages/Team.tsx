@@ -5,56 +5,56 @@ import { motion } from "framer-motion";
 
 const teamMembers = [
   {
-    name: "John Mukundi",
+    name: "John",
     title: "Chief Executive Officer",
     image: "/Jolu-Security-Website/lovable-uploads/team/John.png",
     tier: "executives",
     bio: "John brings over 9 years of experience in security management, corporate leadership, and strategic operations. As the visionary behind Jolu Group Security, he leads with integrity, empowering teams and fostering a culture of accountability. His deep understanding of risk management and client-centered solutions has been instrumental in positioning the company as a trusted name in Kenya’s security industry.",
   },
   {
-    name: "Lucy Ndung'u",
+    name: "Lucy",
     title: "Managing Director",
     image: "/Jolu-Security-Website/lovable-uploads/team/Lucy.png",
     tier: "executives",
     bio: "Lucy is a dynamic leader with a strong background in business operations, client relations, and organizational growth. With over a decade of experience in the security and service sectors, she plays a pivotal role in driving JOLU Group Security’s mission forward. Her hands-on leadership style, strategic mindset, and commitment to excellence have made her a cornerstone of the company’s continued success and expansion.",
   },
   {
-    name: "Shem Njoroge",
+    name: "Shem",
     title: "General Manager",
     image: "/Jolu-Security-Website/lovable-uploads/team/Shem.png",
     tier: "gm",
     bio: "Shem brings a wealth of experience in operational leadership, team management, and service excellence. As General Manager, he ensures that day-to-day activities across all departments run smoothly and efficiently. Known for his problem-solving abilities and attention to detail, Shem plays a key role in maintaining high service standards, optimizing internal processes, and delivering on client expectations across the country.",
   },
   {
-    name: "Paul Muiruri",
+    name: "Paul",
     title: "Head of Operations & Business Development - Nakuru",
     image: "/Jolu-Security-Website/lovable-uploads/team/Paul.png",
     tier: "ops",
-    bio: "Paul oversees all operational and client engagement activities within the Nakuru region. With a hands-on leadership approach and extensive experience in the security industry, he ensures seamless service delivery, personnel supervision, and business growth. Paul is known for his dedication to excellence, operational efficiency, and building strong client relationships. His deep understanding of the local landscape and proactive problem-solving make him a key pillar in the company's regional success.",
+    bio: "Paul leads operations and client engagement in Nakuru. With a hands-on leadership style and strong regional knowledge, he ensures service quality, team coordination, and lasting client relationships. His commitment to operational excellence supports our steady growth in the region.",
   },
   {
-    name: "Kelvin Macharia",
+    name: "Kelvin",
     title: "Head of Operations & Business Development - Nairobi",
     image: "/Jolu-Security-Website/lovable-uploads/team/Kelvin.png",
     tier: "ops",
-    bio: "Kelvin leads operations and growth initiatives in Nairobi with a strategic focus on client acquisition, service delivery, and relationship management. With a strong background in business development and field operations, he combines tactical execution with a deep understanding of client needs. His leadership ensures efficient deployment of security personnel, alignment with client goals, and sustained growth in the Nairobi region. Driven, adaptive, and results-oriented, Kelvin plays a vital role in expanding the company’s presence in the capital.",
+    bio: "Kelvin oversees operations and business growth in Nairobi. His experience in client relations and field coordination ensures reliable service delivery. Focused and adaptable, Kelvin drives performance while maintaining strong partnerships in the capital.",
   },
   {
-    name: "Jackline Mwirabua",
+    name: "Jackline",
     title: "Business Development Executive - Nakuru",
     image: "/Jolu-Security-Website/lovable-uploads/team/Jackline.png",
     tier: "bde",
     bio: "Jackline is a key figure in driving client engagement and service outreach in the Nakuru region. Her communication skills, attention to client needs, and commitment to quality ensure client satisfaction and business growth. She plays a crucial role in expanding our client base and strengthening our brand in the region.",
   },
   {
-    name: "Leah Njoroge",
+    name: "Leah",
     title: "Business Development Executive - Nairobi",
     image: "/Jolu-Security-Website/lovable-uploads/team/Leah.png",
     tier: "bde",
     bio: "Leah supports business expansion in Nairobi by cultivating strong client relationships and identifying new growth opportunities. With a client-first approach and a proactive mindset, she contributes to service excellence and strategic account development.",
   },
   {
-    name: "Fred Chege",
+    name: "Fred",
     title: "Business Development Executive - Nakuru",
     image: "/Jolu-Security-Website/lovable-uploads/team/Fred.png",
     tier: "bde",
@@ -96,14 +96,10 @@ const Team = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 relative">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4 relative z-10">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-800 mb-2 inline-block border-b-4 border-red-700 pb-1">
             Meet Our Team
           </h1>
-          <div className="absolute top-1/2 left-0 w-full flex justify-center gap-12 -z-0">
-            <div className="w-24 h-1 bg-red-700" />
-            <div className="w-24 h-1 bg-red-700" />
-          </div>
         </div>
 
         <div className="space-y-16 max-w-7xl mx-auto">
