@@ -185,7 +185,7 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
           <div>
             {/* Hero Section */}
 
-            <Hero onQuoteClick={() => setShowQuoteForm(true)} />
+            <Hero />
 
             {/* Stats + About */}
             <QuickStats />
