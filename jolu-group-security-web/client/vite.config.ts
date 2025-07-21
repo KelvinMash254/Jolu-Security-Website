@@ -5,16 +5,15 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Jolu-Security-Website/", // ✅ Add this line for GitHub Pages
+  base: "/Jolu-Security-Website/", // ✅ GitHub Pages base path
   server: {
-    host: "::",
+    host: "::", // IPv6 support
     port: 8080,
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
-  ].filter(Boolean),
+    ...(mode === 'development' ? [componentTagger()] : []),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
