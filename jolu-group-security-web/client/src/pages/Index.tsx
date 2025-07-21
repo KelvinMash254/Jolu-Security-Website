@@ -89,74 +89,74 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
           
 
-      // ✅ Quick Stats section
-      const QuickStats = () => (
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
-                <div className="text-gray-600">Protection</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-red-600 mb-2">
-                  <AnimatedCounter end={500} suffix="+" />
-                </div>
-                <div className="text-gray-600">Clients Protected</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-red-600 mb-2">
-                  <AnimatedCounter end={100} suffix="%" />
-                </div>
-                <div className="text-gray-600">Client Satisfaction</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-red-600 mb-2">
-                  <AnimatedCounter end={5} suffix="+" />
-                </div>
-                <div className="text-gray-600">Years Experience</div>
-              </div>
+// ✅ Quick Stats section
+const QuickStats = () => (
+  <section className="py-16 bg-black text-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
+          <div className="text-white">Protection</div>
+        </div>
+        <div>
+          <div className="text-3xl font-bold text-red-600 mb-2">
+            <AnimatedCounter end={500} suffix="+" />
+          </div>
+          <div className="text-white">Clients Protected</div>
+        </div>
+        <div>
+          <div className="text-3xl font-bold text-red-600 mb-2">
+            <AnimatedCounter end={100} suffix="%" />
+          </div>
+          <div className="text-white">Client Satisfaction</div>
+        </div>
+        <div>
+          <div className="text-3xl font-bold text-red-600 mb-2">
+            <AnimatedCounter end={5} suffix="+" />
+          </div>
+          <div className="text-white">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ✅ About Us section
+const AboutUs = () => (
+  <section id="about" className="py-20 bg-white text-black">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+            About Jolu Group Security Ltd
+          </h2>
+          <p className="text-lg text-gray-700 mb-6">
+            Jolu Group Security Limited is a trusted security company providing comprehensive and tailored protective services, logistics, procurement, and training for the defense, energy, and financial sectors, as well as high net-worth clients, diplomatic missions, and international organizations operating in high-risk, volatile, hostile, and complex environments.
+          </p>
+          <p className="text-lg text-gray-700 mb-8">
+            At Jolu Group Security, we believe that safety is the foundation of progress. Our mission is to deliver reliable, mission-driven security solutions that empower individuals and organizations to operate confidently, even in the most challenging environments.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <Shield className="h-12 w-12 text-red-600 mx-auto mb-3" />
+              <h3 className="font-semibold text-black">Integrity</h3>
+            </div>
+            <div className="text-center">
+              <Eye className="h-12 w-12 text-red-600 mx-auto mb-3" />
+              <h3 className="font-semibold text-black">Vigilance</h3>
+            </div>
+            <div className="text-center">
+              <Users className="h-12 w-12 text-red-600 mx-auto mb-3" />
+              <h3 className="font-semibold text-black">Professionalism</h3>
             </div>
           </div>
-        </section>
-      );
-
-      // ✅ About Us section
-      const AboutUs = () => (
-        <section id="about" className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Text Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  About Jolu Group Security Ltd
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  Jolu Group Security Limited is a trusted security company providing comprehensive and tailored protective services, logistics, procurement, and training for the defense, energy, and financial sectors, as well as high net-worth clients, diplomatic missions, and international organizations operating in high-risk, volatile, hostile, and complex environments.
-                </p>
-                <p className="text-lg text-gray-600 mb-8">
-                  At Jolu Group Security, we believe that safety is the foundation of progress. Our mission is to deliver reliable, mission-driven security solutions that empower individuals and organizations to operate confidently, even in the most challenging environments.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <Shield className="h-12 w-12 text-red-600 mx-auto mb-3" />
-                    <h3 className="font-semibold text-gray-900">Integrity</h3>
-                  </div>
-                  <div className="text-center">
-                    <Eye className="h-12 w-12 text-red-600 mx-auto mb-3" />
-                    <h3 className="font-semibold text-gray-900">Vigilance</h3>
-                  </div>
-                  <div className="text-center">
-                    <Users className="h-12 w-12 text-red-600 mx-auto mb-3" />
-                    <h3 className="font-semibold text-gray-900">Professionalism</h3>
-                  </div>
-                </div>
-              </motion.div>
+        </motion.div>
 
               {/* Image */}
               <motion.div
@@ -191,271 +191,273 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
             <QuickStats />
             <AboutUs />       
 
-              {/* Services */}
-          <section id="services" className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Our Security Services
-                </h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Comprehensive security solutions tailored to meet your specific needs and protect what matters most to you.
-                </p>
-              </div>
+                                {/* Services Section */}
+                                <section id="services" className="py-20 bg-white dark:bg-zinc-900">
+                                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div className="text-center mb-16">
+                                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                                        Our Security Services
+                                      </h2>
+                                      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                                        Comprehensive security solutions tailored to meet your specific needs and protect what matters most to you.
+                                      </p>
+                                    </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {serviceData.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{
-                      delay: index * 0.1,
-                      duration: 0.6,
-                      type: "spring",
-                      stiffness: 90,
-                      damping: 18,
-                    }}
-                    whileHover={{
-                      scale: 1.04,
-                      transition: { type: "spring", stiffness: 250 },
-                    }}
-                    whileTap={{ scale: 0.97 }}
-                    className="transform transition-transform duration-300"
-                  >
-                    <Link to={service.path}>
-                      <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden h-full group">
-                        <div className="overflow-hidden">
-                          <img
-                            src={service.image}
-                            alt={service.title}
-                            className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                          />
-                        </div>
-                        <div className="px-6 py-5">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                            {service.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm">{service.desc}</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
+                                    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                      {serviceData.map((service, index) => (
+                                        <motion.div
+                                          key={index}
+                                          initial={{ opacity: 0, y: 60 }}
+                                          whileInView={{ opacity: 1, y: 0 }}
+                                          viewport={{ once: true, amount: 0.2 }}
+                                          transition={{
+                                            delay: index * 0.1,
+                                            duration: 0.6,
+                                            type: "spring",
+                                            stiffness: 90,
+                                            damping: 18,
+                                          }}
+                                          whileHover={{
+                                            scale: 1.03,
+                                            transition: { type: "spring", stiffness: 200 },
+                                          }}
+                                          className="transition-transform duration-300"
+                                        >
+                                          <Link to={service.path}>
+                                            <div className="bg-white dark:bg-zinc-800 rounded-2xl shadow-md hover:shadow-xl dark:hover:shadow-zinc-700 transition-shadow duration-300 overflow-hidden h-full group">
+                                              <div className="overflow-hidden">
+                                                <img
+                                                  src={service.image}
+                                                  alt={service.title}
+                                                  className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                                />
+                                              </div>
+                                              <div className="px-6 py-5">
+                                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                                  {service.title}
+                                                </h3>
+                                                <p className="text-gray-600 dark:text-gray-300 text-sm">{service.desc}</p>
+                                              </div>
+                                            </div>
+                                          </Link>
+                                        </motion.div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </section>
+
+                                {/* Industries Section */}
+                                <section id="industries" className="py-20 bg-gray-50 dark:bg-zinc-900">
+                                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div className="text-center mb-16">
+                                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                                        Industries We Serve
+                                      </h2>
+                                      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                                        Our expertise spans across multiple sectors, providing specialized security solutions for diverse industries.
+                                      </p>
+                                    </div>
+
+                                    <motion.div
+                                      className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                                      initial="hidden"
+                                      whileInView="show"
+                                      viewport={{ once: true, amount: 0.2 }}
+                                      transition={{ staggerChildren: 0.2 }}
+                                    >
+                                      {[
+                                        {
+                                          title: "Residential",
+                                          img: `${import.meta.env.BASE_URL}lovable-uploads/residential.jpg`,
+                                          alt: "Residential Security in Kenya",
+                                          desc: "Protecting homes and residential communities with tailored security solutions for families and property owners.",
+                                        },
+                                        {
+                                          title: "Commercial",
+                                          img: `${import.meta.env.BASE_URL}lovable-uploads/commercial.jpeg`,
+                                          alt: "Commercial Buildings in Nairobi",
+                                          desc: "Comprehensive security services for offices, business centers, and commercial facilities across Kenya.",
+                                        },
+                                        {
+                                          title: "Educational",
+                                          img: `${import.meta.env.BASE_URL}lovable-uploads/educational.jpg`,
+                                          alt: "Educational Institutions in Kenya",
+                                          desc: "Specialized security solutions for schools, colleges, and educational institutions to ensure student safety.",
+                                        },
+                                        {
+                                          title: "Retail",
+                                          img: `${import.meta.env.BASE_URL}lovable-uploads/retail.jpg`,
+                                          alt: "Retail Stores and Shopping Centers",
+                                          desc: "Protecting retail stores, shopping centers, and commercial outlets from theft and security threats.",
+                                        },
+                                        {
+                                          title: "Hospitality",
+                                          img: `${import.meta.env.BASE_URL}lovable-uploads/hospitality.jpg`,
+                                          alt: "Hotels and Hospitality in Kenya",
+                                          desc: "Security services for hotels, restaurants, and hospitality venues to ensure guest safety and peace of mind.",
+                                        },
+                                        {
+                                          title: "Construction",
+                                          img: `${import.meta.env.BASE_URL}lovable-uploads/construction.jpg`,
+                                          alt: "Construction Sites Security",
+                                          desc: "Site security and equipment protection for construction projects and development sites.",
+                                        },
+                                      ].map(({ title, img, alt, desc }, i) => (
+                                        <motion.div
+                                          key={i}
+                                          variants={{
+                                            hidden: { opacity: 0, y: 30 },
+                                            show: { opacity: 1, y: 0 },
+                                          }}
+                                          whileHover={{ y: -5, scale: 1.02 }}
+                                          transition={{ duration: 0.5, ease: "easeOut" }}
+                                          className="bg-white dark:bg-zinc-800 hover:shadow-lg dark:hover:shadow-zinc-700 transition-shadow duration-300 rounded-2xl overflow-hidden shadow-md h-full"
+                                        >
+                                          <CardHeader>
+                                            <div className="mb-4">
+                                              <img
+                                                src={img}
+                                                alt={alt}
+                                                className="w-full h-48 object-cover rounded-lg"
+                                              />
+                                            </div>
+                                            <CardTitle className="text-xl font-semibold text-gray-900 dark:text-white">{title}</CardTitle>
+                                          </CardHeader>
+                                          <CardContent>
+                                            <p className="text-gray-600 dark:text-gray-300">{desc}</p>
+                                          </CardContent>
+                                        </motion.div>
+                                      ))}
+                                    </motion.div>
+                                  </div>
+                                </section>
+
+
+                                                  <WhyChooseUs />
+
+
+                                                        <DocumentsSection />
+
+ {/* Contact Section */}
+<section id="contact" className="py-20 bg-white">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+        Get In Touch
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        Ready to secure your property? Contact us today for a free consultation and personalized security assessment.
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-2 gap-12">
+      {/* LEFT SIDE - Contact Info + Maps */}
+      <motion.div
+        initial={{ opacity: 0, x: -80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <h3 className="text-2xl font-semibold text-black mb-6">Contact Information</h3>
+        <div className="space-y-6">
+          <div className="flex items-start">
+            <Phone className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <div>
+              <div className="font-semibold text-black">Phone</div>
+              <div className="text-gray-700">+254 790 298 003 | +254 790 182 487</div>
             </div>
-          </section>
+          </div>
+          <div className="flex items-start">
+            <Mail className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <div>
+              <div className="font-semibold text-black">Email</div>
+              <div className="text-gray-700">jolugroup@gmail.com</div>
+            </div>
+          </div>
+          <div className="flex items-start">
+            <MapPin className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <div>
+              <div className="font-semibold text-black">Nairobi – Main Office</div>
+              <div className="text-gray-700">Thome Estate, Nairobi</div>
+            </div>
+          </div>
+          <div className="flex items-start">
+            <MapPin className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <div>
+              <div className="font-semibold text-black">Nakuru – Regional Office</div>
+              <div className="text-gray-700">Nakuru</div>
+            </div>
+          </div>
+          <div className="flex items-start">
+            <MapPin className="h-6 w-6 text-red-600 mr-4 mt-1" />
+            <div>
+              <div className="font-semibold text-black">Migori – Branch Office</div>
+              <div className="text-gray-700">Rongo</div>
+            </div>
+          </div>
+        </div>
 
-                  {/* Industries Served */}
-                  <section id="industries" className="py-20">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                      <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                          Our expertise spans across multiple sectors, providing specialized security solutions for diverse industries.
-                        </p>
-                      </div>
+        <div className="mt-8">
+          <a href="https://wa.me/254790298003" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-md transition">
+              <Phone className="mr-2 h-4 w-4" />
+              WhatsApp Us
+            </Button>
+          </a>
+        </div>
 
-                      {/* Animate cards on scroll and hover */}
-                      <motion.div
-                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ staggerChildren: 0.2 }}
-                      >
-                        {[
-                          {
-                            title: "Residential",
-                            img: `${import.meta.env.BASE_URL}lovable-uploads/residential.jpg`,
-                            alt: "Residential Security in Kenya",
-                            desc: "Protecting homes and residential communities with tailored security solutions for families and property owners.",
-                          },
-                          {
-                            title: "Commercial",
-                            img: `${import.meta.env.BASE_URL}lovable-uploads/commercial.jpeg`,
-                            alt: "Commercial Buildings in Nairobi",
-                            desc: "Comprehensive security services for offices, business centers, and commercial facilities across Kenya.",
-                          },
-                          {
-                            title: "Educational",
-                            img: `${import.meta.env.BASE_URL}lovable-uploads/educational.jpg`,
-                            alt: "Educational Institutions in Kenya",
-                            desc: "Specialized security solutions for schools, colleges, and educational institutions to ensure student safety.",
-                          },
-                          {
-                            title: "Retail",
-                            img: `${import.meta.env.BASE_URL}lovable-uploads/retail.jpg`,
-                            alt: "Retail Stores and Shopping Centers",
-                            desc: "Protecting retail stores, shopping centers, and commercial outlets from theft and security threats.",
-                          },
-                          {
-                            title: "Hospitality",
-                            img: `${import.meta.env.BASE_URL}lovable-uploads/hospitality.jpg`,
-                            alt: "Hotels and Hospitality in Kenya",
-                            desc: "Security services for hotels, restaurants, and hospitality venues to ensure guest safety and peace of mind.",
-                          },
-                          {
-                            title: "Construction",
-                            img: `${import.meta.env.BASE_URL}lovable-uploads/construction.jpg`,
-                            alt: "Construction Sites Security",
-                            desc: "Site security and equipment protection for construction projects and development sites.",
-                          },
-                        ].map(({ title, img, alt, desc }, i) => (
-                          <motion.div
-                            key={i}
-                            variants={{
-                              hidden: { opacity: 0, y: 30 },
-                              show: { opacity: 1, y: 0 },
-                            }}
-                            whileHover={{ y: -5, scale: 1.02 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="bg-white hover:shadow-lg transition-shadow duration-300 rounded-2xl overflow-hidden shadow-md h-full"
-                          >
-                            <CardHeader>
-                              <div className="mb-4">
-                                <img
-                                  src={img}
-                                  alt={alt}
-                                  className="w-full h-48 object-cover rounded-lg"
-                                />
-                              </div>
-                              <CardTitle className="text-xl font-semibold text-gray-900">{title}</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                              <p className="text-gray-600">{desc}</p>
-                            </CardContent>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    </div>
-                  </section>
+        {/* Maps */}
+        <div className="mt-12 space-y-10">
+          {/* Nairobi */}
+          <div>
+            <h4 className="font-semibold text-lg text-gray-800 mb-2">Nairobi – Main Office</h4>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.416901251848!2d36.8508475!3d-1.2194246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1c5a6c4b21a7%3A0x991d0a8f3c176aad!2sThome%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1712312919946!5m2!1sen!2ske"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-                  <WhyChooseUs />
+          {/* Nakuru */}
+          <div>
+            <h4 className="font-semibold text-lg text-gray-800 mb-2">Nakuru - Regional Office</h4>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.768809440484!2d36.060809509865564!3d-0.2854380997105522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18298dbee7691795%3A0x57bb3856ac0d67f7!2sKFA%20Building%2C%20Geoffrey%20Kamau%20Ave%2C%20Nakuru!5e0!3m2!1sen!2ske!4v1752868635219!5m2!1sen!2ske"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* RIGHT SIDE - Contact Form */}
+      <motion.div
+        initial={{ opacity: 0, x: 80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <ContactForm />
+      </motion.div>
+    </div>
+  </motion.div>
+</section>
 
 
-                        <DocumentsSection />
-
-
-                            {/* Contact Section */}
-                          <section id="contact" className="py-20">
-                            <motion.div
-                              initial={{ opacity: 0, y: 50 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.7, ease: "easeOut" }}
-                              viewport={{ once: true, amount: 0.3 }}
-                              className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-                            >
-                              <div className="text-center mb-16">
-                                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                                  Ready to secure your property? Contact us today for a free consultation and personalized security assessment.
-                                </p>
-                              </div>
-
-                              <div className="grid lg:grid-cols-2 gap-12">
-                                {/* LEFT SIDE - Contact Info + Maps */}
-                                <motion.div
-                                  initial={{ opacity: 0, x: -80 }}
-                                  whileInView={{ opacity: 1, x: 0 }}
-                                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                                  viewport={{ once: true, amount: 0.2 }}
-                                >
-                                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
-                                  <div className="space-y-6">
-                                    <div className="flex items-center">
-                                      <Phone className="h-6 w-6 text-red-600 mr-4" />
-                                      <div>
-                                        <div className="font-semibold">Phone</div>
-                                        <div className="text-gray-600">+254 790 298 003 | +254 790 182 487</div>
-                                      </div>
-                                    </div>
-                                    <div className="flex items-center">
-                                      <Mail className="h-6 w-6 text-red-600 mr-4" />
-                                      <div>
-                                        <div className="font-semibold">Email</div>
-                                        <div className="text-gray-600">jolugroup@gmail.com</div>
-                                      </div>
-                                    </div>
-                                    <div className="flex items-center">
-                                      <MapPin className="h-6 w-6 text-red-600 mr-4" />
-                                      <div>
-                                        <div className="font-semibold">Nairobi – Main Office</div>
-                                        <div className="text-gray-600">Thome Estate, Nairobi</div>
-                                      </div>
-                                    </div>
-                                    <div className="flex items-center">
-                                      <MapPin className="h-6 w-6 text-red-600 mr-4" />
-                                      <div>
-                                        <div className="font-semibold">Nakuru - Regional Office</div>
-                                        <div className="text-gray-600">Nakuru</div>
-                                      </div>
-                                    </div>
-                                    <div className="flex items-center">
-                                      <MapPin className="h-6 w-6 text-red-600 mr-4" />
-                                      <div>
-                                        <div className="font-semibold">Migori – Branch Office</div>
-                                        <div className="text-gray-600">Rongo</div>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  
-
-                                  <div className="mt-8">
-                                    <a href="https://wa.me/254790298003" target="_blank" rel="noopener noreferrer">
-                                      <Button className="bg-green-500 hover:bg-green-600 text-white">
-                                        <Phone className="mr-2 h-4 w-4" />
-                                        WhatsApp Us
-                                      </Button>
-                                    </a>
-                                  </div>
-
-                                  {/* Maps */}
-                                  <div className="mt-12 space-y-10">
-                                    {/* Nairobi */}
-                                    <div>
-                                      <h4 className="font-semibold text-lg text-gray-800 mb-2">Nairobi – Main Office</h4>
-                                      <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.416901251848!2d36.8508475!3d-1.2194246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1c5a6c4b21a7%3A0x991d0a8f3c176aad!2sThome%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1712312919946!5m2!1sen!2ske"
-                                        width="100%"
-                                        height="300"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                      ></iframe>
-                                    </div>
-
-                                    {/* Nakuru */}
-                                    <div>
-                                      <h4 className="font-semibold text-lg text-gray-800 mb-2">Nakuru - Regional Office</h4>
-                                      <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.768809440484!2d36.060809509865564!3d-0.2854380997105522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18298dbee7691795%3A0x57bb3856ac0d67f7!2sKFA%20Building%2C%20Geoffrey%20Kamau%20Ave%2C%20Nakuru!5e0!3m2!1sen!2ske!4v1752868635219!5m2!1sen!2ske"
-                                        width="100%"
-                                        height="300"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                      ></iframe>
-                                    </div>
-                                  </div>
-                                </motion.div>
-
-                                {/* RIGHT SIDE - Contact Form */}
-                                <motion.div
-                                  initial={{ opacity: 0, x: 80 }}
-                                  whileInView={{ opacity: 1, x: 0 }}
-                                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-                                  viewport={{ once: true, amount: 0.2 }}
-                                >
-                                  <ContactForm />
-                                </motion.div>
-                              </div>
-                            </motion.div>
-                          </section>
 
 
 

@@ -20,11 +20,12 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 fade-in-line-1">
           Your Safety,<br />
-          <span className="text-yellow-300">Our Commitment.</span>
+          <span className="text-red-600">Our Commitment.</span>
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto fade-in-line-2">
           Protecting homes, businesses, and communities across Kenya with reliable, professional security services you can trust.
         </p>
 

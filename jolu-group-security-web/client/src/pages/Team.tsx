@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 import { X } from "lucide-react";
 import { motion } from "framer-motion";
@@ -67,9 +67,9 @@ const TeamCard = ({ member, setSelectedMember }) => (
     onClick={() => setSelectedMember(member)}
     whileHover={{ scale: 1.05 }}
     transition={{ duration: 0.3 }}
-    className="cursor-pointer bg-white rounded-xl shadow-md overflow-hidden w-full max-w-xs"
+    className="cursor-pointer bg-white dark:bg-zinc-800 rounded-xl shadow-md overflow-hidden w-full max-w-xs"
   >
-    <div className="w-full h-36 sm:h-40 bg-white flex items-center justify-center overflow-hidden">
+    <div className="w-full h-36 sm:h-40 bg-white dark:bg-zinc-900 flex items-center justify-center overflow-hidden">
       <img
         src={member.image}
         alt={member.name}
@@ -77,14 +77,22 @@ const TeamCard = ({ member, setSelectedMember }) => (
       />
     </div>
     <div className="p-4 text-center">
-      <h3 className="text-base sm:text-lg font-semibold text-gray-900">{member.name}</h3>
-      <p className="mt-1 text-gray-600 text-xs sm:text-sm line-clamp-2">{member.title}</p>
+      <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
+        {member.name}
+      </h3>
+      <p className="mt-1 text-gray-600 dark:text-gray-300 text-xs sm:text-sm line-clamp-2">
+        {member.title}
+      </p>
     </div>
   </motion.div>
 );
 
 const Team = () => {
   const [selectedMember, setSelectedMember] = useState(null);
+
+  useEffect(() => {
+    document.body.style.overflow = selectedMember ? "hidden" : "auto";
+  }, [selectedMember]);
 
   const grouped = {
     executives: teamMembers.filter((m) => m.tier === "executives"),
@@ -94,10 +102,12 @@ const Team = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-zinc-900 transition-colors">
       <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8">
         <div className="relative mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-2">Meet Our Team</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 dark:text-white mb-2">
+            Meet Our Team
+          </h1>
           <div className="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between">
             <div className="w-1/5 h-1 bg-red-700" />
             <div className="w-1/5 h-1 bg-red-700" />
@@ -127,31 +137,33 @@ const Team = () => {
           </div>
         </div>
 
+        {/* Modal */}
         {selectedMember && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-2 sm:px-4">
-            <div className="bg-white rounded-xl shadow-xl w-full max-w-lg p-4 sm:p-6 relative">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-2 sm:px-4 overflow-y-auto">
+            <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-xl w-full max-w-xl sm:max-w-2xl max-h-screen overflow-y-auto p-4 sm:p-6 relative">
               <button
-                className="absolute top-3 right-3 text-gray-500 hover:text-red-600"
+                className="absolute top-3 right-3 text-gray-500 dark:text-gray-300 hover:text-red-600"
                 onClick={() => setSelectedMember(null)}
               >
-                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                <X className="w-6 h-6" />
               </button>
+
               <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-center">
-                <div className="w-full md:w-[40%] h-48 sm:h-60 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
+                <div className="w-full md:w-[40%] h-48 sm:h-60 bg-gray-100 dark:bg-zinc-700 rounded-lg overflow-hidden flex items-center justify-center">
                   <img
                     src={selectedMember.image}
                     alt={selectedMember.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="w-full md:w-1/2">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+                <div className="w-full md:w-[60%]">
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">
                     {selectedMember.name}
                   </h2>
-                  <p className="text-sm sm:text-base text-gray-500 mb-3">
+                  <p className="text-sm sm:text-base text-gray-500 dark:text-gray-300 mb-3">
                     {selectedMember.title}
                   </p>
-                  <p className="text-gray-700 text-sm sm:text-base text-justify leading-relaxed max-h-[300px] overflow-y-auto pr-1">
+                  <p className="text-gray-700 dark:text-gray-200 text-sm sm:text-base text-justify leading-relaxed">
                     {selectedMember.bio}
                   </p>
                 </div>

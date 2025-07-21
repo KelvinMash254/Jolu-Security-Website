@@ -2,45 +2,43 @@ import React from "react";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Optional: Replace with real descriptions
 const galleryItems = [
-  { src: `${import.meta.env.BASE_URL}gallery/best-image.jpeg`, caption: "JOLU Guards During an Event in Naivasha" },
-  { src: `${import.meta.env.BASE_URL}gallery/events-security.jpg`, caption: "Events Security in Action" },
-  { src: `${import.meta.env.BASE_URL}gallery/1.jpeg`, caption: "K9 Unit Briefing" },
-  { src: `${import.meta.env.BASE_URL}gallery/15.jpeg`, caption: "Nakuru Guard Deployment" },
-  { src: `${import.meta.env.BASE_URL}gallery/2.jpeg`, caption: "Trained Security Guards Guarding an Event in Rift Valley" },
-  { src: `${import.meta.env.BASE_URL}gallery/14.jpeg`, caption: "Nairobi Team Deployment" },
-  { src: `${import.meta.env.BASE_URL}gallery/3.jpeg`, caption: "Security Guard on Alert During an Event" },
-  { src: `${import.meta.env.BASE_URL}gallery/13.jpeg`, caption: "Operation Managers Impromptu Visit" },
-  { src: `${import.meta.env.BASE_URL}gallery/4.jpeg`, caption: "Our Security Team During a Dinner" },
-  { src: `${import.meta.env.BASE_URL}gallery/12.jpeg`, caption: "A Deployment for Guards in Nairobi" },
-  { src: `${import.meta.env.BASE_URL}gallery/5.jpeg`, caption: "Naivasha Dinner" },
-  { src: `${import.meta.env.BASE_URL}gallery/11.jpeg`, caption: "Client Site Protection" },
-  { src: `${import.meta.env.BASE_URL}gallery/6.jpeg`, caption: "Guarding an Event - Kenya Urban Forum" },
-  { src: `${import.meta.env.BASE_URL}gallery/10.jpeg`, caption: "On-Site Inspection" },
-  { src: `${import.meta.env.BASE_URL}gallery/7.jpeg`, caption: "Kenya Urban Forum Security" },
-  { src: `${import.meta.env.BASE_URL}gallery/9.jpeg`, caption: "Team Strategy Session" },
-  { src: `${import.meta.env.BASE_URL}gallery/8.jpeg`, caption: "Annual Company Dinner" },
-
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0021.jpg`, caption: "Assignment in Kangemi" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0095.jpg`, caption: "Managing Director and General Manager" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0100.jpg`, caption: "Photo Session" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0102.jpg`, caption: "Briefing Before Deployment" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0106.jpg`, caption: "Deployment Taskforce" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0107.jpg`, caption: "Our Team" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0058.jpg`, caption: "During our Monthly Meeting at HQ" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0061.jpg`, caption: "Nakuru Team" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0064.jpg`, caption: "Photo Session After Nakuru Meeting " },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0067.jpg`, caption: "The Men in our Team" },
-  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0069.jpg`, caption: "Kangemi Photoshoot" },
+  { src: `${import.meta.env.BASE_URL}gallery/best-image.jpeg`, caption: "Our Guards On Duty at a Naivasha Event" },
+  { src: `${import.meta.env.BASE_URL}gallery/events-security.jpg`, caption: "Ensuring Safety During a Major Event" },
+  { src: `${import.meta.env.BASE_URL}gallery/1.jpeg`, caption: "K9 Unit Receiving Deployment Briefing" },
+  { src: `${import.meta.env.BASE_URL}gallery/15.jpeg`, caption: "Deployment of Guards in Nakuru" },
+  { src: `${import.meta.env.BASE_URL}gallery/2.jpeg`, caption: "Experienced Guards at a Rift Valley Event" },
+  { src: `${import.meta.env.BASE_URL}gallery/14.jpeg`, caption: "Nairobi Team Geared for Deployment" },
+  { src: `${import.meta.env.BASE_URL}gallery/3.jpeg`, caption: "Guard Remaining Vigilant During an Event" },
+  { src: `${import.meta.env.BASE_URL}gallery/13.jpeg`, caption: "Operations Manager Conducting a Site Visit" },
+  { src: `${import.meta.env.BASE_URL}gallery/4.jpeg`, caption: "Team Members Sharing a Dinner Moment" },
+  { src: `${import.meta.env.BASE_URL}gallery/12.jpeg`, caption: "Preparing for Deployment in Nairobi" },
+  { src: `${import.meta.env.BASE_URL}gallery/5.jpeg`, caption: "Dinner Gathering in Naivasha" },
+  { src: `${import.meta.env.BASE_URL}gallery/11.jpeg`, caption: "Client Site Surveillance in Progress" },
+  { src: `${import.meta.env.BASE_URL}gallery/6.jpeg`, caption: "Kenya Urban Forum Event Security" },
+  { src: `${import.meta.env.BASE_URL}gallery/10.jpeg`, caption: "On-Site Supervision & Inspection" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0102.jpg`, caption: "Final Brief Before Deployment" },
+  { src: `${import.meta.env.BASE_URL}gallery/7.jpeg`, caption: "Active Security Team at Kenya Urban Forum" },
+  { src: `${import.meta.env.BASE_URL}gallery/9.jpeg`, caption: "Team Discussion on Strategy & Tactics" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0106.jpg`, caption: "Dedicated Deployment Taskforce" },
+  { src: `${import.meta.env.BASE_URL}gallery/8.jpeg`, caption: "Annual Dinner with the Full Team" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0021.jpg`, caption: "Security Engagement at Kangemi" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0095.jpg`, caption: "Leadership Team - MD and GM" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0100.jpg`, caption: "Capturing the Moment - Photo Session" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250428-WA0107.jpg`, caption: "Part of Our Reliable Team" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0058.jpg`, caption: "Monthly Review Meeting at HQ" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0061.jpg`, caption: "Our Nakuru Team Posing Together" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0064.jpg`, caption: "Post-Meeting Photo Session in Nakuru" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0067.jpg`, caption: "Team Photo Featuring the Men of JOLU" },
+  { src: `${import.meta.env.BASE_URL}gallery/IMG-20250720-WA0069.jpg`, caption: "Team Photoshoot in Kangemi" },
 ];
 
 const Gallery = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-black transition-colors duration-500">
       <main className="flex-grow py-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 relative">
-          <h1 className="text-4xl font-bold text-gray-800">Gallery</h1>
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-white">Gallery</h1>
           <div className="absolute top-3/4 left-0 right-0 h-1 bg-red-700 max-w-[100px] mx-auto mt-2"></div>
         </div>
 
@@ -55,14 +53,14 @@ const Gallery = () => {
             <motion.div
               key={index}
               whileHover={{ scale: 1.02 }}
-              className="relative group overflow-hidden rounded-lg shadow-md"
+              className="relative group overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 transition-colors duration-500"
             >
               <img
                 src={item.src}
                 alt={item.caption}
-                className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-72 object-cover object-top transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-sm px-4 text-center">
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-xs sm:text-sm text-center px-3 py-2 transition-opacity duration-300">
                 {item.caption}
               </div>
             </motion.div>
