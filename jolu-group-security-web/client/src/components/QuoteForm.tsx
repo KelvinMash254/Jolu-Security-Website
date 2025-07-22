@@ -23,7 +23,7 @@ export const QuoteForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/quote`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/quote`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -130,7 +130,7 @@ export const QuoteForm = () => {
         />
       </div>
 
-      {/* Company Name (Optional) */}
+      {/* Company Name */}
       <div className="col-span-1">
         <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
           Company Name
@@ -181,7 +181,7 @@ export const QuoteForm = () => {
         />
       </div>
 
-      {/* Number of Guards (Optional) */}
+      {/* Number of Guards */}
       <div className="col-span-1">
         <label htmlFor="guards" className="block text-sm font-medium text-gray-700 mb-1">
           Number of Guards
@@ -220,7 +220,7 @@ export const QuoteForm = () => {
         </select>
       </div>
 
-      {/* Message (Full Width) */}
+      {/* Message */}
       <div className="col-span-1 md:col-span-2">
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
           Message
@@ -235,7 +235,7 @@ export const QuoteForm = () => {
         />
       </div>
 
-      {/* Submit Button (Full Width) */}
+      {/* Submit Button */}
       <div className="col-span-1 md:col-span-2">
         <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white">
           Request Quote
