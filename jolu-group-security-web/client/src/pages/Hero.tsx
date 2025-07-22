@@ -1,4 +1,3 @@
-// Hero.tsx
 import React from 'react';
 import './Hero.css';
 import { Button } from "@/components/ui/button";
@@ -7,19 +6,23 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section id="home" className="hero-section py-20 text-white">
+    <section
+      id="home"
+      className="hero-section relative overflow-hidden py-20 text-white w-full"
+    >
       {/* Background Slideshow */}
-      <div className="hero-background">
-        <div className="hero-slide"></div>
-        <div className="hero-slide"></div>
-        <div className="hero-slide"></div>
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <div className="hero-background w-full h-full">
+          <div className="hero-slide w-full h-full"></div>
+          <div className="hero-slide w-full h-full"></div>
+          <div className="hero-slide w-full h-full"></div>
+        </div>
+        {/* Dark Overlay */}
+        <div className="hero-overlay absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
 
-      {/* Dark Overlay */}
-      <div className="hero-overlay"></div>
-
       {/* Hero Content */}
-      <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 fade-in-line-1">
           Your Safety,<br />
           <span className="text-red-600">Our Commitment.</span>
@@ -34,7 +37,7 @@ const Hero = () => {
           <Button
             asChild
             size="lg"
-            className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
+            className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
           >
             <a href="tel:+254790298003">
               <Phone className="w-5 h-5" />
@@ -45,7 +48,7 @@ const Hero = () => {
           <Link to="/quote">
             <Button
               size="lg"
-              className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 animate-pulse transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
+              className="border border-white bg-transparent text-white text-lg px-8 py-4 flex items-center gap-2 transition-transform transform hover:scale-105 active:scale-95 hover:bg-red-600 hover:text-white"
             >
               <span>Get Free Quote</span>
               <ArrowRight className="w-5 h-5" />
