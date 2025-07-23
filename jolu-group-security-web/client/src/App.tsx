@@ -21,6 +21,10 @@ import ElectricFencing from "./pages/services/ElectricFencing";
 import AlarmResponse from "./pages/services/AlarmResponse";
 import VIPCloseProtection from "./pages/services/VIPCloseProtection";
 
+import Top5Ways from "./pages/blog/Top5Ways";
+import EventSecurityChecklist from "./pages/blog/EventSecurityChecklist";
+import WhyCCTVMatters from "./pages/blog/WhyCCTVMatters";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -37,6 +41,9 @@ const App = () => (
           <Route path="gallery" element={<Gallery />} />
           <Route path="quote" element={<QuotePage />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="/blog/top-5-ways" element={<Top5Ways />} />
+          <Route path="/blog/event-security-checklist" element={<EventSecurityChecklist />} />
+          <Route path="/blog/why-cctv-matters" element={<WhyCCTVMatters />} />
 
           {/* Service Pages */}
           <Route path="services/manned-guarding" element={<MannedGuarding />} />

@@ -39,7 +39,7 @@ const Blogs = () => {
                     Top 5 Ways to Secure Your Home
                   </CardTitle>
                   <CardDescription className="text-gray-600 dark:text-gray-400 mt-2">
-                    Published on July 17, 2025
+                    Published on July 23, 2025
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -82,7 +82,7 @@ const Blogs = () => {
                 <CardHeader>
                   <div className="mb-4">
                     <img
-                      src="/Jolu-Security-Website/lovable-uploads/cctv-installation.png"
+                      src="/Jolu-Security-Website/lovable-uploads/cctv-image.jpg"
                       alt="Why Every Business Needs a CCTV System"
                       className="w-full h-auto max-h-64 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                     />
@@ -91,7 +91,7 @@ const Blogs = () => {
                     Why Every Business Needs a CCTV System
                   </CardTitle>
                   <CardDescription className="text-gray-600 dark:text-gray-400 mt-2">
-                    Published on June 25, 2025
+                    Published on July 23, 2025
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
