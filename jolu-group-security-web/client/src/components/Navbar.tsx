@@ -122,6 +122,19 @@ const Navbar = () => {
             Get Quote
           </Button>
 
+          
+                  {/* Toggle Theme Button in Mobile View */}
+                  <div className="md:hidden mr-2">
+                    <button
+                      onClick={() => setIsDark(!isDark)}
+                      className="p-2 rounded-full bg-red-600 text-white hover:bg-black transition-colors"
+                      aria-label="Toggle Theme"
+                    >
+                      {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                    </button>
+                  </div>
+
+
           {/* Hamburger Icon */}
           <button className="md:hidden text-gray-700 dark:text-white" onClick={() => setSidebarOpen(true)}>
             <Menu className="h-6 w-6" />
