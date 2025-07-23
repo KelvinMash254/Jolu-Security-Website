@@ -89,32 +89,32 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
           
 
-// ✅ Quick Stats section
+// ✅ Quick Stats section with dark/light toggle and brand colors
 const QuickStats = () => (
-  <section className="py-16 bg-black text-white">
+  <section className="py-16 bg-white dark:bg-black text-black dark:text-white">
     <div className="w-full">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
-          <div className="text-white">Protection</div>
+          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">24/7</div>
+          <div>Protection</div>
         </div>
         <div>
-          <div className="text-3xl font-bold text-red-600 mb-2">
+          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">
             <AnimatedCounter end={500} suffix="+" />
           </div>
-          <div className="text-white">Clients Protected</div>
+          <div>Clients Protected</div>
         </div>
         <div>
-          <div className="text-3xl font-bold text-red-600 mb-2">
+          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">
             <AnimatedCounter end={100} suffix="%" />
           </div>
-          <div className="text-white">Client Satisfaction</div>
+          <div>Client Satisfaction</div>
         </div>
         <div>
-          <div className="text-3xl font-bold text-red-600 mb-2">
+          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">
             <AnimatedCounter end={5} suffix="+" />
           </div>
-          <div className="text-white">Years Experience</div>
+          <div>Years Experience</div>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@ const QuickStats = () => (
 // ✅ About Us section
 const AboutUs = () => (
   <section id="about" className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
-    <div className="w-full">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <motion.div
@@ -350,7 +350,7 @@ const AboutUs = () => (
 
                                                         <DocumentsSection />
 
- {/* Contact Section */}
+ {/* Contacts Section */}
 <section id="contact" className="py-20 bg-white dark:bg-zinc-900">
   <motion.div
     initial={{ opacity: 0, y: 50 }}
