@@ -229,7 +229,9 @@ const AboutUs = () => (
                                                 <img
                                                   src={service.image}
                                                   alt={service.title}
-                                                  className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+
+
                                                 />
                                               </div>
                                               <div className="px-6 py-5">
