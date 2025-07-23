@@ -89,29 +89,28 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
           
 
-// ✅ Quick Stats section with dark/light toggle and brand colors
 const QuickStats = () => (
-  <section className="py-16 bg-white dark:bg-black text-black dark:text-white">
-    <div className="w-full">
+  <section className="py-16 bg-white dark:bg-black text-gray-900 dark:text-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">24/7</div>
+          <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
           <div>Protection</div>
         </div>
         <div>
-          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">
+          <div className="text-3xl font-bold text-red-600 mb-2">
             <AnimatedCounter end={500} suffix="+" />
           </div>
           <div>Clients Protected</div>
         </div>
         <div>
-          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">
+          <div className="text-3xl font-bold text-red-600 mb-2">
             <AnimatedCounter end={100} suffix="%" />
           </div>
           <div>Client Satisfaction</div>
         </div>
         <div>
-          <div className="text-3xl font-bold text-red-700 dark:text-red-600 mb-2">
+          <div className="text-3xl font-bold text-red-600 mb-2">
             <AnimatedCounter end={5} suffix="+" />
           </div>
           <div>Years Experience</div>
@@ -121,6 +120,7 @@ const QuickStats = () => (
   </section>
 );
 
+
 // ✅ About Us section
 const AboutUs = () => (
   <section id="about" className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
@@ -128,8 +128,8 @@ const AboutUs = () => (
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
@@ -161,8 +161,8 @@ const AboutUs = () => (
         {/* Image */}
         <motion.div
           className="lg:pl-8"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
@@ -207,8 +207,8 @@ const AboutUs = () => (
                                       {serviceData.map((service, index) => (
                                         <motion.div
                                           key={index}
-                                          initial={{ opacity: 0, y: 60 }}
-                                          whileInView={{ opacity: 1, y: 0 }}
+                                          initial={{ opacity: 0 }}
+                                          whileInView={{ opacity: 1 }}
                                           viewport={{ once: true, amount: 0.2 }}
                                           transition={{
                                             delay: index * 0.1,
@@ -318,10 +318,10 @@ const AboutUs = () => (
                                         <motion.div
                                           key={i}
                                           variants={{
-                                            hidden: { opacity: 0, y: 30 },
-                                            show: { opacity: 1, y: 0 },
+                                            hidden: { opacity: 0 },
+                                            show: { opacity: 1 },
                                           }}
-                                          whileHover={{ y: -5, scale: 1.02 }}
+                                          whileHover={{ scale: 1.02 }}
                                           transition={{ duration: 0.5, ease: "easeOut" }}
                                           className="bg-white dark:bg-zinc-800 hover:shadow-lg dark:hover:shadow-zinc-700 transition-shadow duration-300 rounded-2xl overflow-hidden shadow-md h-full"
                                         >
@@ -350,11 +350,11 @@ const AboutUs = () => (
 
                                                         <DocumentsSection />
 
- {/* Contacts Section */}
+ {/* Contact Section */}
 <section id="contact" className="py-20 bg-white dark:bg-zinc-900">
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
     transition={{ duration: 0.7, ease: "easeOut" }}
     viewport={{ once: true, amount: 0.3 }}
     className="max-w-7xl mx-auto"
@@ -371,8 +371,8 @@ const AboutUs = () => (
     <div className="grid lg:grid-cols-2 gap-12">
       {/* LEFT SIDE - Contact Info + Maps */}
       <motion.div
-        initial={{ opacity: 0, x: -80 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true, amount: 0.2 }}
       >
@@ -458,8 +458,8 @@ const AboutUs = () => (
 
       {/* RIGHT SIDE - Contact Form */}
       <motion.div
-        initial={{ opacity: 0, x: 80 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
         viewport={{ once: true, amount: 0.2 }}
       >
