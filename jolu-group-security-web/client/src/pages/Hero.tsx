@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section
-      id="home"
-      className="hero-section relative overflow-hidden py-20 text-white w-full"
+  id="home"
+  className="hero-section relative overflow-hidden py-20 text-white w-full max-w-full"
     >
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 w-full px-0 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 fade-in-line-1">
           Your Safety,<br />
           <span className="text-red-600">Our Commitment.</span>

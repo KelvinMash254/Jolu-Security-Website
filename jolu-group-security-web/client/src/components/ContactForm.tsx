@@ -16,6 +16,7 @@ export const ContactForm = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
   const counties = [
@@ -29,6 +30,7 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
@@ -61,16 +63,15 @@ export const ContactForm = () => {
         description: "Failed to send message. Please try again later.",
         variant: "destructive",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -96,7 +97,7 @@ export const ContactForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your full name"
-                  className="border-gray-300 dark:border-gray-700 focus:border-red-600 focus:ring-red-600 bg-white dark:bg-black text-black dark:text-white"
+                  className="border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 />
               </div>
 
@@ -112,7 +113,7 @@ export const ContactForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="border-gray-300 dark:border-gray-700 focus:border-red-600 focus:ring-red-600 bg-white dark:bg-black text-black dark:text-white"
+                  className="border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 />
               </div>
 
@@ -128,7 +129,7 @@ export const ContactForm = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+254 7XX XXX XXX"
-                  className="border-gray-300 dark:border-gray-700 focus:border-red-600 focus:ring-red-600 bg-white dark:bg-black text-black dark:text-white"
+                  className="border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 />
               </div>
 
@@ -141,7 +142,7 @@ export const ContactForm = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-black text-black dark:text-white focus:border-red-600 focus:ring-red-600"
+                  className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 >
                   <option value="">Select a service</option>
                   <option value="manned-guarding">Manned Guarding</option>
@@ -163,13 +164,11 @@ export const ContactForm = () => {
                   name="county"
                   value={formData.county}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-black text-black dark:text-white focus:border-red-600 focus:ring-red-600"
+                  className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 >
                   <option value="">Select a county</option>
                   {counties.map((county) => (
-                    <option key={county} value={county}>
-                      {county}
-                    </option>
+                    <option key={county} value={county}>{county}</option>
                   ))}
                 </select>
               </div>
@@ -185,7 +184,7 @@ export const ContactForm = () => {
                   value={formData.area}
                   onChange={handleChange}
                   placeholder="e.g. Thome, Syokimau, Moi Avenue"
-                  className="border-gray-300 dark:border-gray-700 focus:border-red-600 focus:ring-red-600 bg-white dark:bg-black text-black dark:text-white"
+                  className="border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 />
               </div>
 
@@ -200,13 +199,17 @@ export const ContactForm = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell us about your security needs..."
-                  className="border-gray-300 dark:border-gray-700 focus:border-red-600 focus:ring-red-600 bg-white dark:bg-black text-black dark:text-white"
+                  className="border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white text-base font-semibold py-2">
-                  Send Message
+                <Button
+                  type="submit"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white text-base font-semibold py-2"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </div>
             </form>

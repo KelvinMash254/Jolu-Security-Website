@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Loader } from "lucide-react";
 
 export const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -17,14 +18,14 @@ export const QuoteForm = () => {
     guards: ''
   });
 
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/quote`, {
-
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -60,188 +61,181 @@ export const QuoteForm = () => {
         description: "Failed to send quote request. Please try again later.",
         variant: "destructive",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const counties = [
-    "Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo Marakwet", "Embu", "Garissa", "Homa Bay", "Isiolo",
-    "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi", "Kirinyaga", "Kisii", "Kisumu", "Kitui",
-    "Kwale", "Laikipia", "Lamu", "Machakos", "Makueni", "Mandera", "Marsabit", "Meru", "Migori",
-    "Mombasa", "Murang’a", "Nairobi", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri",
-    "Samburu", "Siaya", "Taita Taveta", "Tana River", "Tharaka Nithi", "Trans Nzoia", "Turkana",
-    "Uasin Gishu", "Vihiga", "Wajir", "West Pokot"
+    "Mombasa", "Kwale", "Kilifi", "Tana River", "Lamu", "Taita Taveta", "Garissa", "Wajir", "Mandera",
+    "Marsabit", "Isiolo", "Meru", "Tharaka Nithi", "Embu", "Kitui", "Machakos", "Makueni",
+    "Nyandarua", "Nyeri", "Kirinyaga", "Murang'a", "Kiambu", "Turkana", "West Pokot", "Samburu",
+    "Trans Nzoia", "Uasin Gishu", "Elgeyo Marakwet", "Nandi", "Baringo", "Laikipia", "Nakuru",
+    "Narok", "Kajiado", "Kericho", "Bomet", "Kakamega", "Vihiga", "Bungoma", "Busia",
+    "Siaya", "Kisumu", "Homa Bay", "Migori", "Kisii", "Nyamira", "Nairobi"
   ];
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Full Name */}
-      <div className="col-span-1">
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-          Full Name *
-        </label>
-        <Input
-          id="name"
-          name="name"
-          type="text"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Your full name"
-        />
-      </div>
+    <section className="bg-white dark:bg-black text-black dark:text-white py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="name" className="block mb-1 text-sm">Full Name *</label>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
+              placeholder="Your full name"
+            />
+          </div>
 
-      {/* Email */}
-      <div className="col-span-1">
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-          Email Address *
-        </label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="your@email.com"
-        />
-      </div>
+          <div>
+            <label htmlFor="email" className="block mb-1 text-sm">Email Address *</label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
+              placeholder="you@example.com"
+            />
+          </div>
 
-      {/* Phone */}
-      <div className="col-span-1">
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-          Phone Number *
-        </label>
-        <Input
-          id="phone"
-          name="phone"
-          type="tel"
-          required
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="+254 7XX XXX XXX"
-        />
-      </div>
+          <div>
+            <label htmlFor="phone" className="block mb-1 text-sm">Phone Number *</label>
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+              className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
+              placeholder="+254 7XX XXX XXX"
+            />
+          </div>
 
-      {/* Company Name */}
-      <div className="col-span-1">
-        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-          Company Name
-        </label>
-        <Input
-          id="company"
-          name="company"
-          type="text"
-          value={formData.company}
-          onChange={handleChange}
-          placeholder="Optional"
-        />
-      </div>
+          <div>
+            <label htmlFor="company" className="block mb-1 text-sm">Company Name</label>
+            <Input
+              id="company"
+              name="company"
+              type="text"
+              value={formData.company}
+              onChange={handleChange}
+              className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
+              placeholder="Optional"
+            />
+          </div>
 
-      {/* County */}
-      <div className="col-span-1">
-        <label htmlFor="county" className="block text-sm font-medium text-gray-700 mb-1">
-          County *
-        </label>
-        <select
-          id="county"
-          name="county"
-          required
-          value={formData.county}
-          onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-        >
-          <option value="">Select a county</option>
-          {counties.map((county) => (
-            <option key={county} value={county}>{county}</option>
-          ))}
-        </select>
-      </div>
+          <div>
+            <label htmlFor="county" className="block mb-1 text-sm">County *</label>
+            <select
+              id="county"
+              name="county"
+              required
+              value={formData.county}
+              onChange={handleChange}
+              className="w-full px-3 py-2 rounded-md bg-white dark:bg-zinc-900 text-black dark:text-white border border-gray-300 dark:border-gray-700"
+            >
+              <option value="">Select a county</option>
+              {counties.map((county) => (
+                <option key={county} value={county}>{county}</option>
+              ))}
+            </select>
+          </div>
 
-      {/* Area/Town */}
-      <div className="col-span-1">
-        <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1">
-          Area/Town *
-        </label>
-        <Input
-          id="area"
-          name="area"
-          type="text"
-          required
-          value={formData.area}
-          onChange={handleChange}
-          placeholder="e.g. Thome, Syokimau, Moi Avenue"
-        />
-      </div>
+          <div>
+            <label htmlFor="area" className="block mb-1 text-sm">Area/Town *</label>
+            <Input
+              id="area"
+              name="area"
+              type="text"
+              required
+              value={formData.area}
+              onChange={handleChange}
+              className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
+              placeholder="e.g. Syokimau, Kilimani"
+            />
+          </div>
 
-      {/* Number of Guards */}
-      <div className="col-span-1">
-        <label htmlFor="guards" className="block text-sm font-medium text-gray-700 mb-1">
-          Number of Guards
-        </label>
-        <Input
-          id="guards"
-          name="guards"
-          type="number"
-          min="1"
-          value={formData.guards}
-          onChange={handleChange}
-          placeholder="Optional"
-        />
-      </div>
+          <div>
+            <label htmlFor="guards" className="block mb-1 text-sm">Number of Guards</label>
+            <Input
+              id="guards"
+              name="guards"
+              type="number"
+              min="1"
+              value={formData.guards}
+              onChange={handleChange}
+              className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
+              placeholder="Optional"
+            />
+          </div>
 
-      {/* Service Needed */}
-      <div className="col-span-1">
-        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
-          Service Needed
-        </label>
-        <select
-          id="service"
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-        >
-          <option value="">Select a service</option>
-          <option value="manned-guarding">Manned Guarding</option>
-          <option value="k9-unit-services">K9 Unit Services</option>
-          <option value="event-security">Events Security</option>
-          <option value="cctv-installation">CCTV Installation</option>
-          <option value="alarm-response">Alarm Response</option>
-          <option value="electric-fencing">Electric Fencing</option>
-          <option value="vip-close-protection">VIP Close Protection</option>
-        </select>
-      </div>
+          <div>
+            <label htmlFor="service" className="block mb-1 text-sm">Service Needed</label>
+            <select
+              id="service"
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full px-3 py-2 rounded-md bg-white dark:bg-zinc-900 text-black dark:text-white border border-gray-300 dark:border-gray-700"
+            >
+              <option value="">Select a service</option>
+              <option value="manned-guarding">Manned Guarding</option>
+              <option value="k9-unit-services">K9 Unit Services</option>
+              <option value="event-security">Events Security</option>
+              <option value="cctv-installation">CCTV Installation</option>
+              <option value="alarm-response">Alarm Response</option>
+              <option value="electric-fencing">Electric Fencing</option>
+              <option value="vip-close-protection">VIP Close Protection</option>
+            </select>
+          </div>
 
-      {/* Message */}
-      <div className="col-span-1 md:col-span-2">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-          Message
-        </label>
-        <Textarea
-          id="message"
-          name="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Tell us about your security needs..."
-        />
-      </div>
+          <div className="md:col-span-2">
+            <label htmlFor="message" className="block mb-1 text-sm">Message</label>
+            <Textarea
+              id="message"
+              name="message"
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell us about your security needs..."
+              className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
+            />
+          </div>
 
-      {/* Submit Button */}
-      <div className="col-span-1 md:col-span-2">
-        <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white">
-          Request Quote
-        </Button>
+          <div className="md:col-span-2">
+            <Button
+              type="submit"
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="flex items-center justify-center">
+                  <Loader className="animate-spin mr-2 h-4 w-4" />
+                  Sending...
+                </span>
+              ) : (
+                "Request Quote"
+              )}
+            </Button>
+          </div>
+        </form>
       </div>
-    </form>
+    </section>
   );
 };

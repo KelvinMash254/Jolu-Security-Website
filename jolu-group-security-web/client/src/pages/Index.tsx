@@ -92,7 +92,7 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 // ✅ Quick Stats section
 const QuickStats = () => (
   <section className="py-16 bg-black text-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
           <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
@@ -124,7 +124,7 @@ const QuickStats = () => (
 // ✅ About Us section
 const AboutUs = () => (
   <section id="about" className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <motion.div
@@ -193,7 +193,7 @@ const AboutUs = () => (
 
                                 {/* Services Section */}
                                 <section id="services" className="py-20 bg-white dark:bg-zinc-900">
-                                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                  <div className="w-full">
                                     <div className="text-center mb-16">
                                       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                                         Our Security Services
@@ -221,36 +221,46 @@ const AboutUs = () => (
                                             scale: 1.03,
                                             transition: { type: "spring", stiffness: 200 },
                                           }}
-                                          className="transition-transform duration-300"
+                                          className="transition-transform duration-300 h-full"
                                         >
-                                          <Link to={service.path}>
-                                            <div className="bg-white dark:bg-zinc-800 rounded-2xl shadow-md hover:shadow-xl dark:hover:shadow-zinc-700 transition-shadow duration-300 overflow-hidden h-full group">
-                                              <div className="overflow-hidden">
-                                                <img
-                                                  src={service.image}
-                                                  alt={service.title}
-                                                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-
-
-                                                />
+                                          <Link to={service.path} className="block h-full">
+                                            <div className="bg-white dark:bg-zinc-800 rounded-2xl shadow-md hover:shadow-xl dark:hover:shadow-zinc-700 transition-shadow duration-300 overflow-hidden h-full group flex flex-col justify-between">
+                                              <div>
+                                                <div className="overflow-hidden">
+                                                  <img
+                                                    src={service.image}
+                                                    alt={service.title}
+                                                   className="w-full h-auto max-h-64 object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                                  />
+                                                </div>
+                                                <div className="px-6 py-5">
+                                                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                                    {service.title}
+                                                  </h3>
+                                                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                                    {service.desc}
+                                                  </p>
+                                                </div>
                                               </div>
-                                              <div className="px-6 py-5">
-                                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                                                  {service.title}
-                                                </h3>
-                                                <p className="text-gray-600 dark:text-gray-300 text-sm">{service.desc}</p>
+
+                                              {/* Learn More button (still inside the same Link) */}
+                                              <div className="px-6 pb-5 mt-auto">
+                                                <span className="inline-block mt-4 text-sm font-medium text-red-600 dark:text-red-400 hover:underline">
+                                                  Learn More →
+                                                </span>
                                               </div>
                                             </div>
                                           </Link>
                                         </motion.div>
                                       ))}
+                                    
                                     </div>
                                   </div>
                                 </section>
 
                                 {/* Industries Section */}
                                 <section id="industries" className="py-20 bg-gray-50 dark:bg-zinc-900">
-                                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                  <div className="max-w-7xl mx-auto">
                                     <div className="text-center mb-16">
                                       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                                         Industries We Serve
@@ -347,7 +357,7 @@ const AboutUs = () => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7, ease: "easeOut" }}
     viewport={{ once: true, amount: 0.3 }}
-    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    className="max-w-7xl mx-auto"
   >
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
