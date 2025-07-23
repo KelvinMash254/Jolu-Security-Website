@@ -11,7 +11,10 @@ const Navbar = () => {
     about: false,
     services: false,
   });
-  const [isDark, setIsDark] = useState(false);
+
+  const [isDark, setIsDark] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
   const navigate = useNavigate();
   const base = import.meta.env.BASE_URL;
@@ -32,8 +35,10 @@ const Navbar = () => {
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [isDark]);
 
@@ -90,17 +95,17 @@ const Navbar = () => {
 
             <div className="relative" onMouseEnter={handleServicesEnter} onMouseLeave={handleServicesLeave}>
               <button className="text-gray-700 dark:text-white hover:text-red-600 font-medium">Services</button>
-            {openServices && (
-              <div className="absolute bg-white dark:bg-black shadow-lg rounded-md mt-2 min-w-[220px] z-50">
-                <Link to="/services/manned-guarding" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Manned Guarding</Link>
-                <Link to="/services/events-security" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Events Security</Link>
-                <Link to="/services/k9-unit" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">K9 Unit</Link>
-                <Link to="/services/cctv-installation" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">CCTV Installation</Link>
-                <Link to="/services/electric-fencing" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Electric Fencing</Link>
-                <Link to="/services/alarm-response" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Alarm Response</Link>
-                <Link to="/services/vip-close-protection" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">VIP Protection</Link>
-              </div>
-            )}
+              {openServices && (
+                <div className="absolute bg-white dark:bg-black shadow-lg rounded-md mt-2 min-w-[220px] z-50">
+                  <Link to="/services/manned-guarding" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Manned Guarding</Link>
+                  <Link to="/services/events-security" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Events Security</Link>
+                  <Link to="/services/k9-unit" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">K9 Unit</Link>
+                  <Link to="/services/cctv-installation" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">CCTV Installation</Link>
+                  <Link to="/services/electric-fencing" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Electric Fencing</Link>
+                  <Link to="/services/alarm-response" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">Alarm Response</Link>
+                  <Link to="/services/vip-close-protection" className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800">VIP Protection</Link>
+                </div>
+              )}
             </div>
 
             <a href={`${base}#industries`} className="text-gray-700 dark:text-white hover:text-red-600 font-medium">Industries</a>
@@ -122,19 +127,16 @@ const Navbar = () => {
             Get Quote
           </Button>
 
-          
-                                  {/* Toggle Theme Button in Mobile View */}
-                      <div className="md:hidden mr-1 flex items-center">
-                        <button
-                          onClick={() => setIsDark(!isDark)}
-                          className="p-2 rounded-full bg-red-600 text-white hover:bg-black transition-colors"
-                          aria-label="Toggle Theme"
-                        >
-                          {isDark ? <Sun size={18} /> : <Moon size={18} />}
-                        </button>
-                      </div>
-
-
+          {/* Toggle Theme Button in Mobile View */}
+          <div className="md:hidden mr-1 flex items-center">
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="p-2 rounded-full bg-red-600 text-white hover:bg-black transition-colors"
+              aria-label="Toggle Theme"
+            >
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
 
           {/* Hamburger Icon */}
           <button className="md:hidden text-gray-700 dark:text-white" onClick={() => setSidebarOpen(true)}>
@@ -157,68 +159,67 @@ const Navbar = () => {
             <button onClick={() => setSidebarOpen(false)}><X className="h-6 w-6" /></button>
           </div>
 
-<nav className="p-5 space-y-4">
-  <Link to="/" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Home</Link>
+          <nav className="p-5 space-y-4">
+            <Link to="/" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Home</Link>
 
-  {/* About Mobile Dropdown */}
-  <div>
-    <button
-      onClick={() =>
-        setMobileDropdown((prev) => ({ ...prev, about: !prev.about }))
-      }
-      className="flex items-center justify-between w-full text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400"
-    >
-      About <ChevronDown className="h-4 w-4" />
-    </button>
-    {mobileDropdown.about && (
-      <div className="ml-4 mt-2 space-y-2 text-sm">
-        <a href={`${base}#about`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">About Us</a>
-        <Link to="/team" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Our Team</Link>
-        <Link to="/gallery" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Gallery</Link>
-        <a href={`${base}#documents`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Documents</a>
-      </div>
-    )}
-  </div>
+            {/* About Mobile Dropdown */}
+            <div>
+              <button
+                onClick={() =>
+                  setMobileDropdown((prev) => ({ ...prev, about: !prev.about }))
+                }
+                className="flex items-center justify-between w-full text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400"
+              >
+                About <ChevronDown className="h-4 w-4" />
+              </button>
+              {mobileDropdown.about && (
+                <div className="ml-4 mt-2 space-y-2 text-sm">
+                  <a href={`${base}#about`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">About Us</a>
+                  <Link to="/team" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Our Team</Link>
+                  <Link to="/gallery" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Gallery</Link>
+                  <a href={`${base}#documents`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Documents</a>
+                </div>
+              )}
+            </div>
 
-  {/* Services Mobile Dropdown */}
-  <div>
-    <button
-      onClick={() =>
-        setMobileDropdown((prev) => ({ ...prev, services: !prev.services }))
-      }
-      className="flex items-center justify-between w-full text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400"
-    >
-      Services <ChevronDown className="h-4 w-4" />
-    </button>
-    {mobileDropdown.services && (
-      <div className="ml-4 mt-2 space-y-2 text-sm">
-        <Link to="/services/manned-guarding" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Manned Guarding</Link>
-        <Link to="/services/events-security" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Events Security</Link>
-        <Link to="/services/k9-unit" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">K9 Unit</Link>
-        <Link to="/services/cctv-installation" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">CCTV Installation</Link>
-        <Link to="/services/electric-fencing" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Electric Fencing</Link>
-        <Link to="/services/alarm-response" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Alarm Response</Link>
-        <Link to="/services/vip-close-protection" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">VIP Protection</Link>
-      </div>
-    )}
-  </div>
+            {/* Services Mobile Dropdown */}
+            <div>
+              <button
+                onClick={() =>
+                  setMobileDropdown((prev) => ({ ...prev, services: !prev.services }))
+                }
+                className="flex items-center justify-between w-full text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400"
+              >
+                Services <ChevronDown className="h-4 w-4" />
+              </button>
+              {mobileDropdown.services && (
+                <div className="ml-4 mt-2 space-y-2 text-sm">
+                  <Link to="/services/manned-guarding" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Manned Guarding</Link>
+                  <Link to="/services/events-security" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Events Security</Link>
+                  <Link to="/services/k9-unit" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">K9 Unit</Link>
+                  <Link to="/services/cctv-installation" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">CCTV Installation</Link>
+                  <Link to="/services/electric-fencing" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Electric Fencing</Link>
+                  <Link to="/services/alarm-response" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Alarm Response</Link>
+                  <Link to="/services/vip-close-protection" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">VIP Protection</Link>
+                </div>
+              )}
+            </div>
 
-  <a href={`${base}#industries`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Industries</a>
-  <a href={`${base}#why-choose-us`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Why Choose Us</a>
-  <a href={`${base}#contact`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Contact</a>
-  <Link to="/blogs" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Blogs</Link>
+            <a href={`${base}#industries`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Industries</a>
+            <a href={`${base}#why-choose-us`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Why Choose Us</a>
+            <a href={`${base}#contact`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Contact</a>
+            <Link to="/blogs" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Blogs</Link>
 
-  <button
-    onClick={() => {
-      setSidebarOpen(false);
-      navigate("/quote");
-    }}
-    className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 mt-4 w-full"
-  >
-    Get Quote
-  </button>
-</nav>
-
+            <button
+              onClick={() => {
+                setSidebarOpen(false);
+                navigate("/quote");
+              }}
+              className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 mt-4 w-full"
+            >
+              Get Quote
+            </button>
+          </nav>
         </div>
       </div>
     </nav>
