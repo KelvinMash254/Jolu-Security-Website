@@ -104,7 +104,15 @@ const transporter = nodemailer.createTransport({
 
 // ✅ Contact Form
 app.post("/api/contact", async (req, res) => {
-  const { name, email, phone, service, message } = req.body;
+  const {
+    name,
+    email,
+    phone,
+    service,
+    county,
+    area,
+    message,
+  } = req.body;
 
   const mailOptions = {
     from: `"Jolu Group Security" <${process.env.EMAIL_USER}>`,
@@ -116,17 +124,38 @@ app.post("/api/contact", async (req, res) => {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
       <p><strong>Service:</strong> ${service}</p>
+      <p><strong>County:</strong> ${county}</p>
+      <p><strong>Area:</strong> ${area}</p>
       <p><strong>Message:</strong> ${message}</p>
     `,
   };
 
   try {
+    // ✅ Save to MongoDB
+    if (!db) {
+      console.error("MongoDB not connected");
+      return res.status(500).json({ message: "Database not connected" });
+    }
+
+    await db.collection("contacts").insertOne({
+      name,
+      email,
+      phone,
+      service,
+      county,
+      area,
+      message,
+      createdAt: new Date()
+    });
+
+    // ✅ Send email
     const info = await transporter.sendMail(mailOptions);
-    console.log("Message sent: %s", info.messageId);
-    res.status(200).json({ message: "Message sent successfully" });
+    console.log("Contact Form Email sent: %s", info.messageId);
+
+    res.status(200).json({ message: "Message sent and saved successfully" });
   } catch (error) {
-    console.error("Contact Email Error:", error);
-    res.status(500).json({ message: "Failed to send message" });
+    console.error("Contact Submission Error:", error);
+    res.status(500).json({ message: "Failed to process contact request" });
   }
 });
 
