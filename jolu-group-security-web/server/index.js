@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
@@ -10,9 +11,40 @@ const port = process.env.PORT || 3021;
 app.use(cors());
 app.use(express.json());
 
+// ✅ Connect to MongoDB
+const uri = process.env.MONGO_URI;
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+
+// ✅ Optional: Make the DB accessible later via req.db or globally
+let db;
+
+async function connectToMongo() {
+  try {
+    await client.connect();
+    db = client.db(process.env.MONGO_DB_NAME); // optional: access this DB by name
+    console.log("✅ Connected to MongoDB Atlas");
+
+    // Start server only after DB connection is successful
+    app.listen(port, () => {
+      console.log(`🚀 Server is running on port ${port}`);
+    });
+  } catch (err) {
+    console.error("❌ Failed to connect to MongoDB", err);
+    process.exit(1); // exit if DB fails to connect
+  }
+}
+connectToMongo();
+
 // ✅ Serve static files from /public/lovable-uploads
 app.use('/lovable-uploads', express.static(path.join(__dirname, 'public/lovable-uploads')));
 
+// ✅ Sample Services API
 const services = [
   {
     title: "Manned Guarding",
@@ -33,7 +65,6 @@ const services = [
     title: "CCTV Installation",
     description: "Advanced CCTV installation services to help clients monitor and secure their premises effectively with continuous monitoring.",
     image: "/lovable-uploads/cctv-installation.png",
-
   },
   {
     title: "Electric Fencing",
@@ -52,17 +83,17 @@ const services = [
   },
 ];
 
-// ✅ New: Root Route
+// Root route
 app.get("/", (req, res) => {
   res.send("✅ Jolu Security Backend is live.");
 });
 
-// Services API
+// Services route
 app.get("/api/services", (req, res) => {
   res.json(services);
 });
 
-// Email transporter
+// ✅ Email transporter
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   port: process.env.EMAIL_PORT,
@@ -73,7 +104,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Contact Form Endpoint
+// ✅ Contact Form
 app.post("/api/contact", async (req, res) => {
   const { name, email, phone, service, message } = req.body;
 
@@ -94,15 +125,14 @@ app.post("/api/contact", async (req, res) => {
   try {
     const info = await transporter.sendMail(mailOptions);
     console.log("Message sent: %s", info.messageId);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     res.status(200).json({ message: "Message sent successfully" });
   } catch (error) {
-    console.error(error);
+    console.error("Contact Email Error:", error);
     res.status(500).json({ message: "Failed to send message" });
   }
 });
 
-// Quote Form Endpoint
+// ✅ Quote Form
 app.post("/api/quote", async (req, res) => {
   const {
     name,
@@ -137,15 +167,9 @@ app.post("/api/quote", async (req, res) => {
   try {
     const info = await transporter.sendMail(mailOptions);
     console.log("Quote Request sent: %s", info.messageId);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     res.status(200).json({ message: "Quote request sent successfully" });
   } catch (error) {
     console.error("Quote Email Error:", error);
     res.status(500).json({ message: "Failed to send quote request" });
   }
-});
-
-// Start Server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
 });
