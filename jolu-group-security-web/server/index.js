@@ -21,13 +21,12 @@ const client = new MongoClient(uri, {
   },
 });
 
-// ✅ Optional: Make the DB accessible later via req.db or globally
 let db;
 
 async function connectToMongo() {
   try {
     await client.connect();
-    db = client.db(process.env.MONGO_DB_NAME); // optional: access this DB by name
+    db = client.db(process.env.MONGO_DB_NAME);
     console.log("✅ Connected to MongoDB Atlas");
 
     // Start server only after DB connection is successful
@@ -36,12 +35,12 @@ async function connectToMongo() {
     });
   } catch (err) {
     console.error("❌ Failed to connect to MongoDB", err);
-    process.exit(1); // exit if DB fails to connect
+    process.exit(1);
   }
 }
 connectToMongo();
 
-// ✅ Serve static files from /public/lovable-uploads
+// ✅ Serve static files
 app.use('/lovable-uploads', express.static(path.join(__dirname, 'public/lovable-uploads')));
 
 // ✅ Sample Services API
@@ -83,12 +82,11 @@ const services = [
   },
 ];
 
-// Root route
+// ✅ Routes
 app.get("/", (req, res) => {
   res.send("✅ Jolu Security Backend is live.");
 });
 
-// Services route
 app.get("/api/services", (req, res) => {
   res.json(services);
 });
@@ -132,7 +130,7 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-// ✅ Quote Form
+// ✅ Quote Form (with MongoDB insert)
 app.post("/api/quote", async (req, res) => {
   const {
     name,
@@ -165,11 +163,32 @@ app.post("/api/quote", async (req, res) => {
   };
 
   try {
+    // ✅ Save quote to MongoDB
+    if (!db) {
+      console.error("MongoDB not connected");
+      return res.status(500).json({ message: "Database not connected" });
+    }
+
+    await db.collection('quotes').insertOne({
+      name,
+      email,
+      phone,
+      company,
+      county,
+      area,
+      service,
+      message,
+      guards,
+      createdAt: new Date()
+    });
+
+    // ✅ Send email
     const info = await transporter.sendMail(mailOptions);
     console.log("Quote Request sent: %s", info.messageId);
-    res.status(200).json({ message: "Quote request sent successfully" });
+
+    res.status(200).json({ message: "Quote request sent and saved successfully" });
   } catch (error) {
-    console.error("Quote Email Error:", error);
-    res.status(500).json({ message: "Failed to send quote request" });
+    console.error("Quote Submission Error:", error);
+    res.status(500).json({ message: "Failed to process quote request" });
   }
 });
