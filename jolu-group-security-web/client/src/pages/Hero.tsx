@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="hero-slide w-full h-full"></div>
         </div>
         {/* Dark Overlay */}
-        {/* <div className="hero-overlay absolute inset-0 bg-black bg-opacity-60"></div> */}
+        <div className="hero-overlay absolute inset-0 bg-black bg-opacity-0"></div>
       </div>
 
       {/* Hero Content */}

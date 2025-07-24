@@ -30,6 +30,21 @@ import ElectricFencing from "@/pages/services/ElectricFencing";
 import AlarmResponse from "@/pages/services/AlarmResponse";
 import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
+
+
+            const cardVariants = {
+              hidden: { opacity: 0, y: 30 },
+              visible: (i: number) => ({
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: i * 0.2,
+                  duration: 0.6,
+                },
+              }),
+            };
+
+
       // ✅ Reusable animated number counter
               const AnimatedCounter = ({ end, suffix = '', duration = 2 }) => {
                 const { ref, inView } = useInView({ triggerOnce: true });
@@ -143,18 +158,24 @@ const AboutUs = () => (
             At Jolu Group Security, we believe that safety is the foundation of progress. Our mission is to deliver reliable, mission-driven security solutions that empower individuals and organizations to operate confidently, even in the most challenging environments.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <Shield className="h-12 w-12 text-red-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 dark:text-white">Integrity</h3>
-            </div>
-            <div className="text-center">
-              <Eye className="h-12 w-12 text-red-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 dark:text-white">Vigilance</h3>
-            </div>
-            <div className="text-center">
-              <Users className="h-12 w-12 text-red-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900 dark:text-white">Professionalism</h3>
-            </div>
+            {[ 
+              { icon: <Shield className="h-12 w-12 text-red-600 mx-auto mb-3" />, label: "Integrity" },
+              { icon: <Eye className="h-12 w-12 text-red-600 mx-auto mb-3" />, label: "Vigilance" },
+              { icon: <Users className="h-12 w-12 text-red-600 mx-auto mb-3" />, label: "Professionalism" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={cardVariants}
+                className="text-center"
+              >
+                {item.icon}
+                <h3 className="font-semibold text-gray-900 dark:text-white">{item.label}</h3>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
