@@ -162,6 +162,7 @@ export const ContactForm = () => {
                 <select
                   id="county"
                   name="county"
+                  required
                   value={formData.county}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
@@ -181,6 +182,7 @@ export const ContactForm = () => {
                   id="area"
                   name="area"
                   type="text"
+                  required
                   value={formData.area}
                   onChange={handleChange}
                   placeholder="e.g. Thome, Syokimau, Moi Avenue"
