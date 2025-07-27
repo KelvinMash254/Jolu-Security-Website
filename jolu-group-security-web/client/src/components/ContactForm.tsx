@@ -157,7 +157,7 @@ export const ContactForm = () => {
 
               <div>
                 <label htmlFor="county" className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1 block">
-                  County
+                  County *
                 </label>
                 <select
                   id="county"
@@ -176,7 +176,7 @@ export const ContactForm = () => {
 
               <div>
                 <label htmlFor="area" className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1 block">
-                  Area/Town
+                  Area/Town *
                 </label>
                 <Input
                   id="area"
