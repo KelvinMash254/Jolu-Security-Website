@@ -136,67 +136,108 @@ const QuickStats = () => (
 );
 
 
-// ✅ About Us section
-const AboutUs = () => (
-  <section id="about" className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            About Jolu Group Security Ltd
-          </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-            Jolu Group Security Limited is a trusted security company providing comprehensive and tailored protective services, logistics, procurement, and training for the defense, energy, and financial sectors, as well as high net-worth clients, diplomatic missions, and international organizations operating in high-risk, volatile, hostile, and complex environments.
-          </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-            At Jolu Group Security, we believe that safety is the foundation of progress. Our mission is to deliver reliable, mission-driven security solutions that empower individuals and organizations to operate confidently, even in the most challenging environments.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[ 
-              { icon: <Shield className="h-12 w-12 text-red-600 mx-auto mb-3" />, label: "Integrity" },
-              { icon: <Eye className="h-12 w-12 text-red-600 mx-auto mb-3" />, label: "Vigilance" },
-              { icon: <Users className="h-12 w-12 text-red-600 mx-auto mb-3" />, label: "Professionalism" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={cardVariants}
-                className="text-center"
-              >
-                {item.icon}
-                <h3 className="font-semibold text-gray-900 dark:text-white">{item.label}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+const AboutUs = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.6,
+      },
+    }),
+  };
 
-        {/* Image */}
-        <motion.div
-          className="lg:pl-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}lovable-uploads/guards-outside.png`}
-            alt="JOLU Group Security team"
-            className="rounded-lg shadow-lg w-full"
-          />
-        </motion.div>
+  return (
+    <section
+      id="about"
+      className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Text Content - from left */}
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              About Jolu Group Security Ltd
+            </h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              Jolu Group Security Limited is a trusted security company
+              providing comprehensive and tailored protective services,
+              logistics, procurement, and training for the defense, energy, and
+              financial sectors, as well as high net-worth clients, diplomatic
+              missions, and international organizations operating in high-risk,
+              volatile, hostile, and complex environments.
+            </p>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+              At Jolu Group Security, we believe that safety is the foundation
+              of progress. Our mission is to deliver reliable, mission-driven
+              security solutions that empower individuals and organizations to
+              operate confidently, even in the most challenging environments.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: (
+                    <Shield className="h-12 w-12 text-red-600 mx-auto mb-3" />
+                  ),
+                  label: "Integrity",
+                },
+                {
+                  icon: (
+                    <Eye className="h-12 w-12 text-red-600 mx-auto mb-3" />
+                  ),
+                  label: "Vigilance",
+                },
+                {
+                  icon: (
+                    <Users className="h-12 w-12 text-red-600 mx-auto mb-3" />
+                  ),
+                  label: "Professionalism",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={cardVariants}
+                  className="text-center"
+                >
+                  {item.icon}
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {item.label}
+                  </h3>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Image Content - from right */}
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}lovable-uploads/guards-outside.png`}
+              alt="About Jolu"
+              className="w-full h-auto rounded-2xl shadow-lg max-w-md"
+            />
+          </motion.div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
       // ✅ Main Index Page
       const Index = () => {
