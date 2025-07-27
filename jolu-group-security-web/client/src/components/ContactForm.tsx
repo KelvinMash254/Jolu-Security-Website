@@ -69,10 +69,18 @@ export const ContactForm = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+) => {
+  const { name, value } = e.target;
+
+  if (name === "phone") {
+    // Allow only digits and plus sign
+    const numericValue = value.replace(/[^\d+]/g, "");
+    setFormData({ ...formData, [name]: numericValue });
+  } else {
+    setFormData({ ...formData, [name]: value });
+  }
+};
 
   return (
     <section className="py-10 bg-white dark:bg-black transition-colors duration-300">
@@ -125,10 +133,13 @@ export const ContactForm = () => {
                   id="phone"
                   name="phone"
                   type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9+]*"
                   required
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+254 7XX XXX XXX"
+                  maxLength={13}
                   className="border-gray-300 dark:border-gray-700 bg-white dark:bg-zinc-900 text-black dark:text-white"
                 />
               </div>

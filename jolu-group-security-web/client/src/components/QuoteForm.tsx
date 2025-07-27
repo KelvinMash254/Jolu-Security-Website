@@ -70,7 +70,18 @@ export const QuoteForm = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      const numericValue = value.replace(/[^\d+]/g, '');
+      const sanitized = numericValue.startsWith('+')
+        ? '+' + numericValue.slice(1).replace(/\D/g, '')
+        : numericValue.replace(/\D/g, '');
+
+      setFormData(prev => ({ ...prev, phone: sanitized }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const counties = [
@@ -118,9 +129,11 @@ export const QuoteForm = () => {
             <label htmlFor="phone" className="block mb-1 text-sm">Phone Number *</label>
             <Input
               id="phone"
+              inputMode='numeric'
               name="phone"
               type="tel"
               required
+              maxLength={13}
               value={formData.phone}
               onChange={handleChange}
               className="bg-white dark:bg-zinc-900 text-black dark:text-white border-gray-300 dark:border-gray-700"
