@@ -153,6 +153,7 @@ const AboutUs = () => {
     <section
       id="about"
       className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white"
+      style={{ overflowX: 'hidden' }}
     >
       <div className="w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
