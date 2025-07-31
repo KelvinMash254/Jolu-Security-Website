@@ -106,7 +106,7 @@ import VIPCloseProtection from "@/pages/services/VIPCloseProtection";
 
 const QuickStats = () => (
   <section className="py-16 bg-white dark:bg-black text-gray-900 dark:text-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
           <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
@@ -153,8 +153,9 @@ const AboutUs = () => {
     <section
       id="about"
       className="py-20 bg-white dark:bg-zinc-900 text-black dark:text-white"
+      style={{ overflowX: 'hidden' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content - from left */}
           <motion.div
@@ -322,7 +323,7 @@ const AboutUs = () => {
 
                                 {/* Industries Section */}
                                 <section id="industries" className="py-20 bg-gray-50 dark:bg-zinc-900">
-                                  <div className="max-w-7xl mx-auto">
+                                  <div className="w-full">
                                     <div className="text-center mb-16">
                                       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                                         Industries We Serve
@@ -419,7 +420,7 @@ const AboutUs = () => {
     whileInView={{ opacity: 1 }}
     transition={{ duration: 0.7, ease: "easeOut" }}
     viewport={{ once: true, amount: 0.3 }}
-    className="max-w-7xl mx-auto"
+    className="w-full"
   >
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
