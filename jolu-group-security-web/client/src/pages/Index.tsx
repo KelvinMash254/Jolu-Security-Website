@@ -163,10 +163,10 @@ const AboutUs = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="px-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               About Jolu Group Security Ltd
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            <p className="px-4 text-lg text-gray-700 dark:text-gray-300 mb-6">
               Jolu Group Security Limited is a trusted security company
               providing comprehensive and tailored protective services,
               logistics, procurement, and training for the defense, energy, and
@@ -174,7 +174,7 @@ const AboutUs = () => {
               missions, and international organizations operating in high-risk,
               volatile, hostile, and complex environments.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+            <p className="px-4 text-lg text-gray-700 dark:text-gray-300 mb-8">
               At Jolu Group Security, we believe that safety is the foundation
               of progress. Our mission is to deliver reliable, mission-driven
               security solutions that empower individuals and organizations to
@@ -228,7 +228,7 @@ const AboutUs = () => {
             className="flex justify-center"
           >
             <img
-              src="/gallery/guards-outside.png"
+              src="/lovable-uploads/guards-outside.png"
               alt="About Jolu"
               className="w-full h-auto rounded-2xl shadow-lg max-w-md"
             />
@@ -244,7 +244,7 @@ const AboutUs = () => {
         const [showQuoteForm, setShowQuoteForm] = useState(false);
 
         return (
-          <div>
+          <div className="overflow-x-hidden">
             {/* Hero Section */}
 
             <Hero />
@@ -438,39 +438,39 @@ const AboutUs = () => {
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white mb-6">
+        <h3 className="px-4 text-2xl font-semibold text-neutral-900 dark:text-white mb-6">
           Contact Information
         </h3>
         <div className="space-y-6">
-          <div className="flex items-start">
+          <div className="px-4 flex items-start">
             <Phone className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
               <div className="font-semibold text-neutral-800 dark:text-white">Phone</div>
               <div className="text-gray-700 dark:text-gray-300">+254 790 298 003 | +254 790 182 487</div>
             </div>
           </div>
-          <div className="flex items-start">
+          <div className="px-4 flex items-start">
             <Mail className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
               <div className="font-semibold text-neutral-800 dark:text-white">Email</div>
               <div className="text-gray-700 dark:text-gray-300">jolugroup@gmail.com</div>
             </div>
           </div>
-          <div className="flex items-start">
+          <div className="px-4 flex items-start">
             <MapPin className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
               <div className="font-semibold text-neutral-800 dark:text-white">Nairobi – Main Office</div>
               <div className="text-gray-700 dark:text-gray-300">Thome Estate, Nairobi</div>
             </div>
           </div>
-          <div className="flex items-start">
+          <div className="px-4 flex items-start">
             <MapPin className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
               <div className="font-semibold text-neutral-800 dark:text-white">Nakuru – Regional Office</div>
               <div className="text-gray-700 dark:text-gray-300">Nakuru</div>
             </div>
           </div>
-          <div className="flex items-start">
+          <div className="px-4 flex items-start">
             <MapPin className="h-6 w-6 text-red-500 mr-4 mt-1" />
             <div>
               <div className="font-semibold text-neutral-800 dark:text-white">Migori – Branch Office</div>
@@ -479,7 +479,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="px-4 mt-8">
           <a href="https://wa.me/254790298003" target="_blank" rel="noopener noreferrer">
             <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-sm transition-all">
               <Phone className="mr-2 h-4 w-4" />
@@ -489,7 +489,7 @@ const AboutUs = () => {
         </div>
 
         {/* Maps */}
-        <div className="mt-12 space-y-10">
+        <div className="px-4 mt-12 space-y-10">
           <div>
             <h4 className="font-semibold text-lg text-gray-800 dark:text-white mb-2">Nairobi – Main Office</h4>
             <iframe
