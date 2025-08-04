@@ -228,9 +228,9 @@ const AboutUs = () => {
             className="flex justify-center"
           >
             <img
-              src="/lovable-uploads/guards-outside.png"
+              src={`${import.meta.env.BASE_URL}gallery/best-image.jpeg`}
               alt="About Jolu"
-              className="w-full h-auto rounded-2xl shadow-lg max-w-md"
+              className="w-full h-auto rounded-2xl shadow-lg max-w-x1"
             />
           </motion.div>
         </div>
