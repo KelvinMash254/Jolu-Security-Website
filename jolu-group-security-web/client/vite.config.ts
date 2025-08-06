@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Jolu-Security-Website/", // ✅ GitHub Pages base path
+  base: "", // ✅ GitHub Pages base path
   server: {
     host: "::", // IPv6 support
     port: 8080,
