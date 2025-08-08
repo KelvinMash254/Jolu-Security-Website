@@ -6,11 +6,11 @@ export const DocumentsSection = () => {
   const documents = [
     {
       title: "Company Profile",
-      file: "/Jolu-Security-Website/lovable-uploads/company-profile.pdf",
+      file: "/lovable-uploads/company-profile.pdf",
     },
     {
       title: "Security Brochure",
-      file: "/Jolu-Security-Website/lovable-uploads/brochure.pdf",
+      file: "/lovable-uploads/brochure.pdf",
     },
   ];
 

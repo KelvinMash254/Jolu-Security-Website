@@ -18,7 +18,7 @@ const K9Unit = () => {
         className="relative h-[60vh] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('/Jolu-Security-Website/lovable-uploads/k9-unit.png')",
+            "url('/lovable-uploads/k9-unit.png')",
         }}
       >
         <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">

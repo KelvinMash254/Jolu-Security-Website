@@ -18,7 +18,7 @@ const EventsSecurity = () => {
         className="relative h-[60vh] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('/Jolu-Security-Website/lovable-uploads/events-security.png')",
+            "url('/lovable-uploads/events-security.png')",
         }}
       >
         <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">

@@ -15,7 +15,7 @@ const EventSecurityChecklist = () => {
         </p>
 
         <img
-          src="/Jolu-Security-Website/lovable-uploads/event-security-what-to-consider.jpg"
+          src="/lovable-uploads/event-security-what-to-consider.jpg"
           alt="Event Security Kenya"
           className="rounded-lg w-full mb-10"
         />

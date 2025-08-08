@@ -15,7 +15,7 @@ const Top5Ways = () => {
         </p>
 
         <img
-          src="/Jolu-Security-Website/lovable-uploads/secure-home.jpg"
+          src="/lovable-uploads/secure-home.jpg"
           alt="Secure your home"
           className="rounded-lg w-full mb-10"
         />

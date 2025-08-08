@@ -30,7 +30,7 @@ const Blogs = () => {
                 <CardHeader>
                   <div className="mb-4">
                     <img
-                      src="/Jolu-Security-Website/lovable-uploads/secure-home.jpg"
+                      src="/lovable-uploads/secure-home.jpg"
                       alt="Top 5 Ways to Secure Your Home"
                       className="w-full h-auto max-h-64 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                     />
@@ -56,7 +56,7 @@ const Blogs = () => {
                 <CardHeader>
                   <div className="mb-4">
                     <img
-                      src="/Jolu-Security-Website/lovable-uploads/event-security-what-to-consider.jpg"
+                      src="/lovable-uploads/event-security-what-to-consider.jpg"
                       alt="Event Security: What to Consider"
                       className="w-full h-auto max-h-64 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                     />
@@ -82,7 +82,7 @@ const Blogs = () => {
                 <CardHeader>
                   <div className="mb-4">
                     <img
-                      src="/Jolu-Security-Website/lovable-uploads/cctv-image.jpg"
+                      src="/lovable-uploads/cctv-image.jpg"
                       alt="Why Every Business Needs a CCTV System"
                       className="w-full h-auto max-h-64 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                     />

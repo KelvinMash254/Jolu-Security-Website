@@ -15,7 +15,7 @@ const WhyCCTVMatters = () => {
         </p>
 
         <img
-          src="/Jolu-Security-Website/lovable-uploads/cctv-image.jpg"
+          src="/lovable-uploads/cctv-image.jpg"
           alt="Business CCTV Security"
           className="rounded-lg w-full mb-10"
         />

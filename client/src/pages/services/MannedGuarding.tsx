@@ -17,7 +17,7 @@ const MannedGuarding = () => {
         className="relative h-[60vh] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('/Jolu-Security-Website/lovable-uploads/manned-guarding.jpg')",
+            "url('/lovable-uploads/manned-guarding.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">

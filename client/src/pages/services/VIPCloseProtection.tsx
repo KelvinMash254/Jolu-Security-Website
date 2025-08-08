@@ -18,7 +18,7 @@ const VIPCloseProtection = () => {
         className="relative h-[60vh] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('/Jolu-Security-Website/lovable-uploads/vip-close-protection.png')",
+            "url('/lovable-uploads/vip-close-protection.png')",
         }}
       >
         <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">
