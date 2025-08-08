@@ -11,25 +11,24 @@ const AlarmResponse = () => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-return (
-  <div className="bg-white dark:bg-black text-gray-900 dark:text-white">
-    {/* Hero Banner */}
-    <div
-      className="relative h-[60vh] bg-cover bg-center"
-      style={{
-        backgroundImage:
-           `url(${import.meta.env.BASE_URL}lovable-uploads/alarm-response.png)`,
-      }}
-    >
-      <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">
-        <h1
-          className="text-white text-4xl md:text-6xl font-bold text-center px-4"
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          Rapid Alarm Response Services
-        </h1>
-      </div>
+  return (
+    <div className="bg-white dark:bg-black text-gray-900 dark:text-white">
+      {/* Hero Banner */}
+      <div
+        className="relative h-[60vh] bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${import.meta.env.BASE_URL}lovable-uploads/alarm-response.png)`,
+        }}
+      >
+        <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">
+          <h1
+            className="text-white text-4xl md:text-6xl font-bold text-center px-4"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            Rapid Alarm Response Services
+          </h1>
+        </div>
       </div>
 
       {/* Description Section */}
@@ -108,23 +107,24 @@ return (
         </div>
       </section>
 
-        {/* Call to Action */}
-        <section
-          className="py-16 bg-white dark:bg-neutral-900 text-black dark:text-white text-center"
-          data-aos="zoom-in"
-        >
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">
-            Need Immediate Alarm Coverage?
-          </h3>
-          <p className="text-lg mb-8">
-            Count on JOLU Group Security for fast, professional alarm response whenever and wherever you need it.
-          </p>
-          <Link to="/quote">
-            <Button className="bg-red-700 text-white hover:bg-red-800 text-lg px-6 py-3">
-              Request a Free Quote
-            </Button>
-          </Link>
-        </section>
+      {/* Call to Action */}
+      <section
+        className="py-16 bg-white dark:bg-neutral-900 text-black dark:text-white text-center"
+        data-aos="zoom-in"
+      >
+        <h3 className="text-3xl md:text-4xl font-bold mb-6">
+          Need Immediate Alarm Coverage?
+        </h3>
+        <p className="text-lg mb-8">
+          Count on JOLU Group Security for fast, professional alarm response
+          whenever and wherever you need it.
+        </p>
+        <Link to="/quote">
+          <Button className="bg-red-700 text-white hover:bg-red-800 text-lg px-6 py-3">
+            Request a Free Quote
+          </Button>
+        </Link>
+      </section>
 
       <Footer />
     </div>

@@ -37,15 +37,15 @@ const K9Unit = () => {
           Unmatched Security with Trained K9 Units
         </h2>
         <p className="text-lg leading-8 mb-6">
-          At <strong>Jolu Group Security</strong>, our expertly trained K9 units provide
-          unmatched detection, deterrence, and response capabilities across various environments.
-          Whether it’s explosives, narcotics, or crowd management, our K9 teams bring discipline
-          and precision to your security setup.
+          At <strong>Jolu Group Security</strong>, our highly trained K9 units offer a powerful blend
+          of detection, deterrence, and rapid response. Whether you’re protecting events,
+          facilities, or conducting targeted patrols, our canines operate with precision
+          and control.
         </p>
         <p className="text-lg leading-8 mb-6">
-          Each canine operates with a certified handler under strict operational standards,
-          ensuring safety and effectiveness in both proactive and reactive security situations.
-          Perfect for events, facilities, patrols, and rapid deployment.
+          Each dog is partnered with a certified handler and trained in explosive detection,
+          narcotics search, tracking, and threat response. Together, they ensure operational
+          excellence in both proactive and emergency security deployments.
         </p>
       </section>
 
@@ -68,8 +68,8 @@ const K9Unit = () => {
                 Detection Accuracy
               </h4>
               <p>
-                Our dogs are trained to detect explosives, narcotics, and contraband with
-                remarkable precision in various environments.
+                Our canines are trained to detect explosives, narcotics, and contraband
+                with exceptional precision across diverse environments.
               </p>
             </div>
             <div
@@ -78,11 +78,11 @@ const K9Unit = () => {
               data-aos-delay="200"
             >
               <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">
-                Rapid Response
+                Rapid Tactical Response
               </h4>
               <p>
-                K9 teams can deploy quickly to high-risk or sensitive areas, providing mobile
-                reinforcement and proactive threat mitigation.
+                K9 teams are mobile, responsive, and deploy quickly to secure high-risk or
+                time-sensitive areas.
               </p>
             </div>
             <div
@@ -94,8 +94,8 @@ const K9Unit = () => {
                 Certified Handlers
               </h4>
               <p>
-                Every K9 operates under the direction of a certified handler, ensuring control,
-                safety, and consistent operational performance.
+                Every dog works under the supervision of a certified handler, ensuring discipline,
+                control, and operational effectiveness.
               </p>
             </div>
           </div>
@@ -111,8 +111,8 @@ const K9Unit = () => {
           Need Powerful K9 Security?
         </h3>
         <p className="text-lg mb-8">
-          Deploy professionally trained K9 teams with Jolu Group Security for accurate detection,
-          deterrence, and rapid response.
+          Partner with <strong>Jolu Group Security</strong> for advanced canine security solutions
+          that combine speed, accuracy, and reliability.
         </p>
         <Link to="/quote">
           <Button className="text-white bg-red-700 hover:bg-red-800 text-lg px-6 py-3">

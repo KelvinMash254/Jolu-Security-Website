@@ -32,18 +32,20 @@ const EventsSecurity = () => {
       </div>
 
       {/* Description Section */}
-      <section
-        className="py-16 px-4 max-w-5xl mx-auto"
-        data-aos="fade-up"
-      >
+      <section className="py-16 px-4 max-w-5xl mx-auto" data-aos="fade-up">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-red-700 dark:text-red-400">
           Professional Protection for Every Occasion
         </h2>
         <p className="text-lg leading-8 mb-6">
-          At <strong>Jolu Group Security</strong>, we understand the importance of ensuring safety at public and private events. Whether it's a concert, wedding, corporate gathering, or sports event, our trained guards maintain peace, manage crowds, and respond swiftly to potential threats.
+          At <strong>Jolu Group Security</strong>, we know that safety and order are critical
+          to the success of any event. From concerts and weddings to corporate functions and
+          public festivals, our experienced security personnel are trained to manage crowds,
+          protect guests, and handle emergencies with calm professionalism.
         </p>
         <p className="text-lg leading-8 mb-6">
-          Our event security solutions are tailored to meet the scale and nature of your occasion, working closely with organizers to implement access control, emergency response, VIP protection, and perimeter monitoring.
+          Our event security plans are tailored to your specific venue, audience size,
+          and risk level—ensuring thorough coverage through access control, perimeter
+          surveillance, VIP protection, and emergency readiness.
         </p>
       </section>
 
@@ -63,10 +65,11 @@ const EventsSecurity = () => {
               data-aos-delay="100"
             >
               <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">
-                Crowd Control Expertise
+                Crowd Management Experts
               </h4>
               <p>
-                Our team is skilled in managing large groups and preventing stampedes, conflicts, or disruptions during events.
+                We control foot traffic, prevent overcrowding, and ensure order—so your event runs
+                smoothly from start to finish.
               </p>
             </div>
             <div
@@ -75,10 +78,11 @@ const EventsSecurity = () => {
               data-aos-delay="200"
             >
               <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">
-                VIP & Guest Protection
+                VIP & Guest Safety
               </h4>
               <p>
-                From celebrities to corporate guests, we provide discreet, professional security that ensures peace of mind for high-profile attendees.
+                Whether it's celebrities or high-level executives, we provide discreet and
+                personalized protection for all your key guests.
               </p>
             </div>
             <div
@@ -87,10 +91,11 @@ const EventsSecurity = () => {
               data-aos-delay="300"
             >
               <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">
-                Emergency Preparedness
+                Emergency Response Ready
               </h4>
               <p>
-                We plan for the unexpected—ensuring protocols are in place for fire, medical, or evacuation scenarios with rapid response teams on standby.
+                Our team is trained for fire, medical, and evacuation scenarios—with clear
+                protocols and rapid coordination in place.
               </p>
             </div>
           </div>
@@ -106,7 +111,8 @@ const EventsSecurity = () => {
           Let Us Secure Your Next Event
         </h3>
         <p className="text-lg mb-8">
-          Trust Jolu Group Security for peace of mind and professional handling of your upcoming event—big or small.
+          Trust <strong>Jolu Group Security</strong> for peace of mind and professional handling
+          of your event—no matter the size or scope.
         </p>
         <Link to="/quote">
           <Button className="text-white bg-red-700 hover:bg-red-800 text-lg px-6 py-3">

@@ -15,7 +15,7 @@ const WhyCCTVMatters = () => {
         </p>
 
         <img
-          src="/lovable-uploads/cctv-image.jpg"
+          src={`${import.meta.env.BASE_URL}lovable-uploads/cctv-image.jpg`}
           alt="Business CCTV Security"
           className="rounded-lg w-full mb-10"
         />

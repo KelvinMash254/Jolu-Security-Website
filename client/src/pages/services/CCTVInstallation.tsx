@@ -17,8 +17,7 @@ const CCTVInstallation = () => {
       <div
         className="relative h-[60vh] bg-cover bg-center"
         style={{
-          backgroundImage:
-            `url(${import.meta.env.BASE_URL}lovable-uploads/cctv-installation.png)`,
+          backgroundImage: `url(${import.meta.env.BASE_URL}lovable-uploads/cctv-installation.png)`,
         }}
       >
         <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">

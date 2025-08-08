@@ -15,7 +15,7 @@ const Top5Ways = () => {
         </p>
 
         <img
-          src="/lovable-uploads/secure-home.jpg"
+          src={`${import.meta.env.BASE_URL}lovable-uploads/secure-home.jpg`}
           alt="Secure your home"
           className="rounded-lg w-full mb-10"
         />

@@ -3,14 +3,16 @@ import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const DocumentsSection = () => {
+  const basePath = import.meta.env.BASE_URL;
+
   const documents = [
     {
       title: "Company Profile",
-      file: `${import.meta.env.BASE_URL}lovable-uploads/company-profile.pdf`,
+      file: `${basePath}lovable-uploads/company-profile.pdf`,
     },
     {
       title: "Security Brochure",
-      file: `${import.meta.env.BASE_URL}lovable-uploads/brochure.pdf`,
+      file: `${basePath}lovable-uploads/brochure.pdf`,
     },
   ];
 

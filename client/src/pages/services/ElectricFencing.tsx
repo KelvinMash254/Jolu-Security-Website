@@ -24,6 +24,7 @@ const ElectricFencing = () => {
           <h1
             className="text-white text-4xl md:text-6xl font-bold text-center px-4"
             data-aos="zoom-in"
+            data-aos-delay="200"
           >
             Electric Fencing Solutions
           </h1>
@@ -31,39 +32,34 @@ const ElectricFencing = () => {
       </div>
 
       {/* Description Section */}
-      <section className="py-16 px-4 max-w-5xl mx-auto text-gray-800 dark:text-white">
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-6 text-center text-red-700 dark:text-red-400"
-          data-aos="fade-up"
-        >
-          Protect Your Perimeter with Confidence
+      <section className="py-16 px-4 max-w-5xl mx-auto" data-aos="fade-up">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-red-700 dark:text-red-400">
+          Smarter Boundaries, Stronger Protection
         </h2>
-        <p className="text-lg leading-8 mb-6" data-aos="fade-up" data-aos-delay="100">
-          At <strong>Jolu Group Security</strong>, our electric fencing solutions are designed to deliver
-          maximum perimeter protection while deterring unauthorized entry. Whether for
-          residential, commercial, or industrial properties, our systems provide a visible,
-          effective line of defense.
+        <p className="text-lg leading-8 mb-6">
+          At <strong>Jolu Group Security</strong>, we offer high-performance electric fencing systems
+          that deliver powerful perimeter protection for residential, commercial, and industrial
+          spaces. These solutions provide a strong visual and physical deterrent against unauthorized entry.
         </p>
-        <p className="text-lg leading-8 mb-6" data-aos="fade-up" data-aos-delay="200">
-          We use high-quality equipment integrated with alarm systems and access control to offer
-          a powerful security layer. Our trained technicians ensure clean installation,
-          compliance with safety standards, and full system functionality—giving you peace of
-          mind, day and night.
+        <p className="text-lg leading-8 mb-6">
+          From integrated alarm systems to professional-grade components, our electric fencing
+          setups are installed with precision and compliance in mind—ensuring safety,
+          efficiency, and 24/7 protection.
         </p>
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-neutral-100 dark:bg-neutral-900 py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h3
-            className="text-2xl md:text-3xl font-semibold text-center text-gray-900 dark:text-white mb-10"
-            data-aos="fade-up"
-          >
-            Why Choose Our Electric Fencing
+      <section
+        className="bg-gray-100 dark:bg-neutral-900 py-16 transition-colors duration-300"
+        data-aos="fade-up"
+      >
+        <div className="max-w-6xl mx-auto px-4 text-gray-900 dark:text-white">
+          <h3 className="text-2xl md:text-3xl font-semibold text-center mb-10">
+            Why Our Electric Fencing Services Stand Out
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div
-              className="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow hover:shadow-md transition"
+              className="bg-white dark:bg-black p-6 rounded-lg shadow hover:shadow-md transition"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -71,34 +67,34 @@ const ElectricFencing = () => {
                 High-Voltage Deterrence
               </h4>
               <p>
-                Our systems deliver a non-lethal but highly effective electric shock that deters
-                intruders and alerts security teams.
+                Our fencing systems deliver a non-lethal electric shock that discourages intruders
+                and helps protect your perimeter effectively.
               </p>
             </div>
             <div
-              className="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow hover:shadow-md transition"
+              className="bg-white dark:bg-black p-6 rounded-lg shadow hover:shadow-md transition"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">
-                24/7 Monitoring
+                Real-Time Monitoring
               </h4>
               <p>
-                We integrate fencing with alarms and real-time notifications, ensuring your
-                perimeter is under watch around the clock.
+                Integrated with alarm and surveillance systems, our fences provide real-time alerts
+                and monitoring to keep your property secure at all times.
               </p>
             </div>
             <div
-              className="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow hover:shadow-md transition"
+              className="bg-white dark:bg-black p-6 rounded-lg shadow hover:shadow-md transition"
               data-aos="fade-up"
               data-aos-delay="300"
             >
               <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">
-                Custom Installations
+                Customized Installation
               </h4>
               <p>
-                We tailor fencing layouts to your specific property size, shape, and threat
-                profile, ensuring complete coverage and aesthetics.
+                We assess your property’s layout and risk level to design and install electric fencing
+                that fits perfectly—both functionally and aesthetically.
               </p>
             </div>
           </div>
@@ -106,24 +102,24 @@ const ElectricFencing = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-white dark:bg-neutral-900 text-center">
-        <h3
-          className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white"
-          data-aos="fade-up"
-        >
-          Secure Your Perimeter Today
+      <section
+        className="py-16 bg-white dark:bg-neutral-900 text-black dark:text-white text-center transition-colors duration-300"
+        data-aos="zoom-in"
+      >
+        <h3 className="text-3xl md:text-4xl font-bold mb-6">
+          Defend Your Boundaries Today
         </h3>
-        <p className="text-lg mb-8 text-gray-700 dark:text-gray-300" data-aos="fade-up" data-aos-delay="100">
-          Get a professionally installed electric fence and elevate your property's security.
+        <p className="text-lg mb-8">
+          Get a professionally installed electric fencing solution from Jolu Group Security—built to last,
+          and trusted to protect.
         </p>
-        <Link to="/quote" data-aos="zoom-in" data-aos-delay="200">
-          <Button className="bg-red-700 hover:bg-red-800 text-white text-lg px-6 py-3">
+        <Link to="/quote">
+          <Button className="text-white bg-red-700 hover:bg-red-800 text-lg px-6 py-3">
             Request a Free Quote
           </Button>
         </Link>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

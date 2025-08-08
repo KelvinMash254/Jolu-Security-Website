@@ -30,7 +30,7 @@ const Blogs = () => {
                 <CardHeader>
                   <div className="mb-4">
                     <img
-                      src={`${import.meta.env.BASE_URL}lovable-uploads/secure-home.jpg}`}
+                      src={`${import.meta.env.BASE_URL}lovable-uploads/secure-home.jpg`}
                       alt="Top 5 Ways to Secure Your Home"
                       className="w-full h-auto max-h-64 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                     />

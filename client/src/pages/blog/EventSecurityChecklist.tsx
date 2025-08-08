@@ -15,7 +15,7 @@ const EventSecurityChecklist = () => {
         </p>
 
         <img
-          src="/lovable-uploads/event-security-what-to-consider.jpg"
+          src={`${import.meta.env.BASE_URL}lovable-uploads/event-security-what-to-consider.jpg`}
           alt="Event Security Kenya"
           className="rounded-lg w-full mb-10"
         />
