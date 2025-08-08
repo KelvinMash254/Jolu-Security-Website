@@ -18,7 +18,7 @@ return (
       className="relative h-[60vh] bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('/lovable-uploads/alarm-response.png')",
+           `url(${import.meta.env.BASE_URL}lovable-uploads/alarm-response.png)`,
       }}
     >
       <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">

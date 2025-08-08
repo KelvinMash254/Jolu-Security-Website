@@ -17,8 +17,7 @@ const K9Unit = () => {
       <div
         className="relative h-[60vh] bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('/lovable-uploads/k9-unit.png')",
+          backgroundImage: `url(${import.meta.env.BASE_URL}lovable-uploads/k9-unit.png)`,
         }}
       >
         <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">

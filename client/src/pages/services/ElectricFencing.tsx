@@ -17,7 +17,7 @@ const ElectricFencing = () => {
       <div
         className="relative h-[60vh] bg-cover bg-center"
         style={{
-          backgroundImage: "url('/lovable-uploads/electric-fence.png')",
+          backgroundImage: `url(${import.meta.env.BASE_URL}lovable-uploads/electric-fence.png)`,
         }}
       >
         <div className="absolute inset-0 bg-red-900 bg-opacity-40 flex items-center justify-center">

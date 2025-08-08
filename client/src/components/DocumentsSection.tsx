@@ -6,11 +6,11 @@ export const DocumentsSection = () => {
   const documents = [
     {
       title: "Company Profile",
-      file: "/lovable-uploads/company-profile.pdf",
+      file: `${import.meta.env.BASE_URL}lovable-uploads/company-profile.pdf`,
     },
     {
       title: "Security Brochure",
-      file: "/lovable-uploads/brochure.pdf",
+      file: `${import.meta.env.BASE_URL}lovable-uploads/brochure.pdf`,
     },
   ];
 
