@@ -7,56 +7,56 @@ const teamMembers = [
   {
     name: "John",
     title: "Chief Executive Officer",
-    image: "/lovable-uploads/team/John.png",
+    image: "team/John.png",
     tier: "executives",
     bio: "John brings over 9 years of experience in security management, corporate leadership, and strategic operations. As the visionary behind Jolu Group Security, he leads with integrity, empowering teams and fostering a culture of accountability. His deep understanding of risk management and client-centered solutions has been instrumental in positioning the company as a trusted name in Kenya’s security industry.",
   },
   {
     name: "Lucy",
     title: "Managing Director",
-    image: "/lovable-uploads/team/Lucy.png",
+    image: "team/Lucy.png",
     tier: "executives",
     bio: "Lucy is a dynamic leader with a strong background in business operations, client relations, and organizational growth. With over a decade of experience in the security and service sectors, she plays a pivotal role in driving JOLU Group Security’s mission forward. Her hands-on leadership style, strategic mindset, and commitment to excellence have made her a cornerstone of the company’s continued success and expansion.",
   },
   {
     name: "Shem",
     title: "General Manager",
-    image: "/lovable-uploads/team/Shem.png",
+    image: "team/Shem.png",
     tier: "gm",
     bio: "Shem brings a wealth of experience in operational leadership, team management, and service excellence. As General Manager, he ensures that day-to-day activities across all departments run smoothly and efficiently. Known for his problem-solving abilities and attention to detail, Shem plays a key role in maintaining high service standards, optimizing internal processes, and delivering on client expectations across the country.",
   },
   {
     name: "Paul",
     title: "Head of Operations & Business Development - Nakuru",
-    image: "/lovable-uploads/team/Paul.png",
+    image: "team/Paul.png",
     tier: "ops",
     bio: "Paul oversees all operational and client engagement activities within the Nakuru region. With a hands-on leadership approach and extensive experience in the security industry, he ensures seamless service delivery, personnel supervision, and business growth. Paul is known for his dedication to excellence, operational efficiency, and building strong client relationships. His deep understanding of the local landscape and proactive problem-solving make him a key pillar in the company's regional success.",
   },
   {
     name: "Kelvin",
     title: "Head of Operations & Business Development - Nairobi",
-    image: "/lovable-uploads/team/Kelvin.png",
+    image: "team/Kelvin.png",
     tier: "ops",
     bio: "Kelvin leads operations and growth initiatives in Nairobi with a strategic focus on client acquisition, service delivery, and relationship management. With a strong background in business development and field operations, he combines tactical execution with a deep understanding of client needs. His leadership ensures efficient deployment of security personnel, alignment with client goals, and sustained growth in the Nairobi region. Driven, adaptive, and results-oriented, Kelvin plays a vital role in expanding the company’s presence in the capital.",
   },
   {
     name: "Jackline",
     title: "Business Development Executive - Nakuru",
-    image: "/lovable-uploads/team/Jackline.png",
+    image: "team/Jackline.png",
     tier: "bde",
     bio: "Jackline is a key figure in driving client engagement and service outreach in the Nakuru region. Her communication skills, attention to client needs, and commitment to quality ensure client satisfaction and business growth. She plays a crucial role in expanding our client base and strengthening our brand in the region.",
   },
   {
     name: "Leah",
     title: "Business Development Executive - Nairobi",
-    image: "/lovable-uploads/team/Leah.png",
+    image: "team/Leah.png",
     tier: "bde",
     bio: "Leah supports business expansion in Nairobi by cultivating strong client relationships and identifying new growth opportunities. With a client-first approach and a proactive mindset, she contributes to service excellence and strategic account development.",
   },
   {
     name: "Fred",
     title: "Business Development Executive - Nakuru",
-    image: "/lovable-uploads/team/Fred.png",
+    image: "team/Fred.png",
     tier: "bde",
     bio: "Fred’s expertise in client service and regional market knowledge enhances our business outreach in Nakuru. He’s passionate about security solutions that meet real-world challenges and plays a hands-on role in ensuring client expectations are met and exceeded.",
   },
@@ -71,7 +71,7 @@ const TeamCard = ({ member, setSelectedMember }) => (
   >
     <div className="w-full h-36 sm:h-40 bg-white dark:bg-zinc-900 flex items-center justify-center overflow-hidden">
       <img
-        src={member.image}
+        src={`${import.meta.env.BASE_URL}lovable-uploads/${member.image}`}
         alt={member.name}
         className="w-full h-full object-contain p-2"
       />
@@ -137,7 +137,6 @@ const Team = () => {
           </div>
         </div>
 
-        {/* Modal */}
         {selectedMember && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-2 sm:px-4 overflow-y-auto">
             <div className="bg-white dark:bg-zinc-800 rounded-xl shadow-xl w-full max-w-xl sm:max-w-2xl max-h-screen overflow-y-auto p-4 sm:p-6 relative">
@@ -151,7 +150,7 @@ const Team = () => {
               <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-center">
                 <div className="w-full md:w-[40%] h-48 sm:h-60 bg-gray-100 dark:bg-zinc-700 rounded-lg overflow-hidden flex items-center justify-center">
                   <img
-                    src={selectedMember.image}
+                    src={`${import.meta.env.BASE_URL}lovable-uploads/${selectedMember.image}`}
                     alt={selectedMember.name}
                     className="w-full h-full object-contain"
                   />
