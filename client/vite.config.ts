@@ -3,13 +3,19 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  // Use relative base path for universal compatibility
-  base: "./",
+// Set your repo name here
+const repoName = "Jolu-Security-Website";
 
+// Detect if we're in GitHub Pages environment
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+
+// If on GitHub Pages, use repo name as base; otherwise use relative './'
+const basePath = isGitHubPages ? `/${repoName}/` : "./";
+
+export default defineConfig(({ mode }) => ({
+  base: basePath,
   server: {
-    host: "::", // IPv6 support
+    host: "::",
     port: 8080,
   },
   plugins: [
