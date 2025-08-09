@@ -65,7 +65,7 @@ const Blogs = () => {
                     Event Security: What to Consider
                   </CardTitle>
                   <CardDescription className="text-gray-600 dark:text-gray-400 mt-2">
-                    Published on July 10, 2025
+                    Published on July 11, 2025
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
