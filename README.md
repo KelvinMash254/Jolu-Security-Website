@@ -1,99 +1,73 @@
-# Jolu Group Security
+# Welcome to your Lovable project
 
-This repository contains the source code for the Jolu Group Security website.
+## Project info
 
-## Project Structure
+**URL**: https://lovable.dev/projects/dced8845-af23-4549-8fe5-1a7a1ffb633b
 
--   `/client`: The frontend React application.
--   `/server`: The backend Node.js/Express server.
+## How can I edit this code?
 
-## Getting Started
+There are several ways of editing your application.
 
-### Prerequisites
+**Use Lovable**
 
--   Node.js and npm
--   Git
+Simply visit the [Lovable Project](https://lovable.dev/projects/dced8845-af23-4549-8fe5-1a7a1ffb633b) and start prompting.
 
-### Installation
+Changes made via Lovable will be committed automatically to this repo.
 
-1.  **Clone the repository:**
+**Use your preferred IDE**
 
-    ```bash
-    git clone <YOUR_GIT_URL>
-    ```
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-2.  **Install frontend dependencies:**
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-    ```bash
-    cd client
-    npm install
-    ```
+Follow these steps:
 
-3.  **Install backend dependencies:**
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-    ```bash
-    cd ../server
-    npm install
-    ```
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-### Running the Application
+# Step 3: Install the necessary dependencies.
+npm i
 
-1.  **Start the backend server:**
-
-    ```bash
-    cd server
-    npm start
-    ```
-
-    The server will start on port 3001.
-
-2.  **Start the frontend development server:**
-
-    ```bash
-    cd ../client
-    npm run dev
-    ```
-
-    The frontend will be available at `http://localhost:5173`.
-
-## Environment Variables
-
-### Frontend
-
-Create a `.env` file in the `client` directory and add the following environment variable:
-
-```
-VITE_API_URL=http://localhost:3001
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-### Backend
+**Edit a file directly in GitHub**
 
-Create a `.env` file in the `server` directory and add the following environment variables:
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```
-EMAIL_HOST=<your_email_host>
-EMAIL_PORT=<your_email_port>
-EMAIL_SECURE=<your_email_secure>
-EMAIL_USER=<your_email_user>
-EMAIL_PASS=<your_email_password>
-EMAIL_TO=<your_email_address>
-```
+**Use GitHub Codespaces**
 
-## Deployment
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-### Frontend (Vercel)
+## What technologies are used for this project?
 
-1.  Create a new project on Vercel.
-2.  Connect your Git repository.
-3.  Set the "Root Directory" to `client`.
-4.  Vercel will automatically detect the Vite configuration and deploy the application.
-5.  Add your environment variables in the "Environment Variables" section.
+This project is built with:
 
-### Backend (Render)
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-1.  Create a new "Web Service" on Render.
-2.  Connect your Git repository.
-3.  Set the "Root Directory" to `server`.
-4.  Set the "Build Command" to `npm install`.
-5.  Set the "Start Command" to `npm start`.
-6.  Add your environment variables in the "Environment" section.
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/dced8845-af23-4549-8fe5-1a7a1ffb633b) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)

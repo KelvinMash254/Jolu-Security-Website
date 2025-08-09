@@ -1,23 +1,10 @@
-/* Enable smooth scrolling and remove default spacing */
-html, body {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-
-/* Ensure root container takes full width */
 #root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
 }
 
-/* Logo styling (optional – can be removed if not using) */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -31,7 +18,6 @@ html, body {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* Logo spin animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -41,19 +27,16 @@ html, body {
   }
 }
 
-/* Only spin logo if user prefers animation */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-/* Card styling (optional) */
 .card {
   padding: 2em;
 }
 
-/* Optional helper class */
 .read-the-docs {
   color: #888;
 }
