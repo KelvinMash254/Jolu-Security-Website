@@ -41,12 +41,13 @@ const teamMembers = [
     bio: "Cate leads human resource strategy, staff welfare, compliance, and performance management, fostering a productive and positive workplace culture."
   },
 
-  // -------- OPERATIONS / BUSINESS DEVELOPMENT --------
+  // -------- OPERATIONS --------
   {
     name: "Musyoka",
     title: "Senior Technician",
     image: "/lovable-uploads/team/Musyoka.png",
     tier: "operations",
+    unit: "technical",
     bio: "Musyoka leads technical diagnostics, installations, and complex repairs, ensuring high-quality service delivery and equipment reliability."
   },
   {
@@ -54,6 +55,7 @@ const teamMembers = [
     title: "Assistant Technician & Driver",
     image: "/lovable-uploads/team/Dickson.png",
     tier: "operations",
+    unit: "technical",
     bio: "Dickson supports technical operations and logistics, ensuring timely transportation, field assistance, and operational support."
   },
   {
@@ -61,6 +63,7 @@ const teamMembers = [
     title: "Office Administrator – Nakuru",
     image: "/lovable-uploads/team/Mercy.png",
     tier: "operations",
+    unit: "admin",
     bio: "Mercy manages office administration and coordination at the Nakuru branch, ensuring efficient records management and office operations."
   },
   {
@@ -68,14 +71,8 @@ const teamMembers = [
     title: "Head of Business Development – Migori",
     image: "/lovable-uploads/team/Dennis.png",
     tier: "operations",
+    unit: "admin",
     bio: "Dennis leads business development initiatives in the Migori region, focusing on partnerships, client acquisition, and market expansion."
-  },
-  {
-    name: "Ngeno",
-    title: "Head of Business Development – Rift Valley",
-    image: "/lovable-uploads/team/Benard.png",
-    tier: "operations",
-    bio: "Ngeno drives sales growth and market penetration across the Rift Valley region through strategic partnerships and client engagement."
   }
 ];
 
@@ -126,12 +123,16 @@ const Team = () => {
   const grouped = {
     executives: teamMembers.filter((m) => m.tier === "executives"),
     management: teamMembers.filter((m) => m.tier === "management"),
-    operations: teamMembers.filter((m) => m.tier === "operations"),
+    operations: {
+      technical: teamMembers.filter((m) => m.tier === "operations" && m.unit === "technical"),
+      admin: teamMembers.filter((m) => m.tier === "operations" && m.unit === "admin"),
+    },
   };
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors">
       <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+
         {/* Page Intro */}
         <div className="relative mb-12 max-w-5xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -147,8 +148,8 @@ const Team = () => {
           </div>
         </div>
 
-        {/* Team Sections */}
         <div className="space-y-20 max-w-7xl mx-auto">
+
           {/* Executives */}
           <section>
             <h2 className="text-2xl font-bold text-center mb-6">
@@ -173,17 +174,41 @@ const Team = () => {
             </div>
           </section>
 
-          {/* Operations / Business Development */}
+          {/* Operations */}
           <section>
-            <h2 className="text-2xl font-bold text-center mb-6">
+            <h2 className="text-2xl font-bold text-center mb-10">
               Operations & Business Development
             </h2>
-            <div className="flex justify-center flex-wrap gap-6 sm:gap-8">
-              {grouped.operations.map((m, i) => (
-                <TeamCard key={i} member={m} setSelectedMember={setSelectedMember} />
-              ))}
+
+            <div className="space-y-12">
+
+              {/* Technical Unit */}
+              <div>
+                <h3 className="text-lg font-semibold text-center mb-6 text-black-700">
+                  Technical Unit
+                </h3>
+                <div className="flex justify-center flex-wrap gap-6 sm:gap-8">
+                  {grouped.operations.technical.map((m, i) => (
+                    <TeamCard key={i} member={m} setSelectedMember={setSelectedMember} />
+                  ))}
+                </div>
+              </div>
+
+              {/* Admin & Business Development */}
+              <div>
+                <h3 className="text-lg font-semibold text-center mb-6 text-black-700">
+                  Administration & Business Development
+                </h3>
+                <div className="flex justify-center flex-wrap gap-6 sm:gap-8">
+                  {grouped.operations.admin.map((m, i) => (
+                    <TeamCard key={i} member={m} setSelectedMember={setSelectedMember} />
+                  ))}
+                </div>
+              </div>
+
             </div>
           </section>
+
         </div>
 
         {/* Modal */}
@@ -226,6 +251,7 @@ const Team = () => {
             </div>
           </div>
         )}
+
       </main>
 
       <Footer />
