@@ -31,9 +31,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         <Link to="/" onClick={onClose} className="hover:text-red-600">
           Home
         </Link>
-        <Link to="/team" onClick={onClose} className="hover:text-red-600">
-          Our Team
-        </Link>
         <Link to="/gallery" onClick={onClose} className="hover:text-red-600">
           Gallery
         </Link>

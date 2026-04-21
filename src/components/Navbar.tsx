@@ -174,7 +174,6 @@ const Navbar = () => {
               {mobileDropdown.about && (
                 <div className="ml-4 mt-2 space-y-2 text-sm">
                   <a href={`${base}#about`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">About Us</a>
-                  <Link to="/team" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Our Team</Link>
                   <Link to="/gallery" onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Gallery</Link>
                   <a href={`${base}#documents`} onClick={() => setSidebarOpen(false)} className="block text-gray-700 dark:text-white hover:text-red-600 dark:hover:text-red-400">Documents</a>
                 </div>

@@ -489,33 +489,64 @@ const AboutUs = () => {
         </div>
 
         {/* Maps */}
-        <div className="px-4 mt-12 space-y-10">
-          <div>
-            <h4 className="font-semibold text-lg text-gray-800 dark:text-white mb-2">Nairobi – Main Office</h4>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.905467236327!2d36.8703496746426!3d-1.2256593987626516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f15e36827a427%3A0x99f4140fa95df719!2sSimba%20Close%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1755634136414!5m2!1sen!2ske"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+{/* Maps */}
+<div className="px-4 mt-12 space-y-10">
+  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+    Find Us
+  </h3>
 
-          <div>
-            <h4 className="font-semibold text-lg text-gray-800 dark:text-white mb-2">Nakuru - Regional Office</h4>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.768809440484!2d36.060809509865564!3d-0.2854380997105522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18298dbee7691795%3A0x57bb3856ac0d67f7!2sKFA%20Building%2C%20Geoffrey%20Kamau%20Ave%2C%20Nakuru!5e0!3m2!1sen!2ske!4v1752868635219!5m2!1sen!2ske"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
+  <div className="grid md:grid-cols-2 gap-6">
+
+    {/* Nairobi (General - No Simba Close) */}
+    <div>
+      <h4 className="font-medium mb-2">
+        1. Jolu Head Office – Nairobi, Kenya
+      </h4>
+      <iframe
+        src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
+        width="100%"
+        height="250"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    {/* Nakuru - KFA Building ONLY */}
+    <div>
+      <h4 className="font-medium mb-2">
+        2. Jolu Security Office – KFA Building, Nakuru
+      </h4>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.37956243454!2d36.05669568715821!3d-0.28648409808689044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa60a63f693e9%3A0xaba0a02d31f7b4d5!2sKFA%20Building%2C%20Nakuru!5e0!3m2!1sen!2ske!4v1723810622341!5m2!1sen!2ske"
+        width="100%"
+        height="250"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    {/* Rongo - Migori */}
+    <div>
+      <h4 className="font-medium mb-2">
+        3. Jolu Office – Quickfill Service Station, Rongo
+      </h4>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.472100426641!2d34.606213499999996!3d-0.7548144999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182b496e03a56399%3A0xc2ad096c1f16c391!2sQUICKFILL%20RONGO%20STATION!5e0!3m2!1sen!2ske!4v1774360053586!5m2!1sen!2ske"
+        width="100%"
+        height="250"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+  </div>
+</div>
+
       </motion.div>
 
       {/* RIGHT SIDE - Contact Form */}
